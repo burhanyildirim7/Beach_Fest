@@ -15,6 +15,18 @@ TagManager:
   - ToplanmisSamanBalyasi
   - Ambar
   - SirtCantasi
+  - AltinMadeni
+  - Kasap
+  - Altin
+  - ToplanmisAltin
+  - Et
+  - ToplanmisEt
+  - Kisla
+  - Demir
+  - ToplanmisDemir
+  - DemirMadeni
+  - Demirci
+  - ArastirmaBinasi
   layers:
   - Default
   - TransparentFX

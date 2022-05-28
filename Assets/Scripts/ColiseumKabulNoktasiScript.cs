@@ -11,6 +11,10 @@ public class ColiseumKabulNoktasiScript : MonoBehaviour
             //other.gameObject.GetComponent<MeshRenderer>().enabled = false;
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag == "ToplanmisAltin")
+        {
+            Destroy(other.gameObject);
+        }
         else
         {
 

@@ -18,7 +18,7 @@ public class TarlaScript : MonoBehaviour
     [Header("Cekilen Malzemenin Gidecegi Transform")]
     public Transform _malKabulNoktasi;
     [Header("Tamamlandiktan Sonra Acilacak Tarla Varsa Tiklenecek")]
-    public bool _sonrasindaTarlaMi;
+    public bool _sonrasindaTarlaVarMi;
     [Header("Sonrasinda Tarla Varsa Tarla Objesi")]
     public GameObject _sonrakiTarlaObject;
 
@@ -43,7 +43,7 @@ public class TarlaScript : MonoBehaviour
         _meshRenderer = GetComponent<MeshRenderer>();
         _ihtiyacText.text = _gerekliMalzemeSayisi.ToString();
 
-        if (_sonrasindaTarlaMi)
+        if (_sonrasindaTarlaVarMi)
         {
             _sonrakiTarlaObject.SetActive(false);
         }
@@ -130,7 +130,7 @@ public class TarlaScript : MonoBehaviour
                     _meshRenderer.enabled = false;
                     _ihtiyacText.gameObject.SetActive(false);
 
-                    if (_sonrasindaTarlaMi)
+                    if (_sonrasindaTarlaVarMi)
                     {
                         _sonrakiTarlaObject.SetActive(true);
                     }
