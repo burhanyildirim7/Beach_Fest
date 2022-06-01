@@ -7,26 +7,22 @@ TagManager:
   - KarakterPaketi
   - LevelController
   - UIController
-  - engel
-  - finish
-  - collectible
-  - elmas
-  - SamanBalyasi
-  - ToplanmisSamanBalyasi
-  - Ambar
   - SirtCantasi
-  - AltinMadeni
+  - client
   - Kasap
-  - Altin
-  - ToplanmisAltin
   - Et
-  - ToplanmisEt
+  - SamanBalyasi
+  - Ambar
+  - AltinMadeni
+  - ArastirmaBinasi
+  - Altin
+  - Demirci
+  - DemirMadeni
   - Kisla
   - Demir
-  - ToplanmisDemir
-  - DemirMadeni
-  - Demirci
-  - ArastirmaBinasi
+  - stuff
+  - icecream
+  - drink
   layers:
   - Default
   - TransparentFX
