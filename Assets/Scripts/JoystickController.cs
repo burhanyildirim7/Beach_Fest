@@ -8,9 +8,11 @@ public class JoystickController : MonoBehaviour
     public FloatingJoystick _floatingJoystick;
     public Rigidbody _rigidbody;
 
+    [SerializeField] private Animator _animator;
+
     public void FixedUpdate()
     {
-        if (GameController.instance.isContinue == true)
+        if (GameController.instance.isContinue == true && GameController.instance._kameraHareketli == false)
         {
             Vector3 direction = Vector3.forward * _floatingJoystick.Vertical + Vector3.right * _floatingJoystick.Horizontal;
             // transform.Translate(direction * Time.deltaTime * _speed);
@@ -20,6 +22,16 @@ public class JoystickController : MonoBehaviour
             {
                 transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
             }
+
+            if (_rigidbody.velocity.x != 0 || _rigidbody.velocity.z != 0)
+            {
+                _animator.SetBool("walk", true);
+            }
+            else
+            {
+                _animator.SetBool("walk", false);
+            }
+
             //transform.Rotate(0, _floatingJoystick.Horizontal * 1f, 0);
         }
         else
