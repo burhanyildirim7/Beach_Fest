@@ -13,7 +13,11 @@ TagManager:
   - icecream
   - drink
   - sezlong
+<<<<<<< Updated upstream
   - YuzmeAlani
+=======
+  - money
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

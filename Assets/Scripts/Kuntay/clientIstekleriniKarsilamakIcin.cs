@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class clientIstekleriniKarsilamakIcin : MonoBehaviour
 {
-    [SerializeField] GameObject semsiye, dondurma, icecek;
-    static public bool semsiyeIstiyor=false, dondurmaIstiyor=false, icecekIstiyor=false;
+    [SerializeField] GameObject semsiye, dondurma, icecek,kapatilacakGrup,acilacakGrup,dropParaObjesi;
+    public static bool semsiyeIstiyor=false, dondurmaIstiyor=false, icecekIstiyor=false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +29,14 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
 
         }
     }
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag=="client")
+        {
+            acilacakGrup.SetActive(true);
+            kapatilacakGrup.SetActive(false);
+            dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
+        }
+    }
 
 }
