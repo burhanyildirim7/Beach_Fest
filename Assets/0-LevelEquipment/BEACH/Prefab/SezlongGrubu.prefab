@@ -234,7 +234,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bedelText: {fileID: 3899279304947427547}
   acilacakSezlongGrubu: {fileID: 3899279304973145837}
+  birinciDenizGrubu: {fileID: 0}
   kapanacakGrubu: {fileID: 3899279304405619948}
+  sezlongGrubuNo: 2
 --- !u!1 &3899279304947427549
 GameObject:
   m_ObjectHideFlags: 0

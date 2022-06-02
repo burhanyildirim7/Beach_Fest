@@ -6905,6 +6905,10 @@ PrefabInstance:
       value: SezlongGrubu (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5974423511093062665, guid: 7f17841135e2e44d29bbcc41ddbebe9b, type: 3}
+      propertyPath: sezlongGrubuNo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974423511093062665, guid: 7f17841135e2e44d29bbcc41ddbebe9b, type: 3}
       propertyPath: birinciDenizGrubu
       value: 
       objectReference: {fileID: 2981160950502006924}
@@ -7164,6 +7168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenizGrubu (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6722072376097821375, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
+      propertyPath: denizeGirisGrubuNo
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
 --- !u!1 &2981160950502006924 stripped
@@ -7230,6 +7238,10 @@ PrefabInstance:
     - target: {fileID: 4706668338459427178, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
       propertyPath: m_Name
       value: DenizGrubu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722072376097821375, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
+      propertyPath: denizeGirisGrubuNo
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}

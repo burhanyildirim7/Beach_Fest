@@ -861,6 +861,7 @@ MonoBehaviour:
   _speed: 5
   _floatingJoystick: {fileID: 0}
   _rigidbody: {fileID: 305344206}
+  _playerController: {fileID: 0}
   _animator: {fileID: 0}
 --- !u!114 &305344204
 MonoBehaviour:
@@ -877,6 +878,7 @@ MonoBehaviour:
   collectibleDegeri: 10
   xVarMi: 1
   collectibleVarMi: 1
+  _yuzuyorMu: 0
 --- !u!136 &305344205
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3776,6 +3778,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 102799940180435214, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102799940588083201, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
