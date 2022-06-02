@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Sezlong2inciGrubuAcma : MonoBehaviour
 {
     [SerializeField] Text bedelText;
-    [SerializeField] GameObject acilacakSezlongGrubu;
+    [SerializeField] GameObject acilacakSezlongGrubu,birinciDenizGrubu;
     [SerializeField] GameObject kapanacakGrubu;
     int isOpen=0;
     // Start is called before the first frame update
@@ -20,6 +20,7 @@ public class Sezlong2inciGrubuAcma : MonoBehaviour
             isOpen = 1;
             PlayerPrefs.SetInt("2inciSezlongAcikMi", 1);
             acilacakSezlongGrubu.SetActive(true);
+            birinciDenizGrubu.SetActive(true);
             kapanacakGrubu.SetActive(false);
         }
         else
@@ -36,6 +37,7 @@ public class Sezlong2inciGrubuAcma : MonoBehaviour
             isOpen = 1;
             PlayerPrefs.SetInt("2inciSezlongAcikMi",1);
             acilacakSezlongGrubu.SetActive(true);
+            birinciDenizGrubu.SetActive(true);
             kapanacakGrubu.SetActive(false);
         }
         else
