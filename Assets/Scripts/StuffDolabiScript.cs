@@ -13,9 +13,11 @@ public class StuffDolabiScript : MonoBehaviour
 
     private float _timer;
 
+    private int _üretilenStuff;
+
     void Start()
     {
-
+        _üretilenStuff = 0;
     }
 
 
@@ -28,11 +30,7 @@ public class StuffDolabiScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-
-
             _timer = 0;
-
-
         }
         else
         {
@@ -42,7 +40,14 @@ public class StuffDolabiScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.tag == "Player")
+        {
+            _timer = 0;
+        }
+        else
+        {
 
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -51,16 +56,24 @@ public class StuffDolabiScript : MonoBehaviour
         {
             _timer += Time.deltaTime;
 
-            if (_timer > _spawnHizi)
+            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiObjeler.Count < other.gameObject.GetComponent<SirtCantasiScript>()._stackSiniri)
             {
-                GameObject stuff = Instantiate(_stuff, _spawnPoint.transform.position, Quaternion.identity);
-                other.gameObject.GetComponent<SirtCantasiScript>().StuffTopla(stuff);
-                _timer = 0;
+                if (_timer > _spawnHizi)
+                {
+                    GameObject stuff = Instantiate(_stuff, _spawnPoint.transform.position, Quaternion.identity);
+                    other.gameObject.GetComponent<SirtCantasiScript>().StuffTopla(stuff);
+                    _timer = 0;
+                }
+                else
+                {
+
+                }
             }
             else
             {
 
             }
+
 
         }
         else

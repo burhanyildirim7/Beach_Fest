@@ -16,10 +16,12 @@ public class SirtCantasiScript : MonoBehaviour
     public List<GameObject> _cantadakiAltinObjeleri = new List<GameObject>();
     public List<GameObject> _cantadakiEtObjeleri = new List<GameObject>();
     public List<GameObject> _cantadakiDemirObjeleri = new List<GameObject>();
+    [Header("PlayerController Scripti")]
+    [SerializeField] private PlayerController _playerController;
 
-    private int _cantadakiObjeSayisi;
+    [HideInInspector] public int _cantadakiObjeSayisi;
 
-    private int _stackSiniri;
+    [HideInInspector] public int _stackSiniri;
 
     void Start()
     {
@@ -29,6 +31,15 @@ public class SirtCantasiScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_cantadakiObjeler.Count > 0)
+        {
+            _playerController._elindeStaffVarMi = true;
+        }
+        else
+        {
+            _playerController._elindeStaffVarMi = false;
+        }
+
         CantayiDüzenle();
         CantayiHizala();
     }

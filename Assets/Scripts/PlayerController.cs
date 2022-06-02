@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public bool collectibleVarMi = true;
 
     [HideInInspector] public bool _yuzuyorMu;
+    [HideInInspector] public bool _elindeStaffVarMi;
 
 
     private void Awake()

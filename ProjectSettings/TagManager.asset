@@ -3,21 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - KarakterPaketi
-  - LevelController
-  - UIController
-  - SirtCantasi
-  - client
-  - stuff
-  - icecream
-  - drink
-  - sezlong
-<<<<<<< Updated upstream
-  - YuzmeAlani
-=======
-  - money
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX

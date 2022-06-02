@@ -1679,6 +1679,7 @@ MonoBehaviour:
   xVarMi: 1
   collectibleVarMi: 1
   _yuzuyorMu: 0
+  _elindeStaffVarMi: 0
 --- !u!54 &1443049515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1741,6 +1742,7 @@ MonoBehaviour:
   _cantadakiAltinObjeleri: []
   _cantadakiEtObjeleri: []
   _cantadakiDemirObjeleri: []
+  _playerController: {fileID: 1443049514}
 --- !u!1 &1493954317
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,7 +37,25 @@ public class JoystickController : MonoBehaviour
                 {
                     _animator.SetBool("swimidle", false);
                     _animator.SetBool("swim", false);
-                    _animator.SetBool("walk", true);
+
+
+                    if (_playerController._elindeStaffVarMi == true)
+                    {
+                        _animator.SetBool("walk", false);
+                        _animator.SetBool("swim", false);
+                        _animator.SetBool("swimidle", false);
+                        _animator.SetBool("carryidle", false);
+                        _animator.SetBool("carry", true);
+                    }
+                    else
+                    {
+                        _animator.SetBool("swim", false);
+                        _animator.SetBool("swimidle", false);
+                        _animator.SetBool("carry", false);
+                        _animator.SetBool("walk", true);
+
+                    }
+
                 }
 
             }
@@ -53,11 +71,28 @@ public class JoystickController : MonoBehaviour
                 {
                     _animator.SetBool("swim", false);
                     _animator.SetBool("swimidle", false);
-                    _animator.SetBool("walk", false);
+
+
+                    if (_playerController._elindeStaffVarMi == true)
+                    {
+                        _animator.SetBool("walk", false);
+                        _animator.SetBool("swim", false);
+                        _animator.SetBool("swimidle", false);
+                        _animator.SetBool("carry", false);
+                        _animator.SetBool("carryidle", true);
+                    }
+                    else
+                    {
+                        _animator.SetBool("swim", false);
+                        _animator.SetBool("swimidle", false);
+                        _animator.SetBool("carry", false);
+                        _animator.SetBool("walk", false);
+
+                    }
+
                 }
 
             }
-
 
 
             //transform.Rotate(0, _floatingJoystick.Horizontal * 1f, 0);
