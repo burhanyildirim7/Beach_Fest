@@ -33,6 +33,9 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
     {
         if (other.tag=="client")
         {
+            semsiye.SetActive(false);
+            dondurma.SetActive(false);
+            icecek.SetActive(false);
             acilacakGrup.SetActive(true);
             kapatilacakGrup.SetActive(false);
             dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
