@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class denizGirisYerilerininAcilisi : MonoBehaviour
 {
     [SerializeField] Text bedelText;
-    [SerializeField] GameObject acilacakDusGrubu, denizeGirisYerleri;
+    [SerializeField] GameObject acilacakDusGrubu, denizeGirisYerleri, acilacakExpandAlani;
     [SerializeField] GameObject kapanacakGrubu;
     [SerializeField] int denizeGirisGrubuNo = 0;
     int isOpen1 = 0, isOpen2 = 0;
@@ -23,6 +23,7 @@ public class denizGirisYerilerininAcilisi : MonoBehaviour
 
             acilacakDusGrubu.SetActive(true);
             denizeGirisYerleri.SetActive(true);
+            acilacakExpandAlani.SetActive(true);
             kapanacakGrubu.SetActive(false);
 
         }
@@ -31,6 +32,7 @@ public class denizGirisYerilerininAcilisi : MonoBehaviour
 
             acilacakDusGrubu.SetActive(true);
             denizeGirisYerleri.SetActive(true);
+            acilacakExpandAlani.SetActive(true);
             kapanacakGrubu.SetActive(false);
 
         }
@@ -50,6 +52,7 @@ public class denizGirisYerilerininAcilisi : MonoBehaviour
             PlayerPrefs.SetInt("1inciDenizeGirisAlaniAcikMi", 1);
             acilacakDusGrubu.SetActive(true);
             denizeGirisYerleri.SetActive(true);
+            acilacakExpandAlani.SetActive(true);
             kapanacakGrubu.SetActive(false);
         }
         else if (bedelText.text == "$0" && isOpen1 == 0 && denizeGirisGrubuNo == 2)
@@ -58,6 +61,7 @@ public class denizGirisYerilerininAcilisi : MonoBehaviour
             PlayerPrefs.SetInt("2inciDenizeGirisAlaniAcikMi", 1);
             acilacakDusGrubu.SetActive(true);
             denizeGirisYerleri.SetActive(true);
+            acilacakExpandAlani.SetActive(true);
             kapanacakGrubu.SetActive(false);
         }
 
