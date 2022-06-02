@@ -8,7 +8,7 @@ public class ExpandKontrol : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] Text bedelText;
     [SerializeField] GameObject acilacakGrup;
-    [SerializeField] GameObject kapanacakGrup;
+    [SerializeField] GameObject kapanacakGrup,kapanacakOrman;
     [SerializeField] int yeniAlanNo = 0;
     int isOpenYeniAlan1 = 0;//, isOpenYeniAlan2 =0;
     // Start is called before the first frame update
@@ -23,6 +23,7 @@ public class ExpandKontrol : MonoBehaviour
 
             acilacakGrup.SetActive(true);
             kapanacakGrup.SetActive(false);
+            kapanacakOrman.SetActive(false);
 
         }
         /* else if (isOpenYeniAlan2 == 1)
@@ -48,6 +49,7 @@ public class ExpandKontrol : MonoBehaviour
             PlayerPrefs.SetInt("1inciYeniAlanAcikMi", 1);
             acilacakGrup.SetActive(true);
             kapanacakGrup.SetActive(false);
+            kapanacakOrman.SetActive(false);
         }
         /* else if (bedelText.text == "$0" && isOpenYeniAlan1 == 0 && denizeGirisGrubuNo == 2)
          {
@@ -55,6 +57,7 @@ public class ExpandKontrol : MonoBehaviour
              PlayerPrefs.SetInt("2inciYeniAlanAcikMi", 1);
              acilacakGrup.SetActive(true);
              kapanacakGrup.SetActive(false);
+             kapanacakOrman.SetActive(false);
          }*/
 
         else

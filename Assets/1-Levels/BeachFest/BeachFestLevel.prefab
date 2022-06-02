@@ -7012,6 +7012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89683ae57965643f5857e0d9b467048b, type: 3}
+--- !u!1 &782329686812495970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4839895828257857616, guid: 89683ae57965643f5857e0d9b467048b, type: 3}
+  m_PrefabInstance: {fileID: 5328223626250940466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3863749835580794908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8966503208235276334, guid: 89683ae57965643f5857e0d9b467048b, type: 3}
@@ -7564,6 +7569,10 @@ PrefabInstance:
       propertyPath: kapanacakGrup
       value: 
       objectReference: {fileID: 102799940180435214}
+    - target: {fileID: 3227773835656987400, guid: e0c9100998a9845fe8c20ea0e3820db0, type: 3}
+      propertyPath: kapanacakOrman
+      value: 
+      objectReference: {fileID: 782329686812495970}
     - target: {fileID: 7750269298801512984, guid: e0c9100998a9845fe8c20ea0e3820db0, type: 3}
       propertyPath: m_RootOrder
       value: 10
