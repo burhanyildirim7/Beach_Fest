@@ -9,21 +9,11 @@ TagManager:
   - UIController
   - SirtCantasi
   - client
-  - Kasap
-  - Et
-  - SamanBalyasi
-  - Ambar
-  - AltinMadeni
-  - ArastirmaBinasi
-  - Altin
-  - Demirci
-  - DemirMadeni
-  - Kisla
-  - Demir
   - stuff
   - icecream
   - drink
   - sezlong
+  - YuzmeAlani
   layers:
   - Default
   - TransparentFX

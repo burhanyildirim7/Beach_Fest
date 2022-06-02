@@ -2716,6 +2716,7 @@ MonoBehaviour:
   collectibleDegeri: 10
   xVarMi: 1
   collectibleVarMi: 1
+  _yuzuyorMu: 0
 --- !u!54 &1443049515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2747,6 +2748,7 @@ MonoBehaviour:
   _speed: 5
   _floatingJoystick: {fileID: 589370614}
   _rigidbody: {fileID: 1443049515}
+  _playerController: {fileID: 1443049514}
   _animator: {fileID: 1805919960}
 --- !u!114 &1443049517
 MonoBehaviour:

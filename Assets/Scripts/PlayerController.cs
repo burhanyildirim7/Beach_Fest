@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public bool xVarMi = true;
     public bool collectibleVarMi = true;
 
+    [HideInInspector] public bool _yuzuyorMu;
+
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         StartingEvents();
+
     }
 
     /// <summary>
@@ -31,9 +34,27 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+        if (other.gameObject.tag == "YuzmeAlani")
+        {
+            _yuzuyorMu = true;
+        }
+        else
+        {
 
+        }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "YuzmeAlani")
+        {
+            _yuzuyorMu = false;
+        }
+        else
+        {
+
+        }
+    }
 
     /// <summary>
     /// Bu fonksiyon her level baslarken cagrilir. 
@@ -48,6 +69,8 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(0, transform.position.y, 0);
         GetComponent<Collider>().enabled = true;
         GetComponent<SirtCantasiScript>().SirtCantasiLevelStart();
+
+        _yuzuyorMu = false;
 
     }
 
