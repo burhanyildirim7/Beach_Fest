@@ -19,15 +19,37 @@ public class SirtCantasiScript : MonoBehaviour
 
     private int _cantadakiObjeSayisi;
 
+    private int _stackSiniri;
+
     void Start()
     {
         _cantadakiObjeSayisi = 0;
+        _stackSiniri = 4;
     }
 
     private void FixedUpdate()
     {
         CantayiDüzenle();
         CantayiHizala();
+    }
+
+    public void StuffTopla(GameObject other)
+    {
+        if (_cantadakiObjeler.Count < _stackSiniri)
+        {
+            other.gameObject.transform.parent = _sirtCantasiObject.transform;
+            _cantadakiObjeler.Add(other.gameObject);
+
+
+            int sira = _cantadakiObjeSayisi;
+            other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
+            other.gameObject.transform.DOLocalRotate(new Vector3(90, 90, 0), 1);
+            _cantadakiObjeSayisi++;
+        }
+        else
+        {
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)

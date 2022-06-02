@@ -58,6 +58,8 @@ public class JoystickController : MonoBehaviour
 
             }
 
+
+
             //transform.Rotate(0, _floatingJoystick.Horizontal * 1f, 0);
         }
         else
@@ -65,5 +67,10 @@ public class JoystickController : MonoBehaviour
 
         }
 
+
+
     }
+
+
+
 }
