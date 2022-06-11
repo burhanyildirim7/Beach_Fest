@@ -69,6 +69,7 @@ public class ArastirmaTezgahiScript : MonoBehaviour
         }
     }
 
+    /*
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -151,4 +152,5 @@ public class ArastirmaTezgahiScript : MonoBehaviour
 
         }
     }
+    */
 }

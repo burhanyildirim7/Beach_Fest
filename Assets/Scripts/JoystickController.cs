@@ -8,6 +8,9 @@ public class JoystickController : MonoBehaviour
     public FloatingJoystick _floatingJoystick;
     public Rigidbody _rigidbody;
 
+    public float _velocityX;
+    public float _velocityZ;
+
     [SerializeField] private PlayerController _playerController;
 
     [SerializeField] private Animator _animator;
@@ -24,6 +27,17 @@ public class JoystickController : MonoBehaviour
             {
                 transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
             }
+
+            /*
+            if (_floatingJoystick.Horizontal == 0 && _floatingJoystick.Vertical == 0)
+            {
+                _rigidbody.velocity = Vector3.zero;
+
+            }
+            */
+            _velocityX = _rigidbody.velocity.x;
+            _velocityZ = _rigidbody.velocity.z;
+
 
             if (_rigidbody.velocity.x != 0 || _rigidbody.velocity.z != 0)
             {
@@ -52,6 +66,7 @@ public class JoystickController : MonoBehaviour
                         _animator.SetBool("swim", false);
                         _animator.SetBool("swimidle", false);
                         _animator.SetBool("carry", false);
+                        _animator.SetBool("carryidle", false);
                         _animator.SetBool("walk", true);
 
                     }
@@ -86,6 +101,7 @@ public class JoystickController : MonoBehaviour
                         _animator.SetBool("swim", false);
                         _animator.SetBool("swimidle", false);
                         _animator.SetBool("carry", false);
+                        _animator.SetBool("carryidle", false);
                         _animator.SetBool("walk", false);
 
                     }

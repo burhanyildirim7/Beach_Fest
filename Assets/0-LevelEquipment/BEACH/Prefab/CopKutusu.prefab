@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kapakAnimator: {fileID: 6909128910406983578}
+  _malKabulNoktasi: {fileID: 5828992337186917118}
 --- !u!1 &3925796020314139860
 GameObject:
   m_ObjectHideFlags: 0

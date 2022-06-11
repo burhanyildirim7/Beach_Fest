@@ -49,7 +49,7 @@ public class ColiseumScript : MonoBehaviour
 
     }
 
-
+    /*
     private void OnTriggerStay(Collider other)
     {
         if (GameController.instance.isContinue == true)
@@ -136,4 +136,5 @@ public class ColiseumScript : MonoBehaviour
         }
 
     }
+    */
 }

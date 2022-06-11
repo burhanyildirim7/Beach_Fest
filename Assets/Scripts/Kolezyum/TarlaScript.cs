@@ -82,6 +82,7 @@ public class TarlaScript : MonoBehaviour
         }
     }
 
+    /*
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -152,4 +153,5 @@ public class TarlaScript : MonoBehaviour
 
         }
     }
+    */
 }

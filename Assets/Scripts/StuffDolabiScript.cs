@@ -56,7 +56,7 @@ public class StuffDolabiScript : MonoBehaviour
         {
             _timer += Time.deltaTime;
 
-            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiObjeler.Count < other.gameObject.GetComponent<SirtCantasiScript>()._stackSiniri)
+            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiObjeler.Count < other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri)
             {
                 if (_timer > _spawnHizi)
                 {

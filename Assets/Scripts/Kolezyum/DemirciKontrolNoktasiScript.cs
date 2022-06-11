@@ -76,6 +76,7 @@ public class DemirciKontrolNoktasiScript : MonoBehaviour
         }
     }
 
+    /*
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -158,4 +159,5 @@ public class DemirciKontrolNoktasiScript : MonoBehaviour
 
         }
     }
+    */
 }
