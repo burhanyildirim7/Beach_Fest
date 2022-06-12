@@ -327,6 +327,8 @@ MonoBehaviour:
   kapatilacakGrup: {fileID: 3947573290428768893}
   acilacakGrup: {fileID: 3521139254611900318}
   dropParaObjesi: {fileID: 3638962376813942237}
+  _doluMu: 0
+  _dolduranClient: {fileID: 0}
 --- !u!1 &3947573290428768893
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +542,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acilacakSezlong: {fileID: 3947573290428768893}
   kapacakObje: {fileID: 3521139254611900318}
+  _spawnNoktasi: {fileID: 0}
+  _spawnClientList:
+  - {fileID: 3570747035138937264, guid: 9a109ef39edfb40a78b60c502de72d1d, type: 3}
+  _clientIstekleriniKarsilamakIcin: {fileID: 4104661468981561388}
 --- !u!1001 &447761315368629401
 PrefabInstance:
   m_ObjectHideFlags: 0

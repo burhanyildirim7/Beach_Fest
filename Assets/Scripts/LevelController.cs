@@ -25,7 +25,7 @@ public class LevelController : MonoBehaviour
             totalLevelNo = 1;
             levelNo = 1;
         }
-        UIController.instance.SetLevelText(totalLevelNo);
+        //UIController.instance.SetLevelText(totalLevelNo);
         LevelStartingEvents();
     }
 
@@ -38,7 +38,7 @@ public class LevelController : MonoBehaviour
         tempLevelNo = levelNo;
         totalLevelNo++;
         PlayerPrefs.SetInt("level", totalLevelNo);
-        UIController.instance.SetLevelText(totalLevelNo);
+        //UIController.instance.SetLevelText(totalLevelNo);
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ public class LevelController : MonoBehaviour
         {
             levelNo = totalLevelNo;
         }
-        UIController.instance.SetLevelText(totalLevelNo);
+        //UIController.instance.SetLevelText(totalLevelNo);
         currentLevelObj = Instantiate(levels[levelNo - 1], Vector3.zero, Quaternion.identity);
         Elephant.LevelStarted(totalLevelNo);
 
@@ -75,7 +75,7 @@ public class LevelController : MonoBehaviour
 
     public void LevelRestartEvents()
     {
-        UIController.instance.SetLevelText(totalLevelNo);
+        //UIController.instance.SetLevelText(totalLevelNo);
         currentLevelObj = Instantiate(levels[levelNo - 1], Vector3.zero, Quaternion.identity);
         Elephant.LevelStarted(totalLevelNo);
     }

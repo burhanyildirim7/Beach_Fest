@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.UI;
+using ElephantSDK;
 
 public class PlayerController : MonoBehaviour
 {
@@ -73,6 +74,14 @@ public class PlayerController : MonoBehaviour
 
         _yuzuyorMu = false;
 
+        Elephant.LevelStarted(1);
+
+    }
+
+    private void OnApplicationQuit()
+    {
+        Elephant.LevelCompleted(1);
+        Debug.Log("Application ending after " + Time.time + " seconds");
     }
 
 }

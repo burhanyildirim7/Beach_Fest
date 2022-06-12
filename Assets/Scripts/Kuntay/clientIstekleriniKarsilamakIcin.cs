@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class clientIstekleriniKarsilamakIcin : MonoBehaviour
 {
-    [SerializeField] GameObject semsiye, dondurma, icecek,kapatilacakGrup,acilacakGrup,dropParaObjesi;
-    public static bool semsiyeIstiyor=false, dondurmaIstiyor=false, icecekIstiyor=false;
+    [SerializeField] GameObject semsiye, dondurma, icecek, kapatilacakGrup, acilacakGrup, dropParaObjesi;
+    public static bool semsiyeIstiyor = false, dondurmaIstiyor = false, icecekIstiyor = false;
 
+    public bool _doluMu;
+
+    public GameObject _dolduranClient;
+
+
+    private void Start()
+    {
+        _doluMu = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag=="stuff" && semsiyeIstiyor==true)
+        if (other.tag == "stuff" && semsiyeIstiyor == true)
         {
             semsiye.SetActive(true);
             semsiyeIstiyor = false;
         }
-        else if (other.tag =="icecream" && dondurmaIstiyor==true)
+        else if (other.tag == "icecream" && dondurmaIstiyor == true)
         {
             dondurma.SetActive(true);
             dondurmaIstiyor = false;
         }
-        else if (other.tag =="drink" && icecekIstiyor==true)
+        else if (other.tag == "drink" && icecekIstiyor == true)
         {
             icecek.SetActive(true);
             icecekIstiyor = false;
@@ -31,7 +40,7 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag=="client")
+        if (other.gameObject == _dolduranClient.gameObject)
         {
             semsiye.SetActive(false);
             dondurma.SetActive(false);

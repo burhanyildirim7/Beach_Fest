@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - UIController
+  - SirtCantasi
+  - KarakterPaketi
+  - LevelController
+  - YuzmeAlani
+  - stuff
+  - money
+  - sezlong
+  - client
+  - AIHareketKontrol
   layers:
   - Default
   - TransparentFX

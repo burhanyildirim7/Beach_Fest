@@ -7,9 +7,9 @@ public class UIController : MonoBehaviour
 {
     public static UIController instance; // Singleton yapisi icin gerekli ornek
 
-    public GameObject TapToStartPanel, LoosePanel, GamePanel, WinPanel, winScreenEffectObject, winScreenCoinImage, startScreenCoinImage, scoreEffect;
-    public Text gamePlayScoreText, winScreenScoreText, levelNoText, tapToStartScoreText, totalElmasText;
-    public Animator ScoreTextAnim;
+    public GameObject TapToStartPanel, GamePanel;
+    public Text gamePlayScoreText, tapToStartScoreText;
+
 
 
 
@@ -35,10 +35,7 @@ public class UIController : MonoBehaviour
     /// Level numarasini ui kisminda degistirmek icin fonksiyon. Parametre olarak level numarasi aliyor.
     /// </summary>
     /// <param name="levelNo">UI ekranina yazilmak istenen Level numaras?</param>
-    public void SetLevelText(int levelNo)
-    {
-        levelNoText.text = "Level " + levelNo.ToString();
-    }
+
 
     // TAPTOSTART TUSUNA BASILDISINDA  --- GIRIS EKRANINDA VE LEVEL BASLARINDA
     public void TapToStartButtonClick()
@@ -48,7 +45,7 @@ public class UIController : MonoBehaviour
         //PlayerController.instance.SetArmForGaming();
         TapToStartPanel.SetActive(false);
         GamePanel.SetActive(true);
-        SetLevelText(LevelController.instance.totalLevelNo);
+        //SetLevelText(LevelController.instance.totalLevelNo);
         SetGamePlayScoreText();
 
     }
@@ -57,7 +54,7 @@ public class UIController : MonoBehaviour
     public void RestartButtonClick()
     {
         GamePanel.SetActive(false);
-        LoosePanel.SetActive(false);
+        //LoosePanel.SetActive(false);
         TapToStartPanel.SetActive(true);
         LevelController.instance.RestartLevelEvents();
         SetTapToStartScoreText();
@@ -69,10 +66,10 @@ public class UIController : MonoBehaviour
     {
         SetTapToStartScoreText();
         TapToStartPanel.SetActive(true);
-        WinPanel.SetActive(false);
+        //WinPanel.SetActive(false);
         GamePanel.SetActive(false);
         LevelController.instance.NextLevelEvents();
-        StartCoroutine(StartScreenCoinEffect());
+        //StartCoroutine(StartScreenCoinEffect());
     }
 
 
@@ -98,7 +95,7 @@ public class UIController : MonoBehaviour
     /// </summary>
     public void WinScreenScore()
     {
-        winScreenScoreText.text = GameController.instance.score.ToString();
+        //winScreenScoreText.text = GameController.instance.score.ToString();
     }
 
     /// <summary>
@@ -106,7 +103,7 @@ public class UIController : MonoBehaviour
     /// </summary>
     public void SetTotalElmasText()
     {
-        totalElmasText.text = PlayerPrefs.GetInt("totalElmas").ToString();
+        //totalElmasText.text = PlayerPrefs.GetInt("totalElmas").ToString();
     }
 
     /// <summary>
@@ -115,9 +112,10 @@ public class UIController : MonoBehaviour
     public void ActivateWinScreen()
     {
         GamePanel.SetActive(false);
-        StartCoroutine(WinScreenDelay());
+        //StartCoroutine(WinScreenDelay());
     }
 
+    /*
     IEnumerator WinScreenDelay()
     {
         WinPanel.SetActive(true);
@@ -180,6 +178,7 @@ public class UIController : MonoBehaviour
         startScreenCoinImage.SetActive(false);
         startScreenCoinImage.transform.localPosition = new Vector3(0, -446, 0);
     }
+    */
 
     IEnumerator StartScreenCoinsDissolve(GameObject obj)
     {
@@ -200,7 +199,7 @@ public class UIController : MonoBehaviour
     public void ActivateLooseScreen()
     {
         GamePanel.SetActive(false);
-        LoosePanel.SetActive(true);
+        //LoosePanel.SetActive(true);
     }
 
 
@@ -220,8 +219,8 @@ public class UIController : MonoBehaviour
     public void ActivateTapToStartScreen()
     {
         TapToStartPanel.SetActive(true);
-        WinPanel.SetActive(false);
-        LoosePanel.SetActive(false);
+        //WinPanel.SetActive(false);
+        //LoosePanel.SetActive(false);
         GamePanel.SetActive(false);
         tapToStartScoreText.text = PlayerPrefs.GetInt("totalScore").ToString();
     }

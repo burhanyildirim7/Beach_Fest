@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3570747035138937276}
   - component: {fileID: 3570747035138937277}
   - component: {fileID: 3570747035138937266}
+  - component: {fileID: 8307685303511176612}
   m_Layer: 0
   m_Name: ClientErkek1
   m_TagString: client
@@ -49,14 +50,14 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!136 &3570747035138937277
 CapsuleCollider:
@@ -71,7 +72,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!54 &3570747035138937266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -88,6 +89,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8307685303511176612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3570747035138937264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e50c162edacb4217955cf038fc1a688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _giysiliAnimator: {fileID: 5479040048260437683}
+  _giysisizAnimator: {fileID: 619085727424718342}
+  _giysiliKarakter: {fileID: 5134848260523133962}
+  _giysisizKarakter: {fileID: 619085727424718343}
+  _agent: {fileID: 3570747035138937276}
 --- !u!1001 &4550070687063158520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143,11 +161,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: erkek1normal
       objectReference: {fileID: 0}
+    - target: {fileID: 8676110358480593650, guid: f574bfe67317f46e48c3012a4b893da9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f574bfe67317f46e48c3012a4b893da9, type: 3}
+--- !u!1 &5134848260523133962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8676110358480593650, guid: f574bfe67317f46e48c3012a4b893da9, type: 3}
+  m_PrefabInstance: {fileID: 4550070687063158520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5479040048260437680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8299127835556247624, guid: f574bfe67317f46e48c3012a4b893da9, type: 3}
+  m_PrefabInstance: {fileID: 4550070687063158520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5479040048260437683 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8299127835556247627, guid: f574bfe67317f46e48c3012a4b893da9, type: 3}
   m_PrefabInstance: {fileID: 4550070687063158520}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6609618007994435264
@@ -160,6 +192,10 @@ PrefabInstance:
     - target: {fileID: 5993582741501944007, guid: 314d351bd3c1842369bd1ee1f1d82d78, type: 3}
       propertyPath: m_Name
       value: erkek1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993582741501944007, guid: 314d351bd3c1842369bd1ee1f1d82d78, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6369966824906488445, guid: 314d351bd3c1842369bd1ee1f1d82d78, type: 3}
       propertyPath: m_RootOrder
@@ -210,5 +246,15 @@ PrefabInstance:
 --- !u!4 &278307957989080253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6369966824906488445, guid: 314d351bd3c1842369bd1ee1f1d82d78, type: 3}
+  m_PrefabInstance: {fileID: 6609618007994435264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &619085727424718342 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5993582741501944006, guid: 314d351bd3c1842369bd1ee1f1d82d78, type: 3}
+  m_PrefabInstance: {fileID: 6609618007994435264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &619085727424718343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5993582741501944007, guid: 314d351bd3c1842369bd1ee1f1d82d78, type: 3}
   m_PrefabInstance: {fileID: 6609618007994435264}
   m_PrefabAsset: {fileID: 0}
