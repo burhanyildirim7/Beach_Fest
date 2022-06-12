@@ -842,10 +842,10 @@ MonoBehaviour:
   - {fileID: 606467358}
   - {fileID: 140108799}
   _cantadakiObjeler: []
-  _cantadakiSamanObjeleri: []
-  _cantadakiAltinObjeleri: []
-  _cantadakiEtObjeleri: []
-  _cantadakiDemirObjeleri: []
+  _cantadakiStuffObjeleri: []
+  _playerController: {fileID: 0}
+  _cantadakiObjeSayisi: 0
+  _stuffStackSiniri: 0
 --- !u!114 &305344203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +861,8 @@ MonoBehaviour:
   _speed: 5
   _floatingJoystick: {fileID: 0}
   _rigidbody: {fileID: 305344206}
+  _velocityX: 0
+  _velocityZ: 0
   _playerController: {fileID: 0}
   _animator: {fileID: 0}
 --- !u!114 &305344204
@@ -879,6 +881,7 @@ MonoBehaviour:
   xVarMi: 1
   collectibleVarMi: 1
   _yuzuyorMu: 0
+  _elindeStaffVarMi: 0
 --- !u!136 &305344205
 CapsuleCollider:
   m_ObjectHideFlags: 0
