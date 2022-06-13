@@ -19,6 +19,8 @@ public class kabinetkapakacilma : MonoBehaviour
         if (other.tag == "client")
         {
             kabinatorAnim.SetBool("open", true);
+            _doluMu = true;
+            // Debug.Log("dolu mu " + _doluMu);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -26,6 +28,8 @@ public class kabinetkapakacilma : MonoBehaviour
         if (other.tag == "client")
         {
             kabinatorAnim.SetBool("open", false);
+            _doluMu = false;
+            // Debug.Log("dolu mu " + _doluMu);
         }
     }
 

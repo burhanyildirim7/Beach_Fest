@@ -78,7 +78,7 @@ public class UIController : MonoBehaviour
     /// </summary>
     public void SetGamePlayScoreText()
     {
-        gamePlayScoreText.text = PlayerPrefs.GetInt("totalScore").ToString();
+        gamePlayScoreText.text = PlayerPrefs.GetInt("Money").ToString();
     }
 
 
@@ -87,7 +87,7 @@ public class UIController : MonoBehaviour
     /// </summary>
     public void SetTapToStartScoreText()
     {
-        tapToStartScoreText.text = PlayerPrefs.GetInt("totalScore").ToString();
+        tapToStartScoreText.text = PlayerPrefs.GetInt("Money").ToString();
     }
 
     /// <summary>
@@ -222,7 +222,7 @@ public class UIController : MonoBehaviour
         //WinPanel.SetActive(false);
         //LoosePanel.SetActive(false);
         GamePanel.SetActive(false);
-        tapToStartScoreText.text = PlayerPrefs.GetInt("totalScore").ToString();
+        tapToStartScoreText.text = PlayerPrefs.GetInt("Money").ToString();
     }
 
 
