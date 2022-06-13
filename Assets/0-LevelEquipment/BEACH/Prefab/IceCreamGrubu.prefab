@@ -1095,6 +1095,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   garson1Object: {fileID: 6387015970382602317}
   garson2Object: {fileID: 5766663051904652058}
+  workerPaneli: {fileID: 4631874561630633872}
+  dondurmaciPaneli: {fileID: 4307495549212370295}
+  garsonSlideri: {fileID: 0}
 --- !u!1 &1506264681081115970
 GameObject:
   m_ObjectHideFlags: 0
@@ -3503,6 +3506,37 @@ Transform:
   m_Father: {fileID: 2784693367134686065}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4307495549212370295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2893451006346088347}
+  m_Layer: 0
+  m_Name: icecreamdummyobje
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2893451006346088347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307495549212370295}
+  m_LocalRotation: {x: -0, y: 0.92387956, z: -0, w: 0.38268343}
+  m_LocalPosition: {x: -321.8631, y: 918.15326, z: -320.83087}
+  m_LocalScale: {x: 0.9999995, y: 1, z: 0.9999995}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6387015968787984323}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4459521853130433168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,6 +3685,37 @@ Transform:
   - {fileID: 1831468932874696358}
   m_Father: {fileID: 2224604937731025744}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4631874561630633872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7278292947401558160}
+  m_Layer: 0
+  m_Name: workerpanelidummyobje
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7278292947401558160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631874561630633872}
+  m_LocalRotation: {x: -0, y: 0.92387956, z: -0, w: 0.38268343}
+  m_LocalPosition: {x: -321.8631, y: 918.15326, z: -320.83087}
+  m_LocalScale: {x: 0.9999995, y: 1, z: 0.9999995}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6387015968787984323}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4691396943297923096
 GameObject:
@@ -4813,6 +4878,8 @@ Transform:
   - {fileID: 6387015969457753117}
   - {fileID: 6151879150548006183}
   - {fileID: 377212203188911094}
+  - {fileID: 7278292947401558160}
+  - {fileID: 2893451006346088347}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

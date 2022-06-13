@@ -7199,6 +7199,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1879629599516737784}
     m_Modifications:
+    - target: {fileID: 689582635182808415, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689582635182808415, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1274822475330132494, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
       propertyPath: m_Name
       value: cankurtarankabini
@@ -7255,6 +7263,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2706727755652313568, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706727755652313568, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3094329174907960054, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7289,9 +7305,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+--- !u!114 &2531527928909852077 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 51447738543541948, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+  m_PrefabInstance: {fileID: 2564532046416601873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4138184269032367013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1944082680799609012, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+  m_PrefabInstance: {fileID: 2564532046416601873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7269021718250681221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5149810040507076756, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+  m_PrefabInstance: {fileID: 2564532046416601873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8726764389549384512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6524798553231638609, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
   m_PrefabInstance: {fileID: 2564532046416601873}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3994760893434184584
@@ -7633,6 +7676,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1879629599516737784}
     m_Modifications:
+    - target: {fileID: 1654190021909065432, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: garsonSlideri
+      value: 
+      objectReference: {fileID: 7269021718250681221}
     - target: {fileID: 6387015968787984322, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
       propertyPath: m_Name
       value: IceCreamGrubu
@@ -7706,6 +7753,11 @@ GameObject:
 --- !u!4 &102799939750646147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6387015968787984323, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+  m_PrefabInstance: {fileID: 6471115414697819712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5619684337484335988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1455546748260496692, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
   m_PrefabInstance: {fileID: 6471115414697819712}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6552908559852708905
@@ -8288,6 +8340,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7858674326203108827, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: workerPaneli
+      value: 
+      objectReference: {fileID: 8726764389549384512}
+    - target: {fileID: 7858674326203108827, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: garsonSlideri
+      value: 
+      objectReference: {fileID: 2531527928909852077}
+    - target: {fileID: 7858674326203108827, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: dondurmaciPaneli
+      value: 
+      objectReference: {fileID: 5619684337484335988}
     - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
       propertyPath: beachBarObjesi
       value: 
