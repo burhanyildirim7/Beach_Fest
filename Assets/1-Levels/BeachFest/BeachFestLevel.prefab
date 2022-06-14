@@ -7981,17 +7981,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1879629599516737784}
     m_Modifications:
-    - target: {fileID: 1654190021909065432, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
-      propertyPath: garsonSlideri
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6387015968787984322, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
       propertyPath: m_Name
       value: IceCreamGrubu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387015968787984322, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6387015968787984323, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
       propertyPath: m_RootOrder

@@ -940,6 +940,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   garson1Object: {fileID: 8575297975613754292}
   garson2Object: {fileID: 6604474878748766301}
+  workerPaneli: {fileID: 0}
+  dondurmaciObjesi: {fileID: 0}
+  garsonSlideri: {fileID: 0}
 --- !u!1 &481570765092290058
 GameObject:
   m_ObjectHideFlags: 0

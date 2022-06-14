@@ -49,6 +49,9 @@ MonoBehaviour:
   bedelText: {fileID: 7601231401335175740}
   acilacakDusGrubu: {fileID: 7601231402214663270}
   denizeGirisYerleri: {fileID: 114461439108721269}
+  acilacakExpandAlani: {fileID: 0}
+  acilacakDondurmaAlani: {fileID: 0}
+  acilacaIcecekAlani: {fileID: 0}
   kapanacakGrubu: {fileID: 7601231401074787317}
   denizeGirisGrubuNo: 0
 --- !u!1001 &3036650192376727774
@@ -58,9 +61,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2803798449376489100}
     m_Modifications:
+    - target: {fileID: 3148859810111464107, guid: e1baf93a34dc44c82b5c756de5bd8c94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4852812137432074368, guid: e1baf93a34dc44c82b5c756de5bd8c94, type: 3}
       propertyPath: m_Name
       value: DenizeGirisYeri
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852812137432074368, guid: e1baf93a34dc44c82b5c756de5bd8c94, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4852812137432074371, guid: e1baf93a34dc44c82b5c756de5bd8c94, type: 3}
       propertyPath: m_RootOrder
@@ -147,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 786332543025489221, guid: d5d7c52e074fc49ab8aeaac952307481, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 786332543025489222, guid: d5d7c52e074fc49ab8aeaac952307481, type: 3}
       propertyPath: m_RootOrder
