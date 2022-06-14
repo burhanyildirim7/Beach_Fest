@@ -34,6 +34,8 @@ public class ClientAIScript : MonoBehaviour
 
     private bool _kabinde;
 
+    private bool _kabineGidiyor;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -79,7 +81,7 @@ public class ClientAIScript : MonoBehaviour
 
         if (GameController.instance.isContinue == true)
         {
-            if (_timer > 1)
+            if (_timer > 0.1f)
             {
                 KabinKontrolEt();
 
@@ -100,9 +102,24 @@ public class ClientAIScript : MonoBehaviour
                                     {
                                         gameObject.GetComponent<NavMeshAgent>().enabled = true;
                                         _point = _aiHareketKontrol._kabinler[_kabinNumber].transform;
+                                        _aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu = true;
+                                        gameObject.transform.parent = null;
+                                        _kabineGidiyor = true;
+
+                                        //Debug.Log(_kabinNumber);
                                     }
                                     else
                                     {
+                                        if (_kabinde == false)
+                                        {
+
+                                            _point = _aiHareketKontrol._kabinler[0].transform;
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                        //_point = _aiHareketKontrol._kabinler[0].transform;
                                         //_point = gameObject.transform;
                                     }
                                 }
@@ -117,6 +134,7 @@ public class ClientAIScript : MonoBehaviour
                             }
                             else
                             {
+                                /*
                                 if (_kabinde == false)
                                 {
 
@@ -126,6 +144,7 @@ public class ClientAIScript : MonoBehaviour
                                 {
 
                                 }
+                                */
 
                             }
 
@@ -146,7 +165,7 @@ public class ClientAIScript : MonoBehaviour
 
                 }
 
-                //_timer = 0;
+                _timer = 0;
             }
             else
             {
@@ -265,6 +284,8 @@ public class ClientAIScript : MonoBehaviour
         if (other.gameObject == _aiHareketKontrol._kabinler[_kabinNumber])
         {
             _kabinde = false;
+
+            _kabineGidiyor = false;
             //SetDestination(_ambarNoktasi.transform);
             //_agent.SetDestination(_ambarNoktasi.transform.position);
 
@@ -336,6 +357,7 @@ public class ClientAIScript : MonoBehaviour
         yield return new WaitForSeconds(10f);
         gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
         _kabineGit = true;
+        _kabineGidiyor = false;
     }
 
     private void SezlongKontrolEt()
@@ -370,28 +392,36 @@ public class ClientAIScript : MonoBehaviour
 
     private void KabinKontrolEt()
     {
-        for (int i = 1; i < _aiHareketKontrol._kabinler.Count; i++)
+        if (_kabineGidiyor == false)
         {
-            if (_aiHareketKontrol._kabinler[i].gameObject.transform.parent.gameObject.transform.GetChild(1).gameObject.activeSelf)
+            for (int i = 1; i < _aiHareketKontrol._kabinler.Count; i++)
             {
-                if (_aiHareketKontrol._kabinler[i].GetComponent<kabinetkapakacilma>()._doluMu == false)
+                if (_aiHareketKontrol._kabinler[i].gameObject.transform.parent.gameObject.transform.GetChild(1).gameObject.activeSelf)
                 {
-                    _kabinNumber = i;
+                    if (_aiHareketKontrol._kabinler[i].GetComponent<kabinetkapakacilma>()._doluMu == false)
+                    {
+                        _kabinNumber = i;
 
 
-                    break;
+                        break;
+                    }
+                    else
+                    {
+                        //_kabinNumber = 0;
+                    }
                 }
                 else
                 {
 
                 }
-            }
-            else
-            {
 
             }
+        }
+        else
+        {
 
         }
+
     }
 
     private void SezlongDoldur()

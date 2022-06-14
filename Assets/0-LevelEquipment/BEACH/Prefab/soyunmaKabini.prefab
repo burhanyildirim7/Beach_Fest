@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 1900175545035118275}
   - component: {fileID: 1900175545035118272}
   - component: {fileID: 1900175545035118273}
+  - component: {fileID: 4162792827789059597}
   m_Layer: 0
   m_Name: soyunmaKabini
   m_TagString: Untagged
@@ -114,6 +115,7 @@ Transform:
   - {fileID: 1900175545685805910}
   - {fileID: 8617457464527013853}
   - {fileID: 7800580674944553331}
+  - {fileID: 4010096013719650631}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -167,6 +169,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4162792827789059597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900175545035118276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f1cd20091b94824a258ec62458e2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bedelText: {fileID: 1900175545319127655}
+  acilacakSezlongGrubu: {fileID: 1900175545685805896}
+  kapanacakGrubu: {fileID: 1900175546297750446}
+  kapanacakCollider: {fileID: 8978661660594180888}
+  acilacakCollider: {fileID: 6609362074654375565}
+  sezlongGrubuNo: 0
 --- !u!1 &1900175545319127641
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +595,135 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000007, y: 1.1448166, z: 1.0000008}
   m_Center: {x: 0.00000070789304, y: -0.07240784, z: 0.0000009737045}
+--- !u!1 &8978661660594180888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4010096013719650631}
+  - component: {fileID: 6098745637834844935}
+  - component: {fileID: 6086525728218365782}
+  - component: {fileID: 2743429952607652631}
+  - component: {fileID: 5057824427564324507}
+  - component: {fileID: 6739907804496644555}
+  m_Layer: 0
+  m_Name: BedelOdemeCollideri
+  m_TagString: BedelOdemeCollider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4010096013719650631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978661660594180888}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.26000002, z: 0}
+  m_LocalScale: {x: 8, y: 0.5, z: 8}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1900175545035118275}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6098745637834844935
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978661660594180888}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6086525728218365782
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978661660594180888}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2743429952607652631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978661660594180888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5057824427564324507
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978661660594180888}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &6739907804496644555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978661660594180888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1150ba8439ec549d98023d6b2d8fe0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bedelText: {fileID: 1900175545319127655}
+  _odenecekBedel: 50
 --- !u!1001 &6852888018664175317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -640,6 +789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1aabc01f18b14e7988ef099a3947066, type: 3}
+--- !u!1 &1900175545685805896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4991288899423616413, guid: e1aabc01f18b14e7988ef099a3947066, type: 3}
+  m_PrefabInstance: {fileID: 6852888018664175317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1900175545685805910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4991288899423616387, guid: e1aabc01f18b14e7988ef099a3947066, type: 3}

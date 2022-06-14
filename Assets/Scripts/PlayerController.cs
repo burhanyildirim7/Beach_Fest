@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool _elindeStaffVarMi;
 
 
+    private float _stayTimer;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -37,11 +39,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// Playerin collider olaylari.. collectible, engel veya finish noktasi icin. Burasi artirilabilir.
-    /// elmas icin veya baska herhangi etkilesimler icin tag ekleyerek kontrol dongusune eklenir.
-    /// </summary>
-    /// <param name="other"></param>
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -61,24 +59,40 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator ParaAnim()
+    private void OnTriggerStay(Collider other)
     {
-        Instantiate(_moneyEfektObject, _moneyEfektSpawnPoint.position, Quaternion.identity);
+        if (other.gameObject.tag == "BedelOdemeCollider")
+        {
+            if (PlayerPrefs.GetInt("Money") > 0)
+            {
+                _stayTimer += Time.deltaTime;
 
-        GameObject gidecekPara = Instantiate(_gidecekParaObject, _gidecekParaParent.transform.position, Quaternion.identity);
+                if (_stayTimer > 0.5f)
+                {
+                    _paraUI.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).OnComplete(() => _paraUI.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f));
+                    other.GetComponent<BedelOdemeler>().BedelOdeUlen();
+                    PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 10);
+                    UIController.instance.SetGamePlayScoreText();
+                    _stayTimer = 0;
+                }
+                else
+                {
 
-        gidecekPara.transform.parent = _gidecekParaParent.transform;
-        gidecekPara.transform.rotation = Quaternion.Euler(0, 0, 20);
+                }
+            }
+            else
+            {
 
-        gidecekPara.transform.DOLocalMove(new Vector3(_gidecegiKonum.transform.localPosition.x, _gidecegiKonum.transform.localPosition.y, 0), 1f).OnComplete(() => Destroy(gidecekPara.gameObject));
+            }
 
-        yield return new WaitForSeconds(1f);
 
-        _paraUI.transform.DOScale(new Vector3(_paraUI.transform.localScale.x * 1.2f, _paraUI.transform.localScale.y * 1.2f, _paraUI.transform.localScale.z * 1.2f), 0.2f).OnComplete(() => _paraUI.transform.DOScale(new Vector3(_paraUI.transform.localScale.x / 1.2f, _paraUI.transform.localScale.y / 1.2f, _paraUI.transform.localScale.z / 1.2f), 0.2f));
+        }
+        else
+        {
 
-        PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") + 10);
-        UIController.instance.SetGamePlayScoreText();
+        }
     }
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -92,9 +106,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Bu fonksiyon her level baslarken cagrilir. 
-    /// </summary>
+
+    IEnumerator ParaAnim()
+    {
+        Instantiate(_moneyEfektObject, _moneyEfektSpawnPoint.position, Quaternion.identity);
+
+        GameObject gidecekPara = Instantiate(_gidecekParaObject, _gidecekParaParent.transform.position, Quaternion.identity);
+
+        gidecekPara.transform.parent = _gidecekParaParent.transform;
+        gidecekPara.transform.rotation = Quaternion.Euler(0, 0, 20);
+
+        gidecekPara.transform.DOLocalMove(new Vector3(_gidecegiKonum.transform.localPosition.x, _gidecegiKonum.transform.localPosition.y, 0), 1f).OnComplete(() => Destroy(gidecekPara.gameObject));
+
+        yield return new WaitForSeconds(1f);
+
+        _paraUI.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).OnComplete(() => _paraUI.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f));
+
+        PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") + 10);
+        UIController.instance.SetGamePlayScoreText();
+    }
+
+
+
+
     public void StartingEvents()
     {
 
