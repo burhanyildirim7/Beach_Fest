@@ -92,6 +92,7 @@ public class ClientAIScript : MonoBehaviour
                     {
                         // Debug.Log(_kabineGit);
 
+
                         if (_kabinNumber > 0)
                         {
                             if (_aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu == false)
