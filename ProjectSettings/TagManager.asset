@@ -16,6 +16,7 @@ TagManager:
   - AIHareketKontrol
   - AIParent
   - BedelOdemeCollider
+  - AISpawnController
   layers:
   - Default
   - TransparentFX

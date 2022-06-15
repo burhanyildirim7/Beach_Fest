@@ -2346,6 +2346,7 @@ Transform:
   - {fileID: 4153899612469252348}
   - {fileID: 4725458007957248110}
   - {fileID: 6764396044491859498}
+  - {fileID: 6575034075550977196}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3472,6 +3473,55 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6422702940486474744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6575034075550977196}
+  - component: {fileID: 1339638167795946017}
+  m_Layer: 0
+  m_Name: AISpawnController
+  m_TagString: AISpawnController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6575034075550977196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422702940486474744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7610832761450377267}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1339638167795946017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422702940486474744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3727fb2d48998490e82ed96867be5b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnClientList:
+  - {fileID: 3570747035138937264, guid: 9a109ef39edfb40a78b60c502de72d1d, type: 3}
+  _spawnNoktasi: {fileID: 4153899612469252348}
+  _spawnHizi: 3
+  _aiHareketKontrol: {fileID: 2287683629053507856}
 --- !u!1 &6524105550508234497
 GameObject:
   m_ObjectHideFlags: 0

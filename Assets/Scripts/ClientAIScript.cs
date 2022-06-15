@@ -19,6 +19,7 @@ public class ClientAIScript : MonoBehaviour
 
 
     private AIHareketKontrol _aiHareketKontrol;
+    private AISpawnController _aiSpawnController;
 
     private bool _donuyor;
 
@@ -40,11 +41,14 @@ public class ClientAIScript : MonoBehaviour
 
     public bool _kabinSirasinda;
 
+    private List<GameObject> _gidilecekSezlonglar = new List<GameObject>();
+
     // Start is called before the first frame update
     private void Awake()
     {
 
         _aiHareketKontrol = GameObject.FindGameObjectWithTag("AIHareketKontrol").GetComponent<AIHareketKontrol>();
+        _aiSpawnController = GameObject.FindGameObjectWithTag("AISpawnController").GetComponent<AISpawnController>();
     }
     void Start()
     {
@@ -64,7 +68,7 @@ public class ClientAIScript : MonoBehaviour
 
         _kabinNumber = 1;
         _timer = 0;
-
+        SezlongEkle();
         SezlongDoldur();
     }
 
@@ -89,6 +93,7 @@ public class ClientAIScript : MonoBehaviour
         {
             if (_timer > 0.1f)
             {
+
                 KabinKontrolEt();
 
 
@@ -96,6 +101,8 @@ public class ClientAIScript : MonoBehaviour
                 {
                     if (_kabineGit == true)
                     {
+
+
                         // Debug.Log(_kabineGit);
 
 
@@ -234,7 +241,7 @@ public class ClientAIScript : MonoBehaviour
 
             //Debug.Log("Tarlada");
         }
-        else if (other.gameObject == _aiHareketKontrol._sezlonglar[_konumNumber])
+        else if (other.gameObject == _gidilecekSezlonglar[_konumNumber])
         {
 
 
@@ -373,7 +380,7 @@ public class ClientAIScript : MonoBehaviour
 
         SezlongKontrolEt();
 
-        _point = _aiHareketKontrol._sezlonglar[_konumNumber].transform;
+        _point = _gidilecekSezlonglar[_konumNumber].transform;
     }
 
     private IEnumerator GiysiAc()
@@ -479,8 +486,44 @@ public class ClientAIScript : MonoBehaviour
 
     }
 
+    private void SezlongEkle()
+    {
+        for (int i = 1; i < _aiHareketKontrol._sezlonglar.Count; i++)
+        {
+            if (_aiHareketKontrol._sezlonglar[i].gameObject.transform.parent.gameObject.activeSelf)
+            {
+
+                if (_aiHareketKontrol._sezlonglar[i].GetComponent<clientIstekleriniKarsilamakIcin>()._doluMu == false)
+                {
+                    _gidilecekSezlonglar.Add(_aiHareketKontrol._sezlonglar[i]);
+
+                }
+                else
+                {
+                    for (int k = 0; k < _gidilecekSezlonglar.Count; k++)
+                    {
+                        if (_aiHareketKontrol._sezlonglar[i] == _gidilecekSezlonglar[k])
+                        {
+                            _gidilecekSezlonglar.RemoveAt(k);
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+            }
+            else
+            {
+
+            }
+
+        }
+    }
+
     private void SezlongDoldur()
     {
+        /*
         for (int i = 1; i < _aiHareketKontrol._sezlonglar.Count; i++)
         {
             if (_aiHareketKontrol._sezlonglar[i].gameObject.transform.parent.gameObject.activeSelf)
@@ -504,6 +547,33 @@ public class ClientAIScript : MonoBehaviour
             }
 
         }
+        */
+
+        int k = 0;
+        k = Random.Range(0, _gidilecekSezlonglar.Count);
+        if (_gidilecekSezlonglar[k].gameObject.transform.parent.gameObject.activeSelf)
+        {
+            if (_gidilecekSezlonglar[k].GetComponent<clientIstekleriniKarsilamakIcin>()._doluMu == false)
+            {
+                _dolanSezlongNumber = k;
+                // Debug.Log(_konumNumber);
+                _gidilecekSezlonglar[k].GetComponent<clientIstekleriniKarsilamakIcin>()._doluMu = true;
+                _gidilecekSezlonglar[k].GetComponent<clientIstekleriniKarsilamakIcin>()._dolduranClient = gameObject;
+                //_aiSpawnController._uret = false;
+
+            }
+            else
+            {
+
+            }
+        }
+        else
+        {
+            SezlongDoldur();
+        }
+
+
+
     }
 
     private void KabinSirasinaGec()

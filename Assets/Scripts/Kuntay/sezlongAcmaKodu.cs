@@ -6,12 +6,14 @@ public class sezlongAcmaKodu : MonoBehaviour
 {
     [SerializeField] GameObject acilacakSezlong, kapacakObje;
 
-    [SerializeField] private Transform _spawnNoktasi;
+    //[SerializeField] private Transform _spawnNoktasi;
 
-    [SerializeField] private List<GameObject> _spawnClientList = new List<GameObject>();
+    //[SerializeField] private List<GameObject> _spawnClientList = new List<GameObject>();
 
     [SerializeField] private clientIstekleriniKarsilamakIcin _clientIstekleriniKarsilamakIcin;
     // Start is called before the first frame update
+
+    private AISpawnController _aiSpawnController;
 
     private void Awake()
     {
@@ -19,7 +21,7 @@ public class sezlongAcmaKodu : MonoBehaviour
     }
     private void Start()
     {
-
+        _aiSpawnController = GameObject.FindGameObjectWithTag("AISpawnController").GetComponent<AISpawnController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +33,8 @@ public class sezlongAcmaKodu : MonoBehaviour
             kapacakObje.SetActive(false);
             Destroy(other.gameObject);
 
-            SpawnFunc();
+
+            //SpawnFunc();
         }
         else if (other.gameObject.tag == "Player")
         {
@@ -51,10 +54,11 @@ public class sezlongAcmaKodu : MonoBehaviour
         }
     }
 
-
+    /*
     private void SpawnFunc()
     {
         Instantiate(_spawnClientList[0], _spawnNoktasi.position, Quaternion.identity);
     }
+    */
 
 }
