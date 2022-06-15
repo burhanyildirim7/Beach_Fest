@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kzvelednormal
       objectReference: {fileID: 0}
+    - target: {fileID: 7844479951511414523, guid: 5688bb7af5da74dd6a76dafea90c8e12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8620858704082071107, guid: 5688bb7af5da74dd6a76dafea90c8e12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 77.098785
