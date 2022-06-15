@@ -13,6 +13,8 @@ public class AIHareketKontrol : MonoBehaviour
 
     public List<GameObject> _kabinler = new List<GameObject>();
 
+    public List<GameObject> _kabinSirasi = new List<GameObject>();
+
 
     private float _timer;
 

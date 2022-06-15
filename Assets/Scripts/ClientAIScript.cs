@@ -28,13 +28,17 @@ public class ClientAIScript : MonoBehaviour
 
     private int _dolanSezlongNumber;
 
-    private int _kabinNumber;
+    public int _kabinNumber;
 
-    private bool _kabineGit;
+    public bool _kabineGit;
 
-    private bool _kabinde;
+    public bool _kabinde;
 
-    private bool _kabineGidiyor;
+    public bool _kabineGidiyor;
+
+    public int _kabinSirasiNumber;
+
+    public bool _kabinSirasinda;
 
     // Start is called before the first frame update
     private void Awake()
@@ -56,7 +60,9 @@ public class ClientAIScript : MonoBehaviour
         _kabineGit = false;
 
         _kabinde = false;
+        _kabinSirasinda = false;
 
+        _kabinNumber = 1;
         _timer = 0;
 
         SezlongDoldur();
@@ -95,17 +101,28 @@ public class ClientAIScript : MonoBehaviour
 
                         if (_kabinNumber > 0)
                         {
-                            if (_aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu == false)
+                            if (gameObject.transform.parent != null)
                             {
-                                if (gameObject.transform.parent != null)
+                                if (gameObject == gameObject)
                                 {
-                                    if (gameObject == GameObject.FindGameObjectWithTag("AIParent").gameObject.transform.GetChild(0).gameObject)
+                                    if (_aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu == false)
                                     {
-                                        gameObject.GetComponent<NavMeshAgent>().enabled = true;
-                                        _point = _aiHareketKontrol._kabinler[_kabinNumber].transform;
-                                        _aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu = true;
-                                        gameObject.transform.parent = null;
-                                        _kabineGidiyor = true;
+
+                                        if (_kabinSirasiNumber == 0)
+                                        {
+                                            gameObject.GetComponent<NavMeshAgent>().enabled = true;
+                                            _point = _aiHareketKontrol._kabinler[_kabinNumber].transform;
+                                            _aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu = true;
+                                            _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
+                                            gameObject.transform.parent = null;
+                                            _kabineGidiyor = true;
+                                        }
+                                        else
+                                        {
+
+                                        }
+
+
 
                                         //Debug.Log(_kabinNumber);
                                     }
@@ -113,8 +130,11 @@ public class ClientAIScript : MonoBehaviour
                                     {
                                         if (_kabinde == false)
                                         {
+                                            KabinSirasinaGec();
+                                            _point = _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].transform;
+                                            _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
 
-                                            _point = _aiHareketKontrol._kabinler[0].transform;
+                                            Debug.Log("siraya gir");
                                         }
                                         else
                                         {
@@ -166,7 +186,7 @@ public class ClientAIScript : MonoBehaviour
 
                 }
 
-                _timer = 0;
+                //_timer = 0;
             }
             else
             {
@@ -200,6 +220,9 @@ public class ClientAIScript : MonoBehaviour
             if (_donuyor == false)
             {
                 _kabineGit = true;
+                _kabineGidiyor = false;
+                _kabinSirasinda = false;
+
             }
             else
             {
@@ -249,14 +272,9 @@ public class ClientAIScript : MonoBehaviour
         }
         else if (other.gameObject == _aiHareketKontrol._kabinler[0])
         {
-            if (_kabineGit == true)
-            {
-                gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            }
-            else
-            {
 
-            }
+
+
 
 
             //SetDestination(_ambarNoktasi.transform);
@@ -268,6 +286,27 @@ public class ClientAIScript : MonoBehaviour
         {
             Destroy(gameObject);
 
+
+            //SetDestination(_ambarNoktasi.transform);
+            //_agent.SetDestination(_ambarNoktasi.transform.position);
+
+            //Debug.Log("Tarlada");
+        }
+        else if (other.gameObject == _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber])
+        {
+
+            _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
+
+            //_kabinSirasinda = false;
+
+            if (_kabineGit == true)
+            {
+                //gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            }
+            else
+            {
+
+            }
 
             //SetDestination(_ambarNoktasi.transform);
             //_agent.SetDestination(_ambarNoktasi.transform.position);
@@ -287,6 +326,18 @@ public class ClientAIScript : MonoBehaviour
             _kabinde = false;
 
             _kabineGidiyor = false;
+            //SetDestination(_ambarNoktasi.transform);
+            //_agent.SetDestination(_ambarNoktasi.transform.position);
+
+            //Debug.Log("Tarlada");
+        }
+        else if (other.gameObject == _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber])
+        {
+
+            //_aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
+
+            //_kabinSirasinda = false;
+
             //SetDestination(_ambarNoktasi.transform);
             //_agent.SetDestination(_ambarNoktasi.transform.position);
 
@@ -357,8 +408,11 @@ public class ClientAIScript : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+        //_point = _aiHareketKontrol._kabinler[0].transform;
         _kabineGit = true;
         _kabineGidiyor = false;
+        _kabinSirasinda = false;
+        //KabinSirasinaGec();
     }
 
     private void SezlongKontrolEt()
@@ -450,5 +504,102 @@ public class ClientAIScript : MonoBehaviour
             }
 
         }
+    }
+
+    private void KabinSirasinaGec()
+    {
+        if (_kabineGidiyor == false)
+        {
+            if (_kabinSirasinda == false)
+            {
+                for (int i = 0; i < _aiHareketKontrol._kabinSirasi.Count; i++)
+                {
+                    if (_aiHareketKontrol._kabinSirasi[i].gameObject.activeSelf)
+                    {
+                        if (_aiHareketKontrol._kabinSirasi[i].GetComponent<KabinSirasiKontrol>()._doluMu == false)
+                        {
+                            //_aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
+                            _kabinSirasiNumber = i;
+                            _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
+                            _kabinSirasinda = true;
+
+                            break;
+
+
+                        }
+                        else
+                        {
+                            //_kabinNumber = 0;
+                        }
+                    }
+                    else
+                    {
+
+                    }
+
+                }
+            }
+            else
+            {
+                if (_kabinSirasiNumber > 0)
+                {
+                    if (_aiHareketKontrol._kabinSirasi[_kabinSirasiNumber - 1].GetComponent<KabinSirasiKontrol>()._doluMu == false)
+                    {
+                        _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
+                        _kabinSirasiNumber--;
+                        _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
+                        //_kabinSirasinda = true;
+                    }
+                    else
+                    {
+
+
+                    }
+                }
+                else
+                {
+
+                }
+
+                /*
+                for (int i = 0; i < _aiHareketKontrol._kabinSirasi.Count; i++)
+                {
+                    if (_aiHareketKontrol._kabinSirasi[i].gameObject.activeSelf)
+                    {
+                        if (_aiHareketKontrol._kabinSirasi[i].GetComponent<KabinSirasiKontrol>()._doluMu == false)
+                        {
+                            if (i <= _kabinSirasiNumber)
+                            {
+                                _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
+                                _kabinSirasiNumber = i;
+                                _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
+                                //_kabinSirasinda = true;
+
+                                break;
+                            }
+
+
+
+                        }
+                        else
+                        {
+                            //_kabinNumber = 0;
+                        }
+                    }
+                    else
+                    {
+
+                    }
+
+                }
+                */
+            }
+
+        }
+        else
+        {
+
+        }
+
     }
 }

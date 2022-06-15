@@ -19,37 +19,37 @@ public class dusAlaniAcma : MonoBehaviour
         dus4Acik = PlayerPrefs.GetInt("dus4AcikMi");
         dus5Acik = PlayerPrefs.GetInt("dus5AcikMi");
         dus6Acik = PlayerPrefs.GetInt("dus6AcikMi");
-        if (dus1Acik==1)
+        if (dus1Acik == 1 && dusNo == 1)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
-        else if (dus2Acik == 1)
+        else if (dus2Acik == 1 && dusNo == 2)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
-        else if (dus3Acik == 1)
+        else if (dus3Acik == 1 && dusNo == 3)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
-        else if (dus4Acik == 1)
+        else if (dus4Acik == 1 && dusNo == 4)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
-        else if (dus5Acik == 1)
+        else if (dus5Acik == 1 && dusNo == 5)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
-        else if (dus6Acik == 1)
+        else if (dus6Acik == 1 && dusNo == 6)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
@@ -65,12 +65,12 @@ public class dusAlaniAcma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bedelOdemeText.text=="$0" && dus1Acik==0 && dusNo==1)
+        if (bedelOdemeText.text == "$0" && dus1Acik == 0 && dusNo == 1)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
             transform.GetComponent<MeshRenderer>().enabled = false;
-            PlayerPrefs.SetInt("dus1AcikMi",1);
+            PlayerPrefs.SetInt("dus1AcikMi", 1);
         }
         else if (bedelOdemeText.text == "$0" && dus2Acik == 0 && dusNo == 2)
         {
@@ -100,7 +100,7 @@ public class dusAlaniAcma : MonoBehaviour
             transform.GetComponent<MeshRenderer>().enabled = false;
             PlayerPrefs.SetInt("dus5AcikMi", 1);
         }
-        else if (bedelOdemeText.text == "$0" && dus6Acik == 0 && dusNo == 5)
+        else if (bedelOdemeText.text == "$0" && dus6Acik == 0 && dusNo == 6)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
