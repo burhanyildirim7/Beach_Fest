@@ -22,13 +22,14 @@ public class YuzmeAlaniClientIstek : MonoBehaviour
     {
         if (other.gameObject == _dolduranClient.gameObject)
         {
-            dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
+
         }
     }
 
     public void PaletGiy()
     {
         kapatilacakGrup.SetActive(false);
+        dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
     }
 
     public void DenizdenCikti()

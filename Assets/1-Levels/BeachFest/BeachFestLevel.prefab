@@ -6439,6 +6439,7 @@ MonoBehaviour:
   - {fileID: 5087762472377556081}
   - {fileID: 8061522882642448669}
   _duslar:
+  - {fileID: 1927242674767576012}
   - {fileID: 7548680346926537069}
   - {fileID: 8992036971328798655}
   _dusSirasi:
@@ -13732,7 +13733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4706668338459427178, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5936271820228815331, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
       propertyPath: dusNo

@@ -53,21 +53,23 @@ public class ClientAIScript : MonoBehaviour
 
     private int _dolanYuzmeAlaniNumber;
 
-    private bool _yuzecek;
+    public bool _yuzecek;
 
-    private bool _yuzmedenDonuyor;
+    public bool _yuzmedenDonuyor;
 
-    private bool _dusaGit;
+    public bool _dusaGit;
 
-    private bool _dusaGidiyor;
+    public bool _dusaGidiyor;
 
-    private int _dusSirasiNumber;
+    public int _dusSirasiNumber;
 
-    private bool _dusSirasinda;
+    public bool _dusSirasinda;
 
-    private bool _dusta;
+    public bool _dusta;
 
-    private int _dusNumber;
+    public int _dusNumber;
+
+    private GameObject _rotaBaslangic;
 
     // Start is called before the first frame update
     private void Awake()
@@ -86,6 +88,7 @@ public class ClientAIScript : MonoBehaviour
         _point = _aiHareketKontrol._girisNoktalari[0].transform;
 
         _donuyor = false;
+        _yuzmedenDonuyor = false;
 
         _kabineGit = false;
         _dusaGit = false;
@@ -369,7 +372,7 @@ public class ClientAIScript : MonoBehaviour
 
             //Debug.Log("Tarlada");
         }
-        else if (other.gameObject == _gidilecekSezlonglar[_konumNumber])
+        else if (other.gameObject == _gidilecekSezlonglar[_dolanSezlongNumber])
         {
 
 
@@ -414,27 +417,37 @@ public class ClientAIScript : MonoBehaviour
 
             //Debug.Log("Tarlada");
         }
-        else if (_yuzecek)
+        else if (other.gameObject.tag == "RotaOlustur")
         {
-            if (other.gameObject == _gidilecekSezlonglar[_konumNumber].GetComponent<YuzmeAlaniClientIstek>()._denizeGirilecekNokta.transform)
+            if (_yuzecek)
             {
+                Debug.Log("YUZMEYE GELDI");
+
+                _rotaBaslangic = other.gameObject;
+
                 if (_yuzmedenDonuyor)
                 {
                     _dusaGit = true;
 
                     for (int i = 0; i < _snorkelSeti.Count; i++)
                     {
-                        _snorkelSeti[i].SetActive(true);
+                        _snorkelSeti[i].SetActive(false);
                     }
+
+                    _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<YuzmeAlaniClientIstek>().DenizdenCikti();
                 }
                 else
                 {
                     int rota = Random.Range(0, _aiHareketKontrol._yuzmeAlanlari.Count + 1);
 
-                    _point = _aiHareketKontrol._yuzmeAlanlari[rota].transform;
+                    _point = _aiHareketKontrol._yuzmeRotalari[rota].transform;
 
-                    YuzmeyeDevamEdiyor();
+                    StartCoroutine(YuzmeyeDevamEdiyor());
+
+                    Debug.Log(_aiHareketKontrol._yuzmeRotalari[rota].name);
                 }
+
+
             }
             else
             {
@@ -611,6 +624,8 @@ public class ClientAIScript : MonoBehaviour
             _snorkelSeti[i].SetActive(true);
         }
 
+        _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<YuzmeAlaniClientIstek>().PaletGiy();
+
         yield return new WaitForSeconds(1f);
 
         _point = _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<YuzmeAlaniClientIstek>()._denizeGirilecekNokta.transform;
@@ -626,11 +641,13 @@ public class ClientAIScript : MonoBehaviour
         yield return new WaitForSeconds(15f);
         //gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
 
-        _point = _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<YuzmeAlaniClientIstek>()._denizeGirilecekNokta.transform;
+        _point = _rotaBaslangic.transform;
 
         _yuzmedenDonuyor = true;
 
-        yield return new WaitForSeconds(2f);
+        gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+
+
 
 
 
@@ -653,7 +670,13 @@ public class ClientAIScript : MonoBehaviour
 
         _dusaGit = false;
 
+        gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+
         _kabineGit = true;
+
+        _yuzmedenDonuyor = false;
+
+        _dusaGidiyor = false;
 
 
 

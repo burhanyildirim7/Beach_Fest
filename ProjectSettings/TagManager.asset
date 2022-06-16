@@ -17,6 +17,7 @@ TagManager:
   - AIParent
   - BedelOdemeCollider
   - AISpawnController
+  - RotaOlustur
   layers:
   - Default
   - TransparentFX

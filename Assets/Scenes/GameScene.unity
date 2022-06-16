@@ -1555,6 +1555,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2385959130300407535, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+      propertyPath: m_TagString
+      value: RotaOlustur
+      objectReference: {fileID: 0}
     - target: {fileID: 2415858989339482156, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.07
@@ -1619,6 +1623,10 @@ PrefabInstance:
       propertyPath: m_CollectObjects
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2788532546582249635, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+      propertyPath: m_TagString
+      value: RotaOlustur
+      objectReference: {fileID: 0}
     - target: {fileID: 2791427535351169460, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
@@ -1638,6 +1646,10 @@ PrefabInstance:
     - target: {fileID: 3061725258568590634, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 3072636630461433957, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+      propertyPath: m_TagString
+      value: RotaOlustur
       objectReference: {fileID: 0}
     - target: {fileID: 3140458111778653858, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2274,6 +2286,10 @@ PrefabInstance:
     - target: {fileID: 8115787910658421502, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150339757027238187, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+      propertyPath: m_TagString
+      value: RotaOlustur
       objectReference: {fileID: 0}
     - target: {fileID: 8184556592990178857, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_NavMeshData
