@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class dusAlaniAcma : MonoBehaviour
 {
     [SerializeField] Text bedelOdemeText;
-    [SerializeField] GameObject acilacakObje, kapanacakObje;
+    [SerializeField] GameObject acilacakObje, kapanacakObje, _acilacakCollider;
     [SerializeField] int dusNo = 0;
     int dus1Acik = 0, dus2Acik = 0, dus3Acik = 0, dus4Acik = 0, dus5Acik = 0, dus6Acik = 0;
     // Start is called before the first frame update
@@ -23,36 +23,42 @@ public class dusAlaniAcma : MonoBehaviour
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
         else if (dus2Acik == 1 && dusNo == 2)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
         else if (dus3Acik == 1 && dusNo == 3)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
         else if (dus4Acik == 1 && dusNo == 4)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
         else if (dus5Acik == 1 && dusNo == 5)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
         else if (dus6Acik == 1 && dusNo == 6)
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
         }
         else
@@ -69,6 +75,7 @@ public class dusAlaniAcma : MonoBehaviour
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
             PlayerPrefs.SetInt("dus1AcikMi", 1);
         }
@@ -76,6 +83,7 @@ public class dusAlaniAcma : MonoBehaviour
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
             PlayerPrefs.SetInt("dus2AcikMi", 1);
         }
@@ -83,6 +91,7 @@ public class dusAlaniAcma : MonoBehaviour
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
             PlayerPrefs.SetInt("dus3AcikMi", 1);
         }
@@ -90,6 +99,7 @@ public class dusAlaniAcma : MonoBehaviour
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
             PlayerPrefs.SetInt("dus4AcikMi", 1);
         }
@@ -97,6 +107,7 @@ public class dusAlaniAcma : MonoBehaviour
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
             PlayerPrefs.SetInt("dus5AcikMi", 1);
         }
@@ -104,6 +115,7 @@ public class dusAlaniAcma : MonoBehaviour
         {
             acilacakObje.SetActive(true);
             kapanacakObje.SetActive(false);
+            _acilacakCollider.SetActive(true);
             transform.GetComponent<MeshRenderer>().enabled = false;
             PlayerPrefs.SetInt("dus6AcikMi", 1);
         }

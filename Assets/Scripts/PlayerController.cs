@@ -24,8 +24,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool _yuzuyorMu;
     [HideInInspector] public bool _elindeStaffVarMi;
 
+    [SerializeField] private GameObject _canSimidi;
+
 
     private float _stayTimer;
+
+    private float _velocityX;
+    private float _velocityZ;
 
     private void Awake()
     {
@@ -46,6 +51,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "YuzmeAlani")
         {
             _yuzuyorMu = true;
+            _canSimidi.SetActive(true);
         }
         else if (other.gameObject.tag == "money")
         {
@@ -63,17 +69,27 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "BedelOdemeCollider")
         {
-            if (PlayerPrefs.GetInt("Money") > 0)
-            {
-                _stayTimer += Time.deltaTime;
+            _velocityX = GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>()._velocityX;
+            _velocityZ = GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>()._velocityZ;
 
-                if (_stayTimer > 0.5f)
+            if (_velocityX == 0 || _velocityZ == 0)
+            {
+                if (PlayerPrefs.GetInt("Money") > 0)
                 {
-                    _paraUI.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).OnComplete(() => _paraUI.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f));
-                    other.GetComponent<BedelOdemeler>().BedelOdeUlen();
-                    PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 10);
-                    UIController.instance.SetGamePlayScoreText();
-                    _stayTimer = 0;
+                    _stayTimer += Time.deltaTime;
+
+                    if (_stayTimer > 0.1f)
+                    {
+                        _paraUI.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).OnComplete(() => _paraUI.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f));
+                        other.GetComponent<BedelOdemeler>().BedelOdeUlen();
+                        PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 10);
+                        UIController.instance.SetGamePlayScoreText();
+                        _stayTimer = 0;
+                    }
+                    else
+                    {
+
+                    }
                 }
                 else
                 {
@@ -84,6 +100,7 @@ public class PlayerController : MonoBehaviour
             {
 
             }
+
 
 
         }
@@ -99,6 +116,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "YuzmeAlani")
         {
             _yuzuyorMu = false;
+            _canSimidi.SetActive(false);
         }
         else
         {
@@ -141,6 +159,8 @@ public class PlayerController : MonoBehaviour
         GetComponent<SirtCantasiScript>().SirtCantasiLevelStart();
 
         _yuzuyorMu = false;
+
+        _canSimidi.SetActive(false);
 
         Elephant.LevelStarted(1);
 

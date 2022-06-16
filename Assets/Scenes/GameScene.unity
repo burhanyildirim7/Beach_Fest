@@ -1050,6 +1050,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6560731466754921300, guid: f65a1c753d8b4458f89b9a16da8ea135, type: 3}
   m_PrefabInstance: {fileID: 714021498}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &714021500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 582719515527484284, guid: f65a1c753d8b4458f89b9a16da8ea135, type: 3}
+  m_PrefabInstance: {fileID: 714021498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &728523463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3320,6 +3325,7 @@ MonoBehaviour:
   _gidecegiKonum: {fileID: 119763022}
   _yuzuyorMu: 0
   _elindeStaffVarMi: 0
+  _canSimidi: {fileID: 714021500}
 --- !u!54 &1443049515
 Rigidbody:
   m_ObjectHideFlags: 0

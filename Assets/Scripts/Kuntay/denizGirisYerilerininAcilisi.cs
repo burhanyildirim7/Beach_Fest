@@ -8,7 +8,7 @@ public class denizGirisYerilerininAcilisi : MonoBehaviour
 {
     [SerializeField] Text bedelText;
     [SerializeField] GameObject acilacakDusGrubu, denizeGirisYerleri, acilacakExpandAlani, acilacakDondurmaAlani, acilacaIcecekAlani;
-    [SerializeField] GameObject kapanacakGrubu;
+    [SerializeField] GameObject kapanacakGrubu, bedelOdemeCollider;
     [SerializeField] int denizeGirisGrubuNo = 0;
     public static int isOpen1 = 0, isOpen2 = 0;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class denizGirisYerilerininAcilisi : MonoBehaviour
         isOpen2 = PlayerPrefs.GetInt("2inciDenizeGirisAlaniAcikMi");
 
 
-        if (isOpen1 == 1)
+        if (isOpen1 == 1 && denizeGirisGrubuNo == 1)
         {
 
             acilacakDusGrubu.SetActive(true);
@@ -26,15 +26,17 @@ public class denizGirisYerilerininAcilisi : MonoBehaviour
             acilacakDondurmaAlani.SetActive(true);
             acilacaIcecekAlani.SetActive(true);
             kapanacakGrubu.SetActive(false);
+            bedelOdemeCollider.SetActive(false);
 
         }
-        else if (isOpen2 == 1)
+        else if (isOpen2 == 1 && denizeGirisGrubuNo == 2)
         {
 
             acilacakDusGrubu.SetActive(true);
             denizeGirisYerleri.SetActive(true);
             acilacakExpandAlani.SetActive(true);
             kapanacakGrubu.SetActive(false);
+            bedelOdemeCollider.SetActive(false);
 
         }
 
@@ -56,8 +58,9 @@ public class denizGirisYerilerininAcilisi : MonoBehaviour
             acilacakDondurmaAlani.SetActive(true);
             acilacaIcecekAlani.SetActive(true);
             kapanacakGrubu.SetActive(false);
+            bedelOdemeCollider.SetActive(false);
         }
-        else if (bedelText.text == "$0" && isOpen1 == 0 && denizeGirisGrubuNo == 2)
+        else if (bedelText.text == "$0" && isOpen2 == 0 && denizeGirisGrubuNo == 2)
         {
             isOpen2 = 1;
             PlayerPrefs.SetInt("2inciDenizeGirisAlaniAcikMi", 1);
@@ -65,6 +68,7 @@ public class denizGirisYerilerininAcilisi : MonoBehaviour
             denizeGirisYerleri.SetActive(true);
             acilacakExpandAlani.SetActive(true);
             kapanacakGrubu.SetActive(false);
+            bedelOdemeCollider.SetActive(false);
         }
 
         else

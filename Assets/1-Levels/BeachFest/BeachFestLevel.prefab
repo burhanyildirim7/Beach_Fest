@@ -3522,6 +3522,7 @@ MonoBehaviour:
   _spawnNoktasi: {fileID: 4153899612469252348}
   _spawnHizi: 3
   _aiHareketKontrol: {fileID: 2287683629053507856}
+  _uret: 0
 --- !u!1 &6524105550508234497
 GameObject:
   m_ObjectHideFlags: 0
@@ -10687,6 +10688,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1879629599516737784}
     m_Modifications:
+    - target: {fileID: 114461439108721269, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2803798449376489100, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -10766,7 +10771,7 @@ PrefabInstance:
     - target: {fileID: 6283109618441646319, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
       propertyPath: kapanacakObje
       value: 
-      objectReference: {fileID: 102799939699233898}
+      objectReference: {fileID: 1627567830130391091}
     - target: {fileID: 6283109618441646319, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
       propertyPath: bedelOdemeText
       value: 
@@ -10802,7 +10807,7 @@ PrefabInstance:
     - target: {fileID: 8724518690645418204, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
       propertyPath: kapanacakObje
       value: 
-      objectReference: {fileID: 102799940699110415}
+      objectReference: {fileID: 4056258119440793599}
     - target: {fileID: 8724518690645418204, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
       propertyPath: bedelOdemeText
       value: 
@@ -10812,11 +10817,6 @@ PrefabInstance:
 --- !u!1 &102799939214975811 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7601231400973889746, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
-  m_PrefabInstance: {fileID: 7498994411754279825}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &102799939699233898 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7601231400426309627, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
   m_PrefabInstance: {fileID: 7498994411754279825}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &102799939880312037 stripped
@@ -10841,11 +10841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &102799940699110415 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7601231402357354398, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
-  m_PrefabInstance: {fileID: 7498994411754279825}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &102799940844992354 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7601231401429492979, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
@@ -10857,6 +10852,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1627567830130391091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9117414295469468578, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
+  m_PrefabInstance: {fileID: 7498994411754279825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1946433143429605535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8291928519041874702, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
@@ -10865,6 +10865,11 @@ GameObject:
 --- !u!1 &2972576161805308667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4706668338459427178, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
+  m_PrefabInstance: {fileID: 7498994411754279825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4056258119440793599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5790361295371840622, guid: fe3d56c379fc54d189973ec5af94f9c5, type: 3}
   m_PrefabInstance: {fileID: 7498994411754279825}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5690527351614520605 stripped

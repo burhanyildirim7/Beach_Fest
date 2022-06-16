@@ -43,8 +43,8 @@ public class copKutusuKapakControl : MonoBehaviour
         {
             _velocityX = GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>()._velocityX;
             _velocityZ = GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>()._velocityZ;
-            Debug.Log(_velocityX);
-            Debug.Log(_velocityZ);
+            //Debug.Log(_velocityX);
+            //Debug.Log(_velocityZ);
             if (_velocityX == 0 || _velocityZ == 0)
             {
                 _timer += Time.deltaTime;

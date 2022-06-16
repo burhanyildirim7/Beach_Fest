@@ -5,7 +5,7 @@ using UnityEngine;
 public class clientIstekleriniKarsilamakIcin : MonoBehaviour
 {
     [SerializeField] GameObject semsiye, dondurma, icecek, kapatilacakGrup, acilacakGrup, dropParaObjesi;
-    public static bool semsiyeIstiyor = false, dondurmaIstiyor = false, icecekIstiyor = false;
+    public bool semsiyeIstiyor = false, dondurmaIstiyor = false, icecekIstiyor = false;
 
     public bool _doluMu;
 

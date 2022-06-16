@@ -53,6 +53,7 @@ MonoBehaviour:
   acilacakDondurmaAlani: {fileID: 0}
   acilacaIcecekAlani: {fileID: 0}
   kapanacakGrubu: {fileID: 7601231401074787317}
+  bedelOdemeCollider: {fileID: 7061117883042104445}
   denizeGirisGrubuNo: 0
 --- !u!1001 &3036650192376727774
 PrefabInstance:
@@ -122,6 +123,11 @@ PrefabInstance:
 --- !u!1 &114461439108721269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3148859810111464107, guid: e1baf93a34dc44c82b5c756de5bd8c94, type: 3}
+  m_PrefabInstance: {fileID: 3036650192376727774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7061117883042104445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5465813104801516707, guid: e1baf93a34dc44c82b5c756de5bd8c94, type: 3}
   m_PrefabInstance: {fileID: 3036650192376727774}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7601231401046458461 stripped
