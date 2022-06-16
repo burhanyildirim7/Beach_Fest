@@ -6,6 +6,7 @@ public class YuzmeAlaniClientIstek : MonoBehaviour
 {
     [SerializeField] GameObject kapatilacakGrup, acilacakGrup, dropParaObjesi;
 
+    public GameObject _denizeGirilecekNokta;
 
     public bool _doluMu;
 

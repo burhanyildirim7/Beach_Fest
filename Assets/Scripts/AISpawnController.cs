@@ -31,6 +31,7 @@ public class AISpawnController : MonoBehaviour
         {
 
             SezlongKontrolEt();
+            //YuzmeAlaniKontrolEt();
 
             _timer = 0;
 
@@ -55,7 +56,61 @@ public class AISpawnController : MonoBehaviour
         {
             if (_aiHareketKontrol._sezlonglar[i].gameObject.transform.parent.gameObject.activeSelf)
             {
-                if (_aiHareketKontrol._sezlonglar[i].GetComponent<clientIstekleriniKarsilamakIcin>()._doluMu == false)
+                if (_aiHareketKontrol._sezlonglar[i].GetComponent<YuzmeAlaniMi>()._yuzmeAlaniMi)
+                {
+                    if (_aiHareketKontrol._sezlonglar[i].GetComponent<YuzmeAlaniClientIstek>()._doluMu == false)
+                    {
+                        _timer = 0;
+                        // Debug.Log(_konumNumber);
+                        SpawnFunc();
+
+
+                        break;
+                    }
+                    else
+                    {
+
+                    }
+
+                }
+                else
+                {
+                    if (_aiHareketKontrol._sezlonglar[i].GetComponent<clientIstekleriniKarsilamakIcin>()._doluMu == false)
+                    {
+                        _timer = 0;
+                        // Debug.Log(_konumNumber);
+                        SpawnFunc();
+
+
+                        break;
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+            }
+            else
+            {
+
+            }
+
+        }
+
+
+
+
+    }
+
+    private void YuzmeAlaniKontrolEt()
+    {
+
+        for (int i = 1; i < _aiHareketKontrol._yuzmeAlanlari.Count; i++)
+        {
+            if (_aiHareketKontrol._yuzmeAlanlari[i].gameObject.transform.parent.gameObject.activeSelf)
+            {
+                if (_aiHareketKontrol._yuzmeAlanlari[i].GetComponent<YuzmeAlaniClientIstek>()._doluMu == false)
                 {
                     _timer = 0;
                     // Debug.Log(_konumNumber);
