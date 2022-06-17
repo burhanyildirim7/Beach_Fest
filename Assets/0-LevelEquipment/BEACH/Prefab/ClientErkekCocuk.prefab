@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2406846743842875301}
   - component: {fileID: 2406846743842875300}
   - component: {fileID: 2406846743842875299}
+  - component: {fileID: 3679798408574784716}
   m_Layer: 0
   m_Name: ClientErkekCocuk
   m_TagString: client
@@ -45,18 +46,18 @@ NavMeshAgent:
   m_GameObject: {fileID: 2406846743842875297}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Radius: 0.3
+  m_Speed: 2
+  m_Acceleration: 10
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!136 &2406846743842875300
 CapsuleCollider:
@@ -69,9 +70,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &2406846743842875299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -88,6 +89,46 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3679798408574784716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406846743842875297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e50c162edacb4217955cf038fc1a688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _giysiliAnimator: {fileID: 1594927000919311655}
+  _giysisizAnimator: {fileID: 7867065103412919712}
+  _giysiliKarakter: {fileID: 2521984500985220382}
+  _giysisizKarakter: {fileID: 6562021446670836255}
+  _snorkelSeti:
+  - {fileID: 4728548036604520653}
+  - {fileID: 4728548035681457824}
+  - {fileID: 4728548036613640771}
+  - {fileID: 4728548035846610257}
+  _canSimidi: {fileID: 4889799039778957468}
+  _kopukEfekti: {fileID: 8704616359968114831}
+  _snorkelEfekti: {fileID: 3137454570202949269}
+  _agent: {fileID: 2406846743842875301}
+  _kabinNumber: 0
+  _kabineGit: 0
+  _kabinde: 0
+  _kabineGidiyor: 0
+  _kabinSirasiNumber: 0
+  _kabinSirasinda: 0
+  _gidilecekSezlonglar: []
+  _yuzecek: 0
+  _yuzmedenDonuyor: 0
+  _dusaGit: 0
+  _dusaGidiyor: 0
+  _dusSirasiNumber: 0
+  _dusSirasinda: 0
+  _dusta: 0
+  _dusNumber: 0
 --- !u!1001 &4728548036329368454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,6 +136,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2406846743842875298}
     m_Modifications:
+    - target: {fileID: 829585861, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 837190475, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690990295, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793228070, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 163012713966617370, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1280155286601421603, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -143,11 +204,68 @@ PrefabInstance:
       propertyPath: m_Name
       value: erkekveled
       objectReference: {fileID: 0}
+    - target: {fileID: 1913984623168653721, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130415584103654153, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644111796992150803, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+--- !u!1 &3137454570202949269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7644111796992150803, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+  m_PrefabInstance: {fileID: 4728548036329368454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4728548035681457824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1793228070, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+  m_PrefabInstance: {fileID: 4728548036329368454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4728548035846610257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1690990295, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+  m_PrefabInstance: {fileID: 4728548036329368454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4728548036604520653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 837190475, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+  m_PrefabInstance: {fileID: 4728548036329368454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4728548036613640771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 829585861, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+  m_PrefabInstance: {fileID: 4728548036329368454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4889799039778957468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 163012713966617370, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+  m_PrefabInstance: {fileID: 4728548036329368454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5790269100143884453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1280155286601421603, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+  m_PrefabInstance: {fileID: 4728548036329368454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6562021446670836255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1913984623168653721, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+  m_PrefabInstance: {fileID: 4728548036329368454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7867065103412919712 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3220710786355959334, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
+  m_PrefabInstance: {fileID: 4728548036329368454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8704616359968114831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4130415584103654153, guid: fbef99c7129484fd1af656a20462a1eb, type: 3}
   m_PrefabInstance: {fileID: 4728548036329368454}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5984055637708089035
@@ -160,6 +278,10 @@ PrefabInstance:
     - target: {fileID: 8211259967471119317, guid: 83ea26d23f0bb41ac8ca143f7353f020, type: 3}
       propertyPath: m_Name
       value: erkekvelednormal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211259967471119317, guid: 83ea26d23f0bb41ac8ca143f7353f020, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8844948463997170031, guid: 83ea26d23f0bb41ac8ca143f7353f020, type: 3}
       propertyPath: m_RootOrder
@@ -207,6 +329,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83ea26d23f0bb41ac8ca143f7353f020, type: 3}
+--- !u!95 &1594927000919311655 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4983781978957030380, guid: 83ea26d23f0bb41ac8ca143f7353f020, type: 3}
+  m_PrefabInstance: {fileID: 5984055637708089035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2521984500985220382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8211259967471119317, guid: 83ea26d23f0bb41ac8ca143f7353f020, type: 3}
+  m_PrefabInstance: {fileID: 5984055637708089035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3005083090687334308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8844948463997170031, guid: 83ea26d23f0bb41ac8ca143f7353f020, type: 3}

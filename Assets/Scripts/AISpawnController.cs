@@ -45,7 +45,8 @@ public class AISpawnController : MonoBehaviour
 
     private void SpawnFunc()
     {
-        Instantiate(_spawnClientList[0], _spawnNoktasi.position, Quaternion.identity);
+        int deger = Random.Range(0, _spawnClientList.Count);
+        Instantiate(_spawnClientList[deger], _spawnNoktasi.position, Quaternion.identity);
 
     }
 

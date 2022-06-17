@@ -50,8 +50,9 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiStuffObjeleri.Add(other.gameObject);
 
             int sira = _cantadakiObjeSayisi;
-            other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
-            other.gameObject.transform.DOLocalRotate(new Vector3(90, 90, 0), 1);
+            //other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.2f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.2f));
+            other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f);
+            other.gameObject.transform.DOLocalRotate(new Vector3(90, 90, 0), 0.5f);
             _cantadakiObjeSayisi++;
         }
         else

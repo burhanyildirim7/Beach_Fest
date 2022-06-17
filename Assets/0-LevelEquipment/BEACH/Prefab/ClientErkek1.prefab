@@ -70,9 +70,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &3570747035138937266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -120,6 +120,15 @@ MonoBehaviour:
   _kabineGidiyor: 0
   _kabinSirasiNumber: 0
   _kabinSirasinda: 0
+  _gidilecekSezlonglar: []
+  _yuzecek: 0
+  _yuzmedenDonuyor: 0
+  _dusaGit: 0
+  _dusaGidiyor: 0
+  _dusSirasiNumber: 0
+  _dusSirasinda: 0
+  _dusta: 0
+  _dusNumber: 0
 --- !u!1001 &4550070687063158520
 PrefabInstance:
   m_ObjectHideFlags: 0

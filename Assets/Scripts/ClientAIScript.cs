@@ -71,6 +71,8 @@ public class ClientAIScript : MonoBehaviour
 
     private GameObject _rotaBaslangic;
 
+    private int rota;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -117,6 +119,15 @@ public class ClientAIScript : MonoBehaviour
             _yuzecek = false;
         }
 
+        if (_giysiliKarakter.activeSelf)
+        {
+            _giysiliAnimator.SetBool("walk", true);
+        }
+        else
+        {
+            _giysisizAnimator.SetBool("walk", true);
+        }
+
 
     }
 
@@ -136,6 +147,8 @@ public class ClientAIScript : MonoBehaviour
             }
 
         }
+
+
 
         if (GameController.instance.isContinue == true)
         {
@@ -438,11 +451,11 @@ public class ClientAIScript : MonoBehaviour
                 }
                 else
                 {
-                    int rota = Random.Range(0, _aiHareketKontrol._yuzmeAlanlari.Count + 1);
+                    rota = Random.Range(0, _aiHareketKontrol._yuzmeAlanlari.Count);
 
                     _point = _aiHareketKontrol._yuzmeRotalari[rota].transform;
 
-                    StartCoroutine(YuzmeyeDevamEdiyor());
+
 
                     Debug.Log(_aiHareketKontrol._yuzmeRotalari[rota].name);
                 }
@@ -465,7 +478,29 @@ public class ClientAIScript : MonoBehaviour
             Debug.Log("DUSA GELDI");
             _dusta = true;
 
+            _kopukEfekti.SetActive(true);
+
             gameObject.transform.parent = null;
+
+            if (_yuzecek)
+            {
+                if (_giysiliKarakter.activeSelf)
+                {
+                    _giysiliAnimator.SetBool("walk", false);
+                    _giysiliAnimator.SetBool("shower", true);
+                }
+                else
+                {
+                    _giysisizAnimator.SetBool("walk", false);
+                    _giysisizAnimator.SetBool("shower", true);
+                }
+
+
+            }
+            else
+            {
+
+            }
 
             StartCoroutine(Dustayiz());
 
@@ -506,6 +541,82 @@ public class ClientAIScript : MonoBehaviour
 
             //Debug.Log("Tarlada");
         }
+        else if (other.gameObject == _aiHareketKontrol._kabinler[0])
+        {
+
+            if (_yuzecek)
+            {
+                if (_yuzmedenDonuyor)
+                {
+                    gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+
+                    _yuzmedenDonuyor = false;
+
+                    _kabineGit = true;
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.gameObject.tag == "YuzmeAlani")
+        {
+            if (_yuzecek)
+            {
+                if (_giysiliKarakter.activeSelf)
+                {
+                    _giysiliAnimator.SetBool("walk", false);
+                    _giysiliAnimator.SetBool("swim", true);
+                }
+                else
+                {
+                    _giysisizAnimator.SetBool("walk", false);
+                    _giysisizAnimator.SetBool("swim", true);
+                }
+
+
+            }
+            else
+            {
+
+            }
+
+
+            //SetDestination(_ambarNoktasi.transform);
+            //_agent.SetDestination(_ambarNoktasi.transform.position);
+
+            //Debug.Log("Tarlada");
+        }
+        else if (other.gameObject == _aiHareketKontrol._yuzmeRotalari[rota])
+        {
+            Debug.Log("HA BURAYA GELDI");
+            if (_yuzecek)
+            {
+                if (_giysiliKarakter.activeSelf)
+                {
+                    _giysiliAnimator.SetBool("swim", false);
+                    _giysiliAnimator.SetBool("swimidle", true);
+                }
+                else
+                {
+                    _giysisizAnimator.SetBool("swim", false);
+                    _giysisizAnimator.SetBool("swimidle", true);
+                }
+
+                StartCoroutine(YuzmeyeDevamEdiyor());
+
+
+            }
+            else
+            {
+
+            }
+        }
         else
         {
 
@@ -536,6 +647,56 @@ public class ClientAIScript : MonoBehaviour
 
             //Debug.Log("Tarlada");
         }
+        else if (other.gameObject.tag == "YuzmeAlani")
+        {
+            if (_yuzecek)
+            {
+                if (_giysiliKarakter.activeSelf)
+                {
+                    _giysiliAnimator.SetBool("swim", false);
+                    _giysiliAnimator.SetBool("walk", true);
+                }
+                else
+                {
+                    _giysisizAnimator.SetBool("swim", false);
+                    _giysisizAnimator.SetBool("walk", true);
+                }
+
+
+            }
+            else
+            {
+
+            }
+
+
+            //SetDestination(_ambarNoktasi.transform);
+            //_agent.SetDestination(_ambarNoktasi.transform.position);
+
+            //Debug.Log("Tarlada");
+        }
+        else if (other.gameObject == _aiHareketKontrol._yuzmeRotalari[rota])
+        {
+            if (_yuzecek)
+            {
+                if (_giysiliKarakter.activeSelf)
+                {
+                    _giysiliAnimator.SetBool("swimidle", false);
+                    _giysiliAnimator.SetBool("swim", true);
+                }
+                else
+                {
+                    _giysisizAnimator.SetBool("swimidle", false);
+                    _giysisizAnimator.SetBool("swim", true);
+                }
+
+
+            }
+            else
+            {
+
+            }
+        }
         else
         {
 
@@ -550,6 +711,17 @@ public class ClientAIScript : MonoBehaviour
 
     private IEnumerator GiysiKapat()
     {
+        if (_giysiliKarakter.activeSelf)
+        {
+
+            _giysiliAnimator.SetBool("walk", false);
+        }
+        else
+        {
+
+            _giysisizAnimator.SetBool("walk", false);
+        }
+
         yield return new WaitForSeconds(1.3f);
 
         _giysiliKarakter.SetActive(false);
@@ -567,12 +739,35 @@ public class ClientAIScript : MonoBehaviour
 
         _point = _gidilecekSezlonglar[_dolanSezlongNumber].transform;
 
+        if (_giysiliKarakter.activeSelf)
+        {
+
+            _giysiliAnimator.SetBool("walk", true);
+        }
+        else
+        {
+
+            _giysisizAnimator.SetBool("walk", true);
+        }
+
 
 
     }
 
     private IEnumerator GiysiAc()
     {
+
+        if (_giysiliKarakter.activeSelf)
+        {
+
+            _giysiliAnimator.SetBool("walk", false);
+        }
+        else
+        {
+
+            _giysisizAnimator.SetBool("walk", false);
+        }
+
         yield return new WaitForSeconds(1.3f);
 
         _giysisizKarakter.SetActive(false);
@@ -597,27 +792,86 @@ public class ClientAIScript : MonoBehaviour
         //_aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu = false;
 
         _point = _aiHareketKontrol._girisNoktalari[1].transform;
+
+        if (_giysiliKarakter.activeSelf)
+        {
+
+            _giysiliAnimator.SetBool("walk", true);
+        }
+        else
+        {
+
+            _giysisizAnimator.SetBool("walk", true);
+        }
     }
 
     private IEnumerator SezlongtanAyril()
     {
+        yield return new WaitForSeconds(0.5f);
+
+        gameObject.transform.DORotate(new Vector3(0, 135f, 0), 0.5f);
+        //gameObject.transform.DOMoveY(-0.5f, 0.5f);
+        _giysisizKarakter.transform.localPosition = new Vector3(-0.2f, -0.6f, _giysisizKarakter.transform.localPosition.z);
+
+        //yield return new WaitForSeconds(0.5f);
+
+        if (_giysiliKarakter.activeSelf)
+        {
+            _giysiliAnimator.SetBool("walk", false);
+            _giysiliAnimator.SetBool("yatis", true);
+        }
+        else
+        {
+            _giysisizAnimator.SetBool("walk", false);
+            _giysisizAnimator.SetBool("yatis", true);
+        }
+
         yield return new WaitForSeconds(10f);
+        //gameObject.transform.DOMoveY(0f, 0.5f);
+        _giysisizKarakter.transform.localPosition = new Vector3(0f, 0f, _giysisizKarakter.transform.localPosition.z);
+        yield return new WaitForSeconds(0.5f);
         gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
         //_point = _aiHareketKontrol._kabinler[0].transform;
         _kabineGit = true;
         _kabineGidiyor = false;
         _kabinSirasinda = false;
+
+        if (_giysiliKarakter.activeSelf)
+        {
+            _giysiliAnimator.SetBool("yatis", false);
+            _giysiliAnimator.SetBool("walk", true);
+        }
+        else
+        {
+            _giysisizAnimator.SetBool("yatis", false);
+            _giysisizAnimator.SetBool("walk", true);
+        }
         //KabinSirasinaGec();
     }
 
     private IEnumerator YuzmeyeBasla()
     {
-        yield return new WaitForSeconds(1f);
+
         //gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
 
-        gameObject.transform.DORotate(new Vector3(0, 135f, 0), 1f);
+        gameObject.transform.DORotate(new Vector3(0, 135f, 0), 0.5f);
 
-        yield return new WaitForSeconds(2f);
+
+
+        if (_giysiliKarakter.activeSelf)
+        {
+            _giysiliAnimator.SetBool("walk", false);
+            _giysiliAnimator.SetBool("paletgiy", true);
+        }
+        else
+        {
+            _giysisizAnimator.SetBool("walk", false);
+            _giysisizAnimator.SetBool("paletgiy", true);
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        _snorkelEfekti.SetActive(true);
 
         for (int i = 0; i < _snorkelSeti.Count; i++)
         {
@@ -627,6 +881,19 @@ public class ClientAIScript : MonoBehaviour
         _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<YuzmeAlaniClientIstek>().PaletGiy();
 
         yield return new WaitForSeconds(1f);
+
+        _snorkelEfekti.SetActive(false);
+
+        if (_giysiliKarakter.activeSelf)
+        {
+            _giysiliAnimator.SetBool("paletgiy", false);
+            _giysiliAnimator.SetBool("walk", true);
+        }
+        else
+        {
+            _giysisizAnimator.SetBool("paletgiy", false);
+            _giysisizAnimator.SetBool("walk", true);
+        }
 
         _point = _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<YuzmeAlaniClientIstek>()._denizeGirilecekNokta.transform;
 
@@ -663,24 +930,44 @@ public class ClientAIScript : MonoBehaviour
 
     private IEnumerator Dustayiz()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         //gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+
+        _kopukEfekti.SetActive(false);
 
         _dusta = false;
 
         _dusaGit = false;
 
-        gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
 
-        _kabineGit = true;
 
-        _yuzmedenDonuyor = false;
+
 
         _dusaGidiyor = false;
 
 
 
+        _point = _aiHareketKontrol._kabinler[0].transform;
 
+        if (_yuzecek)
+        {
+            if (_giysiliKarakter.activeSelf)
+            {
+                _giysiliAnimator.SetBool("shower", false);
+                _giysiliAnimator.SetBool("walk", true);
+            }
+            else
+            {
+                _giysisizAnimator.SetBool("shower", false);
+                _giysisizAnimator.SetBool("walk", true);
+            }
+
+
+        }
+        else
+        {
+
+        }
 
 
 
