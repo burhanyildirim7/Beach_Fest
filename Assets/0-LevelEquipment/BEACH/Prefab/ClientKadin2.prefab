@@ -101,6 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e50c162edacb4217955cf038fc1a688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Erkek1: 0
+  _Erkek2: 0
+  _ErkekCocuk: 0
+  _Kadin1: 0
+  _Kadin2: 1
+  _KizCocuk: 0
   _giysiliAnimator: {fileID: 4203524967745798956}
   _giysisizAnimator: {fileID: 2700571133407459304}
   _giysiliKarakter: {fileID: 5533084288744140621}

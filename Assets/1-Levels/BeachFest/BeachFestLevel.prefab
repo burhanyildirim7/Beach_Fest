@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 4679922513625222708}
   - component: {fileID: 3166929844752095438}
   - component: {fileID: 8812487702688105011}
+  - component: {fileID: 6279409293808656737}
   m_Layer: 0
   m_Name: RotaRandom (6)
   m_TagString: Untagged
@@ -276,6 +277,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6279409293808656737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164852710790878381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &551668655284797932
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +985,7 @@ GameObject:
   - component: {fileID: 984703687696419410}
   - component: {fileID: 7167472234174145228}
   - component: {fileID: 8678362809801818811}
+  - component: {fileID: 8478435190834771915}
   m_Layer: 0
   m_Name: RotaRandom (5)
   m_TagString: Untagged
@@ -1056,6 +1071,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8478435190834771915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306004026079103263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &1623486340393040110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,6 +1980,7 @@ GameObject:
   - component: {fileID: 5563400188285619996}
   - component: {fileID: 2528222620150511980}
   - component: {fileID: 1669462369051246907}
+  - component: {fileID: 5180268430087465028}
   m_Layer: 0
   m_Name: RotaRandom (8)
   m_TagString: Untagged
@@ -2037,6 +2066,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5180268430087465028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2402363185699244325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &2444057902461918885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,6 +2313,7 @@ GameObject:
   - component: {fileID: 933441758872485161}
   - component: {fileID: 6359677369898089377}
   - component: {fileID: 6342664522240172187}
+  - component: {fileID: 5515365426855670288}
   m_Layer: 0
   m_Name: RotaRandom (1)
   m_TagString: Untagged
@@ -2356,6 +2399,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5515365426855670288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584622642563616866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &2626634840219245044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,6 +2867,7 @@ GameObject:
   - component: {fileID: 5336335215020044}
   - component: {fileID: 2295172843778762638}
   - component: {fileID: 1450663364723201156}
+  - component: {fileID: 1929828141023068677}
   m_Layer: 0
   m_Name: RotaRandom (7)
   m_TagString: Untagged
@@ -2896,6 +2953,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1929828141023068677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492295217633083223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &3552409509927968487
 GameObject:
   m_ObjectHideFlags: 0
@@ -4357,6 +4427,7 @@ GameObject:
   - component: {fileID: 726897786774086707}
   - component: {fileID: 2849690610298921042}
   - component: {fileID: 4260570882172347279}
+  - component: {fileID: 1548473853867201907}
   m_Layer: 0
   m_Name: RotaRandom (4)
   m_TagString: Untagged
@@ -4442,6 +4513,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1548473853867201907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5177871735734455293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &5208251448899291118
 GameObject:
   m_ObjectHideFlags: 0
@@ -5268,6 +5352,7 @@ GameObject:
   - component: {fileID: 3386145778104716030}
   - component: {fileID: 3675590962844697234}
   - component: {fileID: 8201984977331138591}
+  - component: {fileID: 4446992361071855658}
   m_Layer: 0
   m_Name: RotaRandom
   m_TagString: Untagged
@@ -5353,6 +5438,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4446992361071855658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480649860069690625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &6524105550508234497
 GameObject:
   m_ObjectHideFlags: 0
@@ -5957,6 +6055,7 @@ GameObject:
   - component: {fileID: 5699938934524229179}
   - component: {fileID: 7922779014602202220}
   - component: {fileID: 7083559232293319691}
+  - component: {fileID: 4294357951010314513}
   m_Layer: 0
   m_Name: RotaRandom (9)
   m_TagString: Untagged
@@ -6042,6 +6141,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4294357951010314513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116660036599498613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &7186763204005071364
 GameObject:
   m_ObjectHideFlags: 0
@@ -7170,6 +7282,7 @@ GameObject:
   - component: {fileID: 945419914977582850}
   - component: {fileID: 2934174290013473119}
   - component: {fileID: 8268824302778215217}
+  - component: {fileID: 183697545738997442}
   m_Layer: 0
   m_Name: RotaRandom (3)
   m_TagString: Untagged
@@ -7255,6 +7368,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &183697545738997442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225582575869622535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &8264774411860305255
 GameObject:
   m_ObjectHideFlags: 0
@@ -7528,6 +7654,7 @@ GameObject:
   - component: {fileID: 4446824852667061663}
   - component: {fileID: 4520289339754885583}
   - component: {fileID: 8500472012741880014}
+  - component: {fileID: 6381700315661703296}
   m_Layer: 0
   m_Name: RotaRandom (2)
   m_TagString: Untagged
@@ -7613,6 +7740,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6381700315661703296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8788043031081044671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13de3856155fc431f91a6091d6650ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doluMu: 0
 --- !u!1 &8882684808473767870
 GameObject:
   m_ObjectHideFlags: 0

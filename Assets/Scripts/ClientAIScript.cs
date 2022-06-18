@@ -7,6 +7,14 @@ using DG.Tweening;
 public class ClientAIScript : MonoBehaviour
 {
 
+    [SerializeField] private bool _Erkek1;
+    [SerializeField] private bool _Erkek2;
+    [SerializeField] private bool _ErkekCocuk;
+    [SerializeField] private bool _Kadin1;
+    [SerializeField] private bool _Kadin2;
+    [SerializeField] private bool _KizCocuk;
+
+
     [SerializeField] private Animator _giysiliAnimator;
     [SerializeField] private Animator _giysisizAnimator;
 
@@ -183,6 +191,20 @@ public class ClientAIScript : MonoBehaviour
                                             _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
                                             gameObject.transform.parent = null;
                                             _kabineGidiyor = true;
+
+                                            if (_kabinSirasinda == false || _kabinde == false)
+                                            {
+                                                if (_giysiliKarakter.activeSelf)
+                                                {
+
+                                                    _giysiliAnimator.SetBool("walk", true);
+                                                }
+                                                else
+                                                {
+
+                                                    _giysisizAnimator.SetBool("walk", true);
+                                                }
+                                            }
                                         }
                                         else
                                         {
@@ -265,6 +287,20 @@ public class ClientAIScript : MonoBehaviour
                                             _aiHareketKontrol._dusSirasi[_dusSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
                                             gameObject.transform.parent = null;
                                             _dusaGidiyor = true;
+
+                                            if (_dusSirasinda == false || _dusta == false)
+                                            {
+                                                if (_giysiliKarakter.activeSelf)
+                                                {
+
+                                                    _giysiliAnimator.SetBool("walk", true);
+                                                }
+                                                else
+                                                {
+
+                                                    _giysisizAnimator.SetBool("walk", true);
+                                                }
+                                            }
                                         }
                                         else
                                         {
@@ -451,13 +487,11 @@ public class ClientAIScript : MonoBehaviour
                 }
                 else
                 {
-                    rota = Random.Range(0, _aiHareketKontrol._yuzmeAlanlari.Count);
-
-                    _point = _aiHareketKontrol._yuzmeRotalari[rota].transform;
 
 
+                    YuzmeRotasiOlustur();
 
-                    Debug.Log(_aiHareketKontrol._yuzmeRotalari[rota].name);
+                    //Debug.Log(_aiHareketKontrol._yuzmeRotalari[rota].name);
                 }
 
 
@@ -525,11 +559,22 @@ public class ClientAIScript : MonoBehaviour
 
             _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
 
+
+
             //_kabinSirasinda = false;
 
             if (_kabineGit == true)
             {
-                //gameObject.GetComponent<NavMeshAgent>().enabled = false;
+                if (_giysiliKarakter.activeSelf)
+                {
+
+                    _giysiliAnimator.SetBool("walk", false);
+                }
+                else
+                {
+
+                    _giysisizAnimator.SetBool("walk", false);
+                }
             }
             else
             {
@@ -617,6 +662,38 @@ public class ClientAIScript : MonoBehaviour
 
             }
         }
+        else if (other.gameObject == _aiHareketKontrol._dusSirasi[_dusSirasiNumber])
+        {
+
+            //_aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
+
+
+
+            //_kabinSirasinda = false;
+
+            if (_dusaGit == true)
+            {
+                if (_giysiliKarakter.activeSelf)
+                {
+
+                    _giysiliAnimator.SetBool("walk", false);
+                }
+                else
+                {
+
+                    _giysisizAnimator.SetBool("walk", false);
+                }
+            }
+            else
+            {
+
+            }
+
+            //SetDestination(_ambarNoktasi.transform);
+            //_agent.SetDestination(_ambarNoktasi.transform.position);
+
+            //Debug.Log("Tarlada");
+        }
         else
         {
 
@@ -638,9 +715,39 @@ public class ClientAIScript : MonoBehaviour
         else if (other.gameObject == _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber])
         {
 
-            //_aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
+            if (_giysiliKarakter.activeSelf)
+            {
+
+                _giysiliAnimator.SetBool("walk", true);
+            }
+            else
+            {
+
+                _giysisizAnimator.SetBool("walk", true);
+            }
+
+        }
+        else if (other.gameObject == _aiHareketKontrol._dusSirasi[_dusSirasiNumber])
+        {
+
+            //_aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
+
+
 
             //_kabinSirasinda = false;
+
+
+            if (_giysiliKarakter.activeSelf)
+            {
+
+                _giysiliAnimator.SetBool("walk", true);
+            }
+            else
+            {
+
+                _giysisizAnimator.SetBool("walk", true);
+            }
+
 
             //SetDestination(_ambarNoktasi.transform);
             //_agent.SetDestination(_ambarNoktasi.transform.position);
@@ -690,6 +797,7 @@ public class ClientAIScript : MonoBehaviour
                     _giysisizAnimator.SetBool("swim", true);
                 }
 
+                _aiHareketKontrol._yuzmeRotalari[rota].GetComponent<KabinSirasiKontrol>()._doluMu = false;
 
             }
             else
@@ -703,6 +811,20 @@ public class ClientAIScript : MonoBehaviour
         }
     }
 
+    private void YuzmeRotasiOlustur()
+    {
+        rota = Random.Range(0, _aiHareketKontrol._yuzmeAlanlari.Count);
+
+        if (_aiHareketKontrol._yuzmeRotalari[rota].GetComponent<KabinSirasiKontrol>()._doluMu == false)
+        {
+            _point = _aiHareketKontrol._yuzmeRotalari[rota].transform;
+            _aiHareketKontrol._yuzmeRotalari[rota].GetComponent<KabinSirasiKontrol>()._doluMu = true;
+        }
+        else
+        {
+            YuzmeRotasiOlustur();
+        }
+    }
 
     private void SetDestination(Transform point)
     {
@@ -807,11 +929,49 @@ public class ClientAIScript : MonoBehaviour
 
     private IEnumerator SezlongtanAyril()
     {
+
         yield return new WaitForSeconds(0.5f);
 
         gameObject.transform.DORotate(new Vector3(0, 135f, 0), 0.5f);
+
+        yield return new WaitForSeconds(0.5f);
         //gameObject.transform.DOMoveY(-0.5f, 0.5f);
-        _giysisizKarakter.transform.localPosition = new Vector3(-0.2f, -0.6f, _giysisizKarakter.transform.localPosition.z);
+
+        if (_Erkek1)
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(-0.2f, -0.6f, -0.25f), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(-0.2f, -0.6f, -0.25f);
+        }
+        else if (_Erkek2)
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(-0.2f, -0.6f, -0.25f), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(-0.2f, -0.6f, -0.25f);
+        }
+        else if (_ErkekCocuk)
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(-0.2f, -0.5f, -1f), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(-0.2f, -0.5f, -1f);
+        }
+        else if (_Kadin1)
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(-0.2f, -0.6f, -0.25f), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(-0.2f, -0.6f, -0.25f);
+        }
+        else if (_Kadin2)
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(-0.2f, -1f, -0.5f), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(-0.2f, -1f, -0.5f);
+        }
+        else if (_KizCocuk)
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(-0.2f, -0.6f, -0.25f), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(-0.2f, -0.6f, -0.25f);
+        }
+        else
+        {
+
+        }
+
 
         //yield return new WaitForSeconds(0.5f);
 
@@ -827,14 +987,6 @@ public class ClientAIScript : MonoBehaviour
         }
 
         yield return new WaitForSeconds(10f);
-        //gameObject.transform.DOMoveY(0f, 0.5f);
-        _giysisizKarakter.transform.localPosition = new Vector3(0f, 0f, _giysisizKarakter.transform.localPosition.z);
-        yield return new WaitForSeconds(0.5f);
-        gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
-        //_point = _aiHareketKontrol._kabinler[0].transform;
-        _kabineGit = true;
-        _kabineGidiyor = false;
-        _kabinSirasinda = false;
 
         if (_giysiliKarakter.activeSelf)
         {
@@ -846,6 +998,26 @@ public class ClientAIScript : MonoBehaviour
             _giysisizAnimator.SetBool("yatis", false);
             _giysisizAnimator.SetBool("walk", true);
         }
+        //gameObject.transform.DOMoveY(0f, 0.5f);
+        if (_ErkekCocuk)
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(0, 0.52f, 0), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(0, 0.52f, 0);
+        }
+        else
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(0, 0, 0), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(0, 0, 0);
+        }
+
+        //yield return new WaitForSeconds(0.5f);
+        gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+        //_point = _aiHareketKontrol._kabinler[0].transform;
+        _kabineGit = true;
+        _kabineGidiyor = false;
+        _kabinSirasinda = false;
+
+
         //KabinSirasinaGec();
     }
 
