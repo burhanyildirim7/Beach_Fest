@@ -13518,6 +13518,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &102799939617747521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6387015969457753089, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+  m_PrefabInstance: {fileID: 6471115414697819712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &102799939750646146 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6387015968787984322, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
@@ -13531,6 +13536,11 @@ Transform:
 --- !u!1 &5619684337484335988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1455546748260496692, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+  m_PrefabInstance: {fileID: 6471115414697819712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6194125999218593179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 881564132643550171, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
   m_PrefabInstance: {fileID: 6471115414697819712}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6552908559852708905
@@ -14159,6 +14169,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1879629599516737784}
     m_Modifications:
+    - target: {fileID: 910998966468310661, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: m_TagString
+      value: BedelOdemeCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 988604844550925111, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -14176,6 +14190,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5619684337484335988}
     - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _kapanacakObje
+      value: 
+      objectReference: {fileID: 102799939210818758}
+    - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
       propertyPath: beachBarObjesi
       value: 
       objectReference: {fileID: 8128721630058761202}
@@ -14184,17 +14202,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 102799939750646146}
     - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _iceParaCollider
+      value: 
+      objectReference: {fileID: 6194125999218593179}
+    - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
       propertyPath: ExpandAlaniObjesi
       value: 
       objectReference: {fileID: 102799940180435214}
+    - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _drinkParaCollider
+      value: 
+      objectReference: {fileID: 8847366173586551326}
+    - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _kapanacakCollider
+      value: 
+      objectReference: {fileID: 8847366173586551326}
     - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
       propertyPath: beachAlaniParaTexti
       value: 
       objectReference: {fileID: 102799940165029336}
     - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: iceCreamArabaObjesi
+      value: 
+      objectReference: {fileID: 5619684337484335988}
+    - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
       propertyPath: iceCreamAlaniParaTexti
       value: 
       objectReference: {fileID: 102799939318089215}
+    - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _kapanacakIceCreamCanvas
+      value: 
+      objectReference: {fileID: 102799939617747521}
+    - target: {fileID: 8431327419605717780, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _odenecekBedel
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 8575297976042400144, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
       propertyPath: m_Name
       value: DrinkGrubu
@@ -14257,6 +14299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+--- !u!1 &102799939210818758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8575297976676528221, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+  m_PrefabInstance: {fileID: 8533384593401283739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &102799939760532744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8575297976042400147, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
@@ -14281,6 +14328,11 @@ MonoBehaviour:
 --- !u!1 &8128721630058761202 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 478412156574257001, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+  m_PrefabInstance: {fileID: 8533384593401283739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8847366173586551326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 910998966468310661, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
   m_PrefabInstance: {fileID: 8533384593401283739}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8661970021918033034

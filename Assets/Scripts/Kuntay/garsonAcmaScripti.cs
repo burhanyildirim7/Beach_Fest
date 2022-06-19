@@ -7,13 +7,14 @@ public class garsonAcmaScripti : MonoBehaviour
 {
 
     float garsonSayisi;
-    [SerializeField] GameObject garson1Object, garson2Object,workerPaneli,dondurmaciObjesi;
+    [SerializeField] GameObject garson1Object, garson2Object, workerPaneli, dondurmaciObjesi;
     [SerializeField] Slider garsonSlideri;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (dondurmaciObjesi.activeSelf==true)
+        /*
+        if (dondurmaciObjesi.activeSelf == true)
         {
             workerPaneli.SetActive(true);
         }
@@ -21,9 +22,10 @@ public class garsonAcmaScripti : MonoBehaviour
         {
 
         }
-        
+        */
+
         garsonSayisi = PlayerPrefs.GetFloat("GarsonSayisi");
-        garsonSlideri.value = garsonSayisi;
+        //garsonSlideri.value = garsonSayisi;
         if (garsonSayisi == 1)
         {
             garson1Object.SetActive(true);
@@ -41,6 +43,7 @@ public class garsonAcmaScripti : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         garsonSayisi=garsonSlideri.value;
 
         if (garsonSayisi == 1)
@@ -57,5 +60,6 @@ public class garsonAcmaScripti : MonoBehaviour
         {
 
         }
+        */
     }
 }
