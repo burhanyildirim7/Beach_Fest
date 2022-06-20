@@ -13164,6 +13164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SezlongGrubu
       objectReference: {fileID: 0}
+    - target: {fileID: 5246762905906073441, guid: 7f17841135e2e44d29bbcc41ddbebe9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5974423511093062665, guid: 7f17841135e2e44d29bbcc41ddbebe9b, type: 3}
       propertyPath: birinciDenizGrubu
       value: 
@@ -13208,6 +13212,10 @@ PrefabInstance:
       propertyPath: _spawnNoktasi
       value: 
       objectReference: {fileID: 4153899612469252348}
+    - target: {fileID: 8142943698713424343, guid: 7f17841135e2e44d29bbcc41ddbebe9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f17841135e2e44d29bbcc41ddbebe9b, type: 3}
 --- !u!4 &102799940502855768 stripped

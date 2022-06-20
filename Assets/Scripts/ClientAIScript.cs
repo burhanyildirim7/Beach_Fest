@@ -26,6 +26,11 @@ public class ClientAIScript : MonoBehaviour
     [SerializeField] private GameObject _kopukEfekti;
     [SerializeField] private GameObject _snorkelEfekti;
 
+    [SerializeField] private GameObject _semsiyeIstiyorEmoji;
+    [SerializeField] private GameObject _dondurmaIstiyorEmoji;
+    [SerializeField] private GameObject _icecekIstiyorEmoji;
+    [SerializeField] private GameObject _canSimidiIstiyorEmoji;
+
 
     [SerializeField] private NavMeshAgent _agent;
 
@@ -113,6 +118,11 @@ public class ClientAIScript : MonoBehaviour
         _kabinNumber = 1;
         _dusNumber = 1;
         _timer = 0;
+
+        _semsiyeIstiyorEmoji.SetActive(false);
+        _dondurmaIstiyorEmoji.SetActive(false);
+        _icecekIstiyorEmoji.SetActive(false);
+        _canSimidiIstiyorEmoji.SetActive(false);
 
         //YuzmeAlaniEkle();
         SezlongEkle();
@@ -432,7 +442,7 @@ public class ClientAIScript : MonoBehaviour
             }
             else
             {
-                StartCoroutine(SezlongtanAyril());
+                StartCoroutine(SezlongaYat());
             }
 
 
@@ -927,7 +937,7 @@ public class ClientAIScript : MonoBehaviour
         }
     }
 
-    private IEnumerator SezlongtanAyril()
+    private IEnumerator SezlongaYat()
     {
 
         yield return new WaitForSeconds(0.5f);
@@ -986,7 +996,27 @@ public class ClientAIScript : MonoBehaviour
             _giysisizAnimator.SetBool("yatis", true);
         }
 
-        yield return new WaitForSeconds(10f);
+        int sayi = Random.Range(0, 3);
+
+        if (sayi == 0)
+        {
+            StartCoroutine(SezlongtanAyril());
+
+        }
+        else
+        {
+            StartCoroutine(IstekleriVar());
+        }
+
+        //KabinSirasinaGec();
+    }
+
+    private IEnumerator SezlongtanAyril()
+    {
+
+
+
+        yield return new WaitForSeconds(20f);
 
         if (_giysiliKarakter.activeSelf)
         {
@@ -1019,6 +1049,74 @@ public class ClientAIScript : MonoBehaviour
 
 
         //KabinSirasinaGec();
+    }
+
+    private IEnumerator IstekleriVar()
+    {
+        yield return new WaitForSeconds(20f);
+
+        int isteksayi = Random.Range(0, 3);
+
+        if (isteksayi == 0)
+        {
+            _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().semsiyeIstiyor = true;
+            _semsiyeIstiyorEmoji.SetActive(true);
+
+        }
+        else if (isteksayi == 1)
+        {
+            _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().dondurmaIstiyor = true;
+            _dondurmaIstiyorEmoji.SetActive(true);
+
+        }
+        else if (isteksayi == 2)
+        {
+            _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().icecekIstiyor = true;
+            _icecekIstiyorEmoji.SetActive(true);
+        }
+        else
+        {
+
+        }
+    }
+
+    public void IsteklerKarsilandi()
+    {
+        StartCoroutine(IstekKarsilandiTiming());
+    }
+
+    private IEnumerator IstekKarsilandiTiming()
+    {
+        yield return new WaitForSeconds(10f);
+
+        if (_giysiliKarakter.activeSelf)
+        {
+            _giysiliAnimator.SetBool("yatis", false);
+            _giysiliAnimator.SetBool("walk", true);
+        }
+        else
+        {
+            _giysisizAnimator.SetBool("yatis", false);
+            _giysisizAnimator.SetBool("walk", true);
+        }
+        //gameObject.transform.DOMoveY(0f, 0.5f);
+        if (_ErkekCocuk)
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(0, 0.52f, 0), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(0, 0.52f, 0);
+        }
+        else
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(0, 0, 0), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(0, 0, 0);
+        }
+
+        //yield return new WaitForSeconds(0.5f);
+        gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+        //_point = _aiHareketKontrol._kabinler[0].transform;
+        _kabineGit = true;
+        _kabineGidiyor = false;
+        _kabinSirasinda = false;
     }
 
     private IEnumerator YuzmeyeBasla()
