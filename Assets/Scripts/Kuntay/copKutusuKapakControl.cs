@@ -51,16 +51,12 @@ public class copKutusuKapakControl : MonoBehaviour
 
                 if (_timer > 0.1f)
                 {
-                    if (_sirtCantasiScript._cantadakiObjeler.Count > 0)
-                    {
-                        _sirtCantasiScript.CopKutusunaAt(_malKabulNoktasi);
+                    _sirtCantasiScript.CopKutusunaAt(_malKabulNoktasi);
 
-                        _timer = 0;
-                    }
-                    else
-                    {
+                    _timer = 0;
 
-                    }
+
+
                 }
                 else
                 {

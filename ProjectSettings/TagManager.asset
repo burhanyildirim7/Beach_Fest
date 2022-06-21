@@ -18,6 +18,7 @@ TagManager:
   - BedelOdemeCollider
   - AISpawnController
   - RotaOlustur
+  - BedelOdemeMoney
   layers:
   - Default
   - TransparentFX

@@ -57,6 +57,7 @@ public class KabinAcmaScript : MonoBehaviour
             isOpen2 = 1;
             PlayerPrefs.SetInt("2inciKabinAlaniAcikMi", 1);
             acilacakSezlongGrubu.SetActive(true);
+            //acilacakSezlongGrubu.GetComponent<AcilisAnimasyonScript>().AcilisAnim();
             acilacakCollider.SetActive(true);
 
             kapanacakGrubu.SetActive(false);
@@ -69,6 +70,7 @@ public class KabinAcmaScript : MonoBehaviour
             isOpen4 = 1;
             PlayerPrefs.SetInt("4uncuKabinAlaniAcikMi", 1);
             acilacakSezlongGrubu.SetActive(true);
+            //acilacakSezlongGrubu.GetComponent<AcilisAnimasyonScript>().AcilisAnim();
             acilacakCollider.SetActive(true);
 
             kapanacakGrubu.SetActive(false);

@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StuffDolabiScript : MonoBehaviour
+public class IceCreamDolabiScript : MonoBehaviour
 {
-    [Header("Uretilecek Stuff Objesi")]
-    [SerializeField] private GameObject _stuff;
-    [Header("Spawn Point")]
-    [SerializeField] private GameObject _spawnPoint;
+
     [Header("Stuff Toplama Hizi")]
     [SerializeField] private float _spawnHizi;
 
@@ -20,11 +17,6 @@ public class StuffDolabiScript : MonoBehaviour
         _üretilenStuff = 0;
     }
 
-
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -56,20 +48,13 @@ public class StuffDolabiScript : MonoBehaviour
         {
             _timer += Time.deltaTime;
 
-            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count == 0 && other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiDrinkObjeleri.Count == 0)
+            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count < other.gameObject.GetComponent<SirtCantasiScript>()._iceCreamStackSiniri)
             {
-                if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count < other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri)
+                if (_timer > _spawnHizi)
                 {
-                    if (_timer > _spawnHizi)
-                    {
-                        GameObject stuff = Instantiate(_stuff, _spawnPoint.transform.position, Quaternion.identity);
-                        other.gameObject.GetComponent<SirtCantasiScript>().StuffTopla(stuff);
-                        _timer = 0;
-                    }
-                    else
-                    {
 
-                    }
+                    other.gameObject.GetComponent<SirtCantasiScript>().IceCreamTopla();
+                    _timer = 0;
                 }
                 else
                 {
@@ -80,6 +65,7 @@ public class StuffDolabiScript : MonoBehaviour
             {
 
             }
+
 
         }
         else

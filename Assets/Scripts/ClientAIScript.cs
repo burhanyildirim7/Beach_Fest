@@ -30,6 +30,7 @@ public class ClientAIScript : MonoBehaviour
     [SerializeField] private GameObject _dondurmaIstiyorEmoji;
     [SerializeField] private GameObject _icecekIstiyorEmoji;
     [SerializeField] private GameObject _canSimidiIstiyorEmoji;
+    [SerializeField] private GameObject _istekKarsilandiEmoji;
 
 
     [SerializeField] private NavMeshAgent _agent;
@@ -85,6 +86,7 @@ public class ClientAIScript : MonoBehaviour
     private GameObject _rotaBaslangic;
 
     private int rota;
+    private int isteksayi;
 
     // Start is called before the first frame update
     private void Awake()
@@ -123,6 +125,7 @@ public class ClientAIScript : MonoBehaviour
         _dondurmaIstiyorEmoji.SetActive(false);
         _icecekIstiyorEmoji.SetActive(false);
         _canSimidiIstiyorEmoji.SetActive(false);
+        _istekKarsilandiEmoji.SetActive(false);
 
         //YuzmeAlaniEkle();
         SezlongEkle();
@@ -724,7 +727,7 @@ public class ClientAIScript : MonoBehaviour
         }
         else if (other.gameObject == _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber])
         {
-
+            _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
             if (_giysiliKarakter.activeSelf)
             {
 
@@ -1051,11 +1054,16 @@ public class ClientAIScript : MonoBehaviour
         //KabinSirasinaGec();
     }
 
+    private void IstekSayiBelirle()
+    {
+
+    }
+
     private IEnumerator IstekleriVar()
     {
         yield return new WaitForSeconds(20f);
 
-        int isteksayi = Random.Range(0, 3);
+        isteksayi = Random.Range(0, 3);
 
         if (isteksayi == 0)
         {
@@ -1065,19 +1073,67 @@ public class ClientAIScript : MonoBehaviour
         }
         else if (isteksayi == 1)
         {
-            _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().dondurmaIstiyor = true;
-            _dondurmaIstiyorEmoji.SetActive(true);
+            if (PlayerPrefs.GetInt("IceCreamObjesiAcikMi") == 1)
+            {
+                _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().dondurmaIstiyor = true;
+                _dondurmaIstiyorEmoji.SetActive(true);
+            }
+            else
+            {
+                IstedigiObjeYok();
+            }
+
 
         }
         else if (isteksayi == 2)
         {
-            _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().icecekIstiyor = true;
-            _icecekIstiyorEmoji.SetActive(true);
+            if (PlayerPrefs.GetInt("BeachObjesiAcikMi") == 1)
+            {
+                _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().icecekIstiyor = true;
+                _icecekIstiyorEmoji.SetActive(true);
+            }
+            else
+            {
+                IstedigiObjeYok();
+            }
+
         }
         else
         {
 
         }
+    }
+
+    private void IstedigiObjeYok()
+    {
+        if (_giysiliKarakter.activeSelf)
+        {
+            _giysiliAnimator.SetBool("yatis", false);
+            _giysiliAnimator.SetBool("walk", true);
+        }
+        else
+        {
+            _giysisizAnimator.SetBool("yatis", false);
+            _giysisizAnimator.SetBool("walk", true);
+        }
+        //gameObject.transform.DOMoveY(0f, 0.5f);
+        if (_ErkekCocuk)
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(0, 0.52f, 0), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(0, 0.52f, 0);
+        }
+        else
+        {
+            //_giysisizKarakter.transform.DOLocalMove(new Vector3(0, 0, 0), 0.1f);
+            _giysisizKarakter.transform.localPosition = new Vector3(0, 0, 0);
+        }
+
+        //yield return new WaitForSeconds(0.5f);
+        gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+        //_point = _aiHareketKontrol._kabinler[0].transform;
+        _kabineGit = true;
+        _kabineGidiyor = false;
+        _kabinSirasinda = false;
     }
 
     public void IsteklerKarsilandi()
@@ -1087,6 +1143,12 @@ public class ClientAIScript : MonoBehaviour
 
     private IEnumerator IstekKarsilandiTiming()
     {
+        _semsiyeIstiyorEmoji.SetActive(false);
+        _dondurmaIstiyorEmoji.SetActive(false);
+        _icecekIstiyorEmoji.SetActive(false);
+        _canSimidiIstiyorEmoji.SetActive(false);
+        _istekKarsilandiEmoji.SetActive(true);
+
         yield return new WaitForSeconds(10f);
 
         if (_giysiliKarakter.activeSelf)

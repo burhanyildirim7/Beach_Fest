@@ -26,7 +26,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject _canSimidi;
 
+    [SerializeField] private GameObject _bedelOdemePara;
 
+    [SerializeField] private GameObject _moneySpawnPoint;
+
+    private int _kalanBedel;
     private float _stayTimer;
 
     private float _velocityX;
@@ -59,6 +63,10 @@ public class PlayerController : MonoBehaviour
 
             StartCoroutine(ParaAnim());
         }
+        else if (other.gameObject.tag == "BedelOdemeCollider")
+        {
+            _kalanBedel = other.GetComponent<BedelOdemeler>()._odenecekBedel;
+        }
         else
         {
 
@@ -72,18 +80,23 @@ public class PlayerController : MonoBehaviour
             _velocityX = GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>()._velocityX;
             _velocityZ = GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>()._velocityZ;
 
+
             if (_velocityX == 0 || _velocityZ == 0)
             {
-                if (PlayerPrefs.GetInt("Money") > 0)
+                if (PlayerPrefs.GetInt("Money") > 0 && _kalanBedel > 0)
                 {
                     _stayTimer += Time.deltaTime;
 
                     if (_stayTimer > 0.1f)
                     {
                         _paraUI.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).OnComplete(() => _paraUI.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f));
-                        other.GetComponent<BedelOdemeler>().BedelOdeUlen();
+                        GameObject para = Instantiate(_bedelOdemePara, _moneySpawnPoint.transform.position, Quaternion.identity);
+                        para.transform.DOMove(other.gameObject.transform.position, 1f);
+                        //other.GetComponent<BedelOdemeler>().BedelOdeUlen();
                         PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 10);
                         UIController.instance.SetGamePlayScoreText();
+                        _kalanBedel -= 10;
+
                         _stayTimer = 0;
                     }
                     else

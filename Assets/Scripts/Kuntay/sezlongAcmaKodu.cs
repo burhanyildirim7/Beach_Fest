@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class sezlongAcmaKodu : MonoBehaviour
 {
-    [SerializeField] GameObject acilacakSezlong, kapacakObje;
+    [SerializeField] GameObject acilacakSezlong, kapacakObje, childObje;
 
     //[SerializeField] private Transform _spawnNoktasi;
 
@@ -30,6 +30,8 @@ public class sezlongAcmaKodu : MonoBehaviour
         {
             _clientIstekleriniKarsilamakIcin._doluMu = false;
             acilacakSezlong.SetActive(true);
+            //acilacakSezlong.GetComponent<AcilisAnimasyonScript>().AcilisAnim();
+            childObje.GetComponent<AcilisAnimasyonScript>().AcilisAnim();
             kapacakObje.SetActive(false);
             Destroy(other.gameObject);
 
@@ -38,7 +40,7 @@ public class sezlongAcmaKodu : MonoBehaviour
         }
         else if (other.gameObject.tag == "Player")
         {
-            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiObjeler.Count > 0)
+            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count > 0)
             {
                 other.gameObject.GetComponent<SirtCantasiScript>().StuffCek(transform);
 

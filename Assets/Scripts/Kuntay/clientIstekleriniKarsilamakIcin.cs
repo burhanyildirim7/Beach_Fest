@@ -15,9 +15,54 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
     private void Start()
     {
         _doluMu = false;
+        semsiye.SetActive(false);
+        dondurma.SetActive(false);
+        icecek.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Player")
+        {
+            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count > 0 && semsiyeIstiyor == true)
+            {
+                other.gameObject.GetComponent<SirtCantasiScript>().StuffCek(gameObject.transform);
+                semsiye.SetActive(true);
+                _dolduranClient.GetComponent<ClientAIScript>().IsteklerKarsilandi();
+                dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
+                semsiyeIstiyor = false;
+            }
+            else if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count > 0 && dondurmaIstiyor == true)
+            {
+                other.gameObject.GetComponent<SirtCantasiScript>().IceCreamCek();
+                dondurma.SetActive(true);
+                _dolduranClient.GetComponent<ClientAIScript>().IsteklerKarsilandi();
+                dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
+                dondurmaIstiyor = false;
+            }
+            else if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiDrinkObjeleri.Count > 0 && icecekIstiyor == true)
+            {
+                other.gameObject.GetComponent<SirtCantasiScript>().DrinkCek();
+                icecek.SetActive(true);
+                _dolduranClient.GetComponent<ClientAIScript>().IsteklerKarsilandi();
+                dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
+                icecekIstiyor = false;
+            }
+            else
+            {
+
+            }
+        }
+
+        if (other.gameObject.tag == "stuff")
+        {
+            Destroy(other.gameObject);
+        }
+        else
+        {
+
+        }
+
+        /*
         if (other.tag == "stuff" && semsiyeIstiyor == true)
         {
             semsiye.SetActive(true);
@@ -37,6 +82,7 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
         {
 
         }
+        */
     }
     private void OnTriggerExit(Collider other)
     {
@@ -46,6 +92,7 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
             dondurma.SetActive(false);
             icecek.SetActive(false);
             acilacakGrup.SetActive(true);
+            //kapatilacakGrup.GetComponent<AcilisAnimasyonScript>().ChildKapat();
             kapatilacakGrup.SetActive(false);
             dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
         }

@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StuffDolabiScript : MonoBehaviour
+public class DrinkDolabiScript : MonoBehaviour
 {
-    [Header("Uretilecek Stuff Objesi")]
-    [SerializeField] private GameObject _stuff;
-    [Header("Spawn Point")]
-    [SerializeField] private GameObject _spawnPoint;
     [Header("Stuff Toplama Hizi")]
     [SerializeField] private float _spawnHizi;
 
@@ -18,12 +14,12 @@ public class StuffDolabiScript : MonoBehaviour
     void Start()
     {
         _üretilenStuff = 0;
+        Invoke("Yerlestir", 1f);
     }
 
-
-    void Update()
+    private void Yerlestir()
     {
-
+        transform.localPosition = new Vector3(-2.1f, 0, 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,20 +52,13 @@ public class StuffDolabiScript : MonoBehaviour
         {
             _timer += Time.deltaTime;
 
-            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count == 0 && other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiDrinkObjeleri.Count == 0)
+            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiDrinkObjeleri.Count < other.gameObject.GetComponent<SirtCantasiScript>()._drinkStackSiniri)
             {
-                if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count < other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri)
+                if (_timer > _spawnHizi)
                 {
-                    if (_timer > _spawnHizi)
-                    {
-                        GameObject stuff = Instantiate(_stuff, _spawnPoint.transform.position, Quaternion.identity);
-                        other.gameObject.GetComponent<SirtCantasiScript>().StuffTopla(stuff);
-                        _timer = 0;
-                    }
-                    else
-                    {
 
-                    }
+                    other.gameObject.GetComponent<SirtCantasiScript>().DrinkTopla();
+                    _timer = 0;
                 }
                 else
                 {
@@ -80,6 +69,7 @@ public class StuffDolabiScript : MonoBehaviour
             {
 
             }
+
 
         }
         else

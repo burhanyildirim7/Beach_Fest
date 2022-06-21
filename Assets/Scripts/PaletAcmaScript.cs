@@ -30,6 +30,7 @@ public class PaletAcmaScript : MonoBehaviour
         {
             _yuzmeAlaniClientIstek._doluMu = false;
             acilacakSezlong.SetActive(true);
+            acilacakSezlong.GetComponent<AcilisAnimasyonScript>().AcilisAnim();
             kapacakObje.SetActive(false);
             Destroy(other.gameObject);
 
