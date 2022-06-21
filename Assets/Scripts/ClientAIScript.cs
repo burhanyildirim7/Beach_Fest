@@ -88,6 +88,13 @@ public class ClientAIScript : MonoBehaviour
     private int rota;
     private int isteksayi;
 
+    private bool _denizeGirdi;
+    private float _efektTimer;
+
+    [SerializeField] private GameObject _waterSpawnPoint;
+    [SerializeField] private GameObject _waterEfekt;
+    [SerializeField] private GameObject _yurumeEfekt;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -393,6 +400,26 @@ public class ClientAIScript : MonoBehaviour
 
             }
         }
+
+        _efektTimer += Time.deltaTime;
+
+        if (_denizeGirdi)
+        {
+            if (_efektTimer > 0.5f)
+            {
+                Instantiate(_waterEfekt, _waterSpawnPoint.transform.position, Quaternion.identity);
+                _efektTimer = 0;
+            }
+            else
+            {
+
+            }
+        }
+        else
+        {
+
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -707,6 +734,12 @@ public class ClientAIScript : MonoBehaviour
 
             //Debug.Log("Tarlada");
         }
+        else if (other.gameObject.tag == "DenizSiniri")
+        {
+            _denizeGirdi = true;
+            _yurumeEfekt.SetActive(false);
+            _efektTimer = 0;
+        }
         else
         {
 
@@ -817,6 +850,11 @@ public class ClientAIScript : MonoBehaviour
             {
 
             }
+        }
+        else if (other.gameObject.tag == "DenizSiniri")
+        {
+            _denizeGirdi = false;
+            _yurumeEfekt.SetActive(true);
         }
         else
         {

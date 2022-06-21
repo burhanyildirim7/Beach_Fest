@@ -19,6 +19,7 @@ TagManager:
   - AISpawnController
   - RotaOlustur
   - BedelOdemeMoney
+  - DenizSiniri
   layers:
   - Default
   - TransparentFX

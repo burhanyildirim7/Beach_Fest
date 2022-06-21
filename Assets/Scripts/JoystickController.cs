@@ -15,6 +15,11 @@ public class JoystickController : MonoBehaviour
 
     [SerializeField] private Animator _animator;
 
+
+
+
+
+
     public void FixedUpdate()
     {
         if (GameController.instance.isContinue == true && GameController.instance._kameraHareketli == false)
@@ -39,6 +44,7 @@ public class JoystickController : MonoBehaviour
             _velocityZ = _rigidbody.velocity.z;
 
 
+
             if (_rigidbody.velocity.x != 0 || _rigidbody.velocity.z != 0)
             {
                 if (_playerController._yuzuyorMu == true)
@@ -46,6 +52,8 @@ public class JoystickController : MonoBehaviour
                     _animator.SetBool("walk", false);
                     _animator.SetBool("swimidle", false);
                     _animator.SetBool("swim", true);
+
+
                 }
                 else
                 {
@@ -81,6 +89,7 @@ public class JoystickController : MonoBehaviour
                     _animator.SetBool("walk", false);
                     _animator.SetBool("swim", false);
                     _animator.SetBool("swimidle", true);
+
                 }
                 else
                 {
