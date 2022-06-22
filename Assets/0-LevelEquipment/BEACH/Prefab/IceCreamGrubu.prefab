@@ -999,6 +999,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bedelText: {fileID: 6387015969157594047}
+  _alan1Kabin1: 0
+  _alan1Kabin2: 0
+  _alan1Dus1: 0
+  _alan1SezlongAlani: 0
+  _alan1DenizAlani: 0
+  _alan1Drink: 0
+  _alan1IceCream: 1
   _odenecekBedel: 750
 --- !u!1 &1026058602648845318
 GameObject:

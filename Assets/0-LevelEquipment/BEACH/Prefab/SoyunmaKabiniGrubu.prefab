@@ -102,6 +102,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6739907804496644555, guid: 25a878ba4e49946b8a974d35319247d3, type: 3}
+      propertyPath: _alan1Kabin1
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25a878ba4e49946b8a974d35319247d3, type: 3}
 --- !u!4 &3170875649842562166 stripped
@@ -240,6 +244,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1900175546297750446, guid: 25a878ba4e49946b8a974d35319247d3, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739907804496644555, guid: 25a878ba4e49946b8a974d35319247d3, type: 3}
+      propertyPath: _alan1Kabin2
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

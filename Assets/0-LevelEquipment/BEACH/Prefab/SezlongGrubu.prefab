@@ -519,6 +519,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bedelText: {fileID: 3899279304947427547}
+  _alan1Kabin1: 0
+  _alan1Kabin2: 0
+  _alan1Dus1: 0
+  _alan1SezlongAlani: 1
+  _alan1DenizAlani: 0
+  _alan1Drink: 0
+  _alan1IceCream: 0
   _odenecekBedel: 250
 --- !u!1001 &486560975580285288
 PrefabInstance:

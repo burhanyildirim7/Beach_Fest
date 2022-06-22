@@ -83,6 +83,10 @@ public class ClientAIScript : MonoBehaviour
 
     public int _dusNumber;
 
+    public bool _boguluyor;
+
+    public bool _kurtarildi;
+
     private GameObject _rotaBaslangic;
 
     private int rota;
@@ -176,7 +180,14 @@ public class ClientAIScript : MonoBehaviour
 
         }
 
+        if (_kurtarildi)
+        {
+            _point = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        else
+        {
 
+        }
 
         if (GameController.instance.isContinue == true)
         {
@@ -507,6 +518,8 @@ public class ClientAIScript : MonoBehaviour
                     }
 
                     _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<YuzmeAlaniClientIstek>().DenizdenCikti();
+
+                    _canSimidi.SetActive(false);
                 }
                 else
                 {
@@ -662,7 +675,7 @@ public class ClientAIScript : MonoBehaviour
         }
         else if (other.gameObject == _aiHareketKontrol._yuzmeRotalari[rota])
         {
-            Debug.Log("HA BURAYA GELDI");
+            //Debug.Log("HA BURAYA GELDI");
             if (_yuzecek)
             {
                 if (_giysiliKarakter.activeSelf)
@@ -724,6 +737,30 @@ public class ClientAIScript : MonoBehaviour
             _yurumeEfekt.SetActive(false);
 
             _efektTimer = 0;
+
+
+        }
+        else if (other.gameObject.tag == "Player")
+        {
+            if (_boguluyor && other.gameObject.GetComponent<SirtCantasiScript>()._canSimidi.activeSelf)
+            {
+                _canSimidi.SetActive(true);
+                other.gameObject.GetComponent<SirtCantasiScript>()._canSimidi.SetActive(false);
+                gameObject.GetComponent<NavMeshAgent>().speed = 5;
+                _boguluyor = false;
+                _kurtarildi = true;
+
+                _semsiyeIstiyorEmoji.SetActive(false);
+                _dondurmaIstiyorEmoji.SetActive(false);
+                _icecekIstiyorEmoji.SetActive(false);
+                _canSimidiIstiyorEmoji.SetActive(false);
+                _istekKarsilandiEmoji.SetActive(true);
+            }
+            else
+            {
+
+            }
+
         }
         else
         {
@@ -841,6 +878,30 @@ public class ClientAIScript : MonoBehaviour
             _denizeGirdi = false;
             _yurumeEfekt.SetActive(true);
             _waterEfekt.SetActive(false);
+
+            if (_kurtarildi)
+            {
+                _kurtarildi = false;
+
+                _point = _rotaBaslangic.transform;
+
+                _yuzmedenDonuyor = true;
+
+                gameObject.GetComponent<NavMeshAgent>().speed = 2;
+
+                gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+
+                _semsiyeIstiyorEmoji.SetActive(false);
+                _dondurmaIstiyorEmoji.SetActive(false);
+                _icecekIstiyorEmoji.SetActive(false);
+                _canSimidiIstiyorEmoji.SetActive(false);
+                _istekKarsilandiEmoji.SetActive(false);
+                _istekKarsilandiEmoji.SetActive(true);
+            }
+            else
+            {
+
+            }
         }
         else
         {
@@ -1261,27 +1322,30 @@ public class ClientAIScript : MonoBehaviour
 
     private IEnumerator YuzmeyeDevamEdiyor()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(20f);
         //gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
 
-        _point = _rotaBaslangic.transform;
+        int bogulmaihtimal = Random.Range(0, 3);
 
-        _yuzmedenDonuyor = true;
+        if (bogulmaihtimal == 0)
+        {
+            _point = _rotaBaslangic.transform;
 
-        gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+            _yuzmedenDonuyor = true;
 
+            gameObject.transform.parent = GameObject.FindGameObjectWithTag("AIParent").transform;
+        }
+        else
+        {
+            _canSimidiIstiyorEmoji.SetActive(true);
+            _boguluyor = true;
+        }
 
+    }
 
-
-
-
-
-
-
-        //_kabineGit = true;
-        //_kabineGidiyor = false;
-        //_kabinSirasinda = false;
-
+    private IEnumerator BogulmaSenaryosu()
+    {
+        yield return new WaitForSeconds(1f);
     }
 
     private IEnumerator Dustayiz()
