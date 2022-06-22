@@ -23,7 +23,10 @@ public class SirtCantasiScript : MonoBehaviour
     [Header("Drink Yonetme Objeler")]
     [SerializeField] private GameObject _drinkTepsi;
     public List<GameObject> _tepsidekiDrinks = new List<GameObject>();
+    [Header("Can Simidi Yonetme Objeler")]
+    public GameObject _canSimidi;
 
+    [Header("Kontrol Amacli")]
     public int _cantadakiObjeSayisi;
 
     public int _cantadakiStuffSayisi;
@@ -48,7 +51,10 @@ public class SirtCantasiScript : MonoBehaviour
         _iceCreamStackSiniri = 1;
         _drinkStackSiniri = 1;
 
+        _canSimidi.SetActive(false);
+
         _iceCreamTepsi.SetActive(false);
+        _drinkTepsi.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -180,6 +186,13 @@ public class SirtCantasiScript : MonoBehaviour
 
     }
 
+    public void CanSimidiTopla()
+    {
+
+        _canSimidi.SetActive(true);
+
+    }
+
 
 
     public void StuffCek(Transform malKabulNoktasi)
@@ -249,6 +262,11 @@ public class SirtCantasiScript : MonoBehaviour
         }
     }
 
+    public void CanSimidiCek()
+    {
+        _canSimidi.SetActive(false);
+    }
+
 
     public void CopKutusunaAt(Transform malKabulNoktasi)
     {
@@ -256,6 +274,7 @@ public class SirtCantasiScript : MonoBehaviour
 
         IceCreamCek();
         DrinkCek();
+        CanSimidiCek();
     }
 
     public void TepsiBosalt()
@@ -276,7 +295,7 @@ public class SirtCantasiScript : MonoBehaviour
             }
         }
 
-        if (_cantadakiIceCreamSayisi > 0)
+        if (_cantadakiIceCreamObjeleri.Count > 0)
         {
             _iceCreamTepsi.SetActive(true);
 
@@ -287,7 +306,7 @@ public class SirtCantasiScript : MonoBehaviour
 
         }
 
-        if (_cantadakiDrinkSayisi > 0)
+        if (_cantadakiDrinkObjeleri.Count > 0)
         {
             _drinkTepsi.SetActive(true);
 
@@ -300,7 +319,7 @@ public class SirtCantasiScript : MonoBehaviour
 
         if (_cantadakiObjeler.Count == 0)
         {
-            if (_cantadakiIceCreamSayisi > 0 || _cantadakiDrinkSayisi > 0)
+            if (_cantadakiIceCreamObjeleri.Count > 0 || _cantadakiDrinkObjeleri.Count > 0)
             {
 
                 _playerController._elindeStaffVarMi = true;
@@ -346,6 +365,22 @@ public class SirtCantasiScript : MonoBehaviour
         {
             Destroy(_cantadakiStuffObjeleri[0].gameObject);
             _cantadakiStuffObjeleri.RemoveAt(0);
+
+        }
+
+        int cantadakidrinkobjesayi = _cantadakiDrinkObjeleri.Count;
+        for (int i = 0; i < cantadakidrinkobjesayi; i++)
+        {
+            _cantadakiDrinkObjeleri[0].gameObject.SetActive(false);
+            _cantadakiDrinkObjeleri.RemoveAt(0);
+
+        }
+
+        int cantadakiicecreamobjesayi = _cantadakiIceCreamObjeleri.Count;
+        for (int i = 0; i < cantadakiicecreamobjesayi; i++)
+        {
+            _cantadakiIceCreamObjeleri[0].gameObject.SetActive(false);
+            _cantadakiIceCreamObjeleri.RemoveAt(0);
 
         }
 

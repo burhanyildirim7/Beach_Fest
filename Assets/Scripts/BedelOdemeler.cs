@@ -14,6 +14,12 @@ public class BedelOdemeler : MonoBehaviour
     private float _velocityX;
     private float _velocityZ;
 
+    private Vector3 _boyut;
+
+    private void Start()
+    {
+        _boyut = _bedelText.transform.parent.gameObject.transform.parent.gameObject.transform.localScale;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,8 +28,34 @@ public class BedelOdemeler : MonoBehaviour
             BedelOdeUlen();
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag == "Player")
+        {
+            _bedelText.transform.parent.gameObject.transform.parent.gameObject.transform.DOScale(new Vector3(_boyut.x * 1.2f, _boyut.y * 1.2f, _boyut.z * 1.2f), 0.1f).OnComplete(() => BoyutGuncelle());
+
+        }
+        else
+        {
+
+        }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            _bedelText.transform.parent.gameObject.transform.parent.gameObject.transform.DOScale(new Vector3(_boyut.x / 1.2f, _boyut.y / 1.2f, _boyut.z / 1.2f), 0.1f).OnComplete(() => BoyutGuncelle());
+
+        }
+        else
+        {
+
+        }
+    }
+
+    private void BoyutGuncelle()
+    {
+        _boyut = _bedelText.transform.parent.gameObject.transform.parent.gameObject.transform.localScale;
+    }
     public void BedelOdeUlen()
     {
         //_velocityX = GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>()._velocityX;

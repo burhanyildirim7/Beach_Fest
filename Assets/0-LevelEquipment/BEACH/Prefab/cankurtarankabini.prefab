@@ -186,7 +186,6 @@ GameObject:
   - component: {fileID: 2520384455906002528}
   - component: {fileID: 2520384455906002589}
   - component: {fileID: 2520384455906002590}
-  - component: {fileID: 2520384455906002591}
   m_Layer: 0
   m_Name: UpgradeYeri
   m_TagString: Untagged
@@ -260,20 +259,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2520384455906002591
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2520384455906002529}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2520384456423504448
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +453,7 @@ GameObject:
   - component: {fileID: 4295491251734491624}
   - component: {fileID: 2384523794182096441}
   - component: {fileID: 8493585222145086593}
+  - component: {fileID: 7470224164452036473}
   m_Layer: 0
   m_Name: UpgradeAlanCollideri
   m_TagString: Untagged
@@ -569,6 +555,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &7470224164452036473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2799495034985545673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0012fb447a040e9ae6dc37c176b635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 2520384455906002529}
 --- !u!1 &3599621302249550865
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2800631454149446234, guid: 328cf206c8452490cbd528e741fd4b8e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 516.46106
+      value: 233.25754
       objectReference: {fileID: 0}
     - target: {fileID: 5006960991762700774, guid: 328cf206c8452490cbd528e741fd4b8e, type: 3}
       propertyPath: m_Name
@@ -838,11 +837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5495180945294262807, guid: 328cf206c8452490cbd528e741fd4b8e, type: 3}
       propertyPath: m_Size
-      value: 0
+      value: 0.9999991
       objectReference: {fileID: 0}
     - target: {fileID: 5495180945294262807, guid: 328cf206c8452490cbd528e741fd4b8e, type: 3}
       propertyPath: m_Value
-      value: -1.6666666
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8283249461069001506, guid: 328cf206c8452490cbd528e741fd4b8e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -854,11 +853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8628922968922092523, guid: 328cf206c8452490cbd528e741fd4b8e, type: 3}
       propertyPath: m_Size
-      value: 0
+      value: 0.62508875
       objectReference: {fileID: 0}
     - target: {fileID: 8628922968922092523, guid: 328cf206c8452490cbd528e741fd4b8e, type: 3}
       propertyPath: m_Value
-      value: 0.17006043
+      value: 0.00000013083192
       objectReference: {fileID: 0}
     - target: {fileID: 8890784936756930447, guid: 328cf206c8452490cbd528e741fd4b8e, type: 3}
       propertyPath: m_Pivot.x

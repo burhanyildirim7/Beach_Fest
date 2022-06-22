@@ -24,13 +24,12 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool _yuzuyorMu;
     [HideInInspector] public bool _elindeStaffVarMi;
 
-    [SerializeField] private GameObject _canSimidi;
 
     [SerializeField] private GameObject _bedelOdemePara;
 
     [SerializeField] private GameObject _moneySpawnPoint;
 
-    [SerializeField] private GameObject _waterSpawnPoint;
+
     [SerializeField] private GameObject _waterEfekt;
     [SerializeField] private GameObject _yurumeEfekt;
 
@@ -57,29 +56,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-        _efektTimer += Time.deltaTime;
-
-        if (_denizeGirdi)
-        {
-            if (_efektTimer > 0.5f)
-            {
-                Instantiate(_waterEfekt, _waterSpawnPoint.transform.position, Quaternion.identity);
-                _efektTimer = 0;
-            }
-            else
-            {
-
-            }
-        }
-        else
-        {
-
-        }
-
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -87,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "YuzmeAlani")
         {
             _yuzuyorMu = true;
-            _canSimidi.SetActive(true);
+
         }
         else if (other.gameObject.tag == "money")
         {
@@ -102,8 +78,10 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.tag == "DenizSiniri")
         {
             _denizeGirdi = true;
+            _waterEfekt.SetActive(true);
             _yurumeEfekt.SetActive(false);
-            _efektTimer = 0;
+            gameObject.GetComponent<SirtCantasiScript>().SirtCantasiLevelStart();
+
         }
         else
         {
@@ -129,6 +107,7 @@ public class PlayerController : MonoBehaviour
                     {
                         _paraUI.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).OnComplete(() => _paraUI.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f));
                         GameObject para = Instantiate(_bedelOdemePara, _moneySpawnPoint.transform.position, Quaternion.identity);
+                        para.transform.rotation = Quaternion.Euler(90, 0, 0);
                         para.transform.DOMove(other.gameObject.transform.position, 1f);
                         //other.GetComponent<BedelOdemeler>().BedelOdeUlen();
                         PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 10);
@@ -166,12 +145,13 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "YuzmeAlani")
         {
             _yuzuyorMu = false;
-            _canSimidi.SetActive(false);
+
         }
         else if (other.gameObject.tag == "DenizSiniri")
         {
             _denizeGirdi = false;
             _yurumeEfekt.SetActive(true);
+            _waterEfekt.SetActive(false);
         }
         else
         {
@@ -217,7 +197,7 @@ public class PlayerController : MonoBehaviour
 
         _denizeGirdi = false;
 
-        _canSimidi.SetActive(false);
+
 
         Elephant.LevelStarted(1);
 

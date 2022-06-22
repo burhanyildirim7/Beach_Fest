@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IceCreamDolabiScript : MonoBehaviour
+public class CanSimidiSandigi : MonoBehaviour
 {
-
     [Header("Stuff Toplama Hizi")]
     [SerializeField] private float _spawnHizi;
     [Header("Slider")]
@@ -34,7 +33,18 @@ public class IceCreamDolabiScript : MonoBehaviour
             _timer = 0;
             _slider.value = 0;
             _sinirText.gameObject.SetActive(true);
-            _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._iceCreamStackSiniri.ToString();
+
+            if (other.gameObject.GetComponent<SirtCantasiScript>()._canSimidi.activeSelf == false)
+            {
+
+                _sinirText.text = "0 / 1";
+
+            }
+            else
+            {
+                _sinirText.text = "1 / 1";
+            }
+
         }
         else
         {
@@ -67,26 +77,19 @@ public class IceCreamDolabiScript : MonoBehaviour
             if (_velocityX == 0 || _velocityZ == 0)
             {
 
-                if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiDrinkObjeleri.Count == 0 && other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count == 0)
+                if (other.gameObject.GetComponent<SirtCantasiScript>()._canSimidi.activeSelf == false)
                 {
-                    if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count < other.gameObject.GetComponent<SirtCantasiScript>()._iceCreamStackSiniri)
+
+                    _timer += Time.deltaTime;
+                    _slider.value += Time.deltaTime;
+
+                    if (_timer > _spawnHizi)
                     {
 
-                        _timer += Time.deltaTime;
-                        _slider.value += Time.deltaTime;
-
-                        if (_timer > _spawnHizi)
-                        {
-
-                            other.gameObject.GetComponent<SirtCantasiScript>().IceCreamTopla();
-                            _timer = 0;
-                            _slider.value = 0;
-                            _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._iceCreamStackSiniri.ToString();
-                        }
-                        else
-                        {
-
-                        }
+                        other.gameObject.GetComponent<SirtCantasiScript>().CanSimidiTopla();
+                        _timer = 0;
+                        _slider.value = 0;
+                        _sinirText.text = "0 / 1";
                     }
                     else
                     {
@@ -95,22 +98,24 @@ public class IceCreamDolabiScript : MonoBehaviour
                 }
                 else
                 {
-
+                    _sinirText.text = "1 / 1";
                 }
-
-
 
             }
             else
             {
 
             }
+
+
         }
         else
         {
 
         }
-
-
     }
+
+
+
+
 }

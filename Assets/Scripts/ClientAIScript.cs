@@ -91,7 +91,7 @@ public class ClientAIScript : MonoBehaviour
     private bool _denizeGirdi;
     private float _efektTimer;
 
-    [SerializeField] private GameObject _waterSpawnPoint;
+    //[SerializeField] private GameObject _waterSpawnPoint;
     [SerializeField] private GameObject _waterEfekt;
     [SerializeField] private GameObject _yurumeEfekt;
 
@@ -401,24 +401,7 @@ public class ClientAIScript : MonoBehaviour
             }
         }
 
-        _efektTimer += Time.deltaTime;
 
-        if (_denizeGirdi)
-        {
-            if (_efektTimer > 0.5f)
-            {
-                Instantiate(_waterEfekt, _waterSpawnPoint.transform.position, Quaternion.identity);
-                _efektTimer = 0;
-            }
-            else
-            {
-
-            }
-        }
-        else
-        {
-
-        }
 
     }
 
@@ -737,7 +720,9 @@ public class ClientAIScript : MonoBehaviour
         else if (other.gameObject.tag == "DenizSiniri")
         {
             _denizeGirdi = true;
+            _waterEfekt.SetActive(true);
             _yurumeEfekt.SetActive(false);
+
             _efektTimer = 0;
         }
         else
@@ -855,6 +840,7 @@ public class ClientAIScript : MonoBehaviour
         {
             _denizeGirdi = false;
             _yurumeEfekt.SetActive(true);
+            _waterEfekt.SetActive(false);
         }
         else
         {

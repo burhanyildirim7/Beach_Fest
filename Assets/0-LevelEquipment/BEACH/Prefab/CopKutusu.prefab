@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 677998456577258165}
   - component: {fileID: 7044467321215410648}
   - component: {fileID: 2476437469125690172}
+  - component: {fileID: 8851223606147557211}
   m_Layer: 0
   m_Name: TrashControlCollider
   m_TagString: Untagged
@@ -226,6 +227,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kapakAnimator: {fileID: 6909128910406983578}
   _malKabulNoktasi: {fileID: 5828992337186917118}
+--- !u!114 &8851223606147557211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722915051626506611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0012fb447a040e9ae6dc37c176b635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 5056243081392419019}
 --- !u!1 &3925796020314139860
 GameObject:
   m_ObjectHideFlags: 0
