@@ -17,7 +17,10 @@ public class JoystickController : MonoBehaviour
 
 
 
-
+    private void Start()
+    {
+        PlayerSpeedGuncelle();
+    }
 
 
     public void FixedUpdate()
@@ -129,6 +132,26 @@ public class JoystickController : MonoBehaviour
 
 
 
+    }
+
+    public void PlayerSpeedGuncelle()
+    {
+        if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 0)
+        {
+            _speed = 3;
+        }
+        else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 1)
+        {
+            _speed = 4;
+        }
+        else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 2)
+        {
+            _speed = 5;
+        }
+        else
+        {
+
+        }
     }
 
 

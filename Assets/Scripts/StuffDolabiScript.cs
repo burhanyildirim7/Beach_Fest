@@ -30,10 +30,7 @@ public class StuffDolabiScript : MonoBehaviour
     }
 
 
-    void Update()
-    {
 
-    }
 
     private void OnTriggerEnter(Collider other)
     {

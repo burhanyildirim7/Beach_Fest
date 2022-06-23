@@ -55,6 +55,8 @@ public class SirtCantasiScript : MonoBehaviour
 
         _iceCreamTepsi.SetActive(false);
         _drinkTepsi.SetActive(false);
+
+        PlayerCapacityGuncelle();
     }
 
     private void FixedUpdate()
@@ -81,6 +83,32 @@ public class SirtCantasiScript : MonoBehaviour
             _iceCreamTepsi.SetActive(false);
         }
         */
+    }
+
+    public void PlayerCapacityGuncelle()
+    {
+        if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 0)
+        {
+            _stuffStackSiniri = 4;
+            _iceCreamStackSiniri = 1;
+            _drinkStackSiniri = 1;
+        }
+        else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 1)
+        {
+            _stuffStackSiniri = 7;
+            _iceCreamStackSiniri = 2;
+            _drinkStackSiniri = 2;
+        }
+        else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 2)
+        {
+            _stuffStackSiniri = 10;
+            _iceCreamStackSiniri = 3;
+            _drinkStackSiniri = 3;
+        }
+        else
+        {
+
+        }
     }
 
     public void StuffTopla(GameObject other)

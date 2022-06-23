@@ -7,11 +7,19 @@ public class UIController : MonoBehaviour
 {
     public static UIController instance; // Singleton yapisi icin gerekli ornek
 
-    public GameObject TapToStartPanel, GamePanel;
+    public GameObject TapToStartPanel, GamePanel, _upgradePanel;
     public Text gamePlayScoreText, tapToStartScoreText;
 
+    [Header("UPGRADE EKRANI")]
+    [Header("Player")]
+    [SerializeField] private Text _playerSpeedPriceText;
+    [SerializeField] private Slider _playerSpeedSlider;
+    [SerializeField] private Button _playerSpeedButton;
+    [SerializeField] private Text _playerCapacityPriceText;
+    [SerializeField] private Slider _playerCapacitySlider;
+    [SerializeField] private Button _playerCapacityButton;
 
-
+    private bool _upgradeScreenAcik;
 
     // singleton yapisi burada kuruluyor.
     private void Awake()
@@ -23,12 +31,26 @@ public class UIController : MonoBehaviour
     private void Start()
     {
         StartUI();
+
+        _upgradeScreenAcik = false;
     }
 
     // Oyun ilk acildiginda calisacak olan ui fonksiyonu. 
     public void StartUI()
     {
         ActivateTapToStartScreen();
+    }
+
+    private void FixedUpdate()
+    {
+        if (_upgradeScreenAcik)
+        {
+            UpgradeScreenOpen();
+        }
+        else
+        {
+
+        }
     }
 
     /// <summary>
@@ -115,84 +137,6 @@ public class UIController : MonoBehaviour
         //StartCoroutine(WinScreenDelay());
     }
 
-    /*
-    IEnumerator WinScreenDelay()
-    {
-        WinPanel.SetActive(true);
-        winScreenScoreText.text = "0";
-        int sayac = 0;
-        while (sayac < GameController.instance.score)
-        {
-            sayac += PlayerController.instance.collectibleDegeri;
-            if (sayac % 2 * PlayerController.instance.collectibleDegeri == 0)
-            {
-                GameObject effectObj = Instantiate(winScreenEffectObject, new Vector3(144, 400, 0), Quaternion.identity, winScreenCoinImage.transform);
-                effectObj.transform.localPosition = new Vector3(144, 300, 0);
-                effectObj.transform.localRotation = Quaternion.Euler(0, 0, winScreenCoinImage.transform.localRotation.z);
-                effectObj.GetComponent<Image>().sprite = winScreenCoinImage.GetComponent<Image>().sprite;
-                effectObj.transform.localScale = Vector3.one * .2f;
-                StartCoroutine(WinScreenEffect(effectObj));
-            }
-            winScreenScoreText.text = sayac.ToString();
-            yield return new WaitForSeconds(.05f);
-        }
-    }
-
-    IEnumerator WinScreenEffect(GameObject effectObj)
-    {
-        float sayac = 0;
-        float scale = 0;
-        while (Vector2.Distance(effectObj.transform.position, winScreenCoinImage.transform.position) > 0.05f)
-        {
-            effectObj.transform.position = Vector2.Lerp(effectObj.transform.position, winScreenCoinImage.transform.position, sayac);
-            scale = Mathf.Lerp(effectObj.transform.localScale.x, winScreenCoinImage.transform.localScale.x, sayac);
-            effectObj.transform.localScale = Vector3.one * scale;
-            sayac += .02f;
-            yield return new WaitForSeconds(.015f);
-        }
-        Destroy(effectObj);
-    }
-
-    IEnumerator StartScreenCoinEffect()
-    {
-        startScreenCoinImage.GetComponent<Image>().sprite = winScreenCoinImage.GetComponent<Image>().sprite;
-        startScreenCoinImage.SetActive(true);
-        float sayac = 0;
-        int adet = 0;
-        while (Vector2.Distance(startScreenCoinImage.transform.position, tapToStartScoreText.transform.position) >= 5f)
-        {
-            adet++;
-            sayac += .01f;
-            startScreenCoinImage.transform.position = Vector2.Lerp(startScreenCoinImage.transform.position, tapToStartScoreText.transform.position, sayac);
-            yield return new WaitForSeconds(.025f);
-            if (adet % 3 == 0)
-            {
-                GameObject coin = Instantiate(winScreenEffectObject, startScreenCoinImage.transform.position, Quaternion.identity, TapToStartPanel.transform);
-                coin.GetComponent<Image>().sprite = winScreenCoinImage.GetComponent<Image>().sprite;
-                coin.transform.rotation = startScreenCoinImage.transform.rotation;
-                StartCoroutine(StartScreenCoinsDissolve(coin));
-            }
-        }
-        Instantiate(scoreEffect, new Vector3(1.34f, 5.43F, -1.15F), Quaternion.identity);
-        ScoreTextAnim.SetTrigger("score");
-        startScreenCoinImage.SetActive(false);
-        startScreenCoinImage.transform.localPosition = new Vector3(0, -446, 0);
-    }
-    */
-
-    IEnumerator StartScreenCoinsDissolve(GameObject obj)
-    {
-        Color tempColor = obj.GetComponent<Image>().color;
-        while (obj.transform.localScale.x > .2f)
-        {
-            obj.transform.localScale = new Vector3(obj.transform.localScale.x - .05f, obj.transform.localScale.y - .05f, obj.transform.localScale.z - .05f);
-            tempColor.a = tempColor.a - .05f;
-            obj.GetComponent<Image>().color = tempColor;
-            yield return new WaitForSeconds(.03f);
-        }
-        Destroy(obj);
-    }
-
     /// <summary>
     /// Bu fonksiyon loose secreeni acar. 
     /// </summary>
@@ -225,6 +169,189 @@ public class UIController : MonoBehaviour
         tapToStartScoreText.text = PlayerPrefs.GetInt("Money").ToString();
     }
 
+    public void UpgradeCanvasAc()
+    {
+        //GamePanel.SetActive(false);
+        _upgradePanel.SetActive(true);
+        _upgradeScreenAcik = true;
+    }
 
+    public void UpgradeCanvasKapat()
+    {
+        _upgradePanel.SetActive(false);
+        _upgradeScreenAcik = false;
+        //GamePanel.SetActive(true);
+
+    }
+
+
+    //------------------UPGRADE EKRANI----------------------------------------------------
+
+    private void UpgradeScreenOpen()
+    {
+
+        //-------PLAYER SPEED--------
+
+        if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 0)
+        {
+            _playerSpeedPriceText.text = "$1000";
+            _playerSpeedSlider.value = 1;
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _playerSpeedButton.interactable = false;
+            }
+            else
+            {
+                _playerSpeedButton.interactable = true;
+            }
+        }
+        else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 1)
+        {
+            _playerSpeedPriceText.text = "$2000";
+            _playerSpeedSlider.value = 2;
+
+            if (PlayerPrefs.GetInt("Money") < 2000)
+            {
+                _playerSpeedButton.interactable = false;
+            }
+            else
+            {
+                _playerSpeedButton.interactable = true;
+            }
+        }
+        else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 2)
+        {
+            _playerSpeedPriceText.text = "MAX LEVEL";
+            _playerSpeedSlider.value = 3;
+
+
+            _playerSpeedButton.interactable = false;
+
+        }
+        else
+        {
+
+        }
+
+        //-------PLAYER CAPACITY--------
+
+        if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 0)
+        {
+            _playerCapacityPriceText.text = "$1000";
+            _playerCapacitySlider.value = 1;
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _playerCapacityButton.interactable = false;
+            }
+            else
+            {
+                _playerCapacityButton.interactable = true;
+            }
+        }
+        else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 1)
+        {
+            _playerCapacityPriceText.text = "$2000";
+            _playerCapacitySlider.value = 2;
+
+            if (PlayerPrefs.GetInt("Money") < 2000)
+            {
+                _playerCapacityButton.interactable = false;
+            }
+            else
+            {
+                _playerCapacityButton.interactable = true;
+            }
+        }
+        else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 2)
+        {
+            _playerCapacityPriceText.text = "MAX LEVEL";
+            _playerCapacitySlider.value = 3;
+
+
+            _playerCapacityButton.interactable = false;
+
+        }
+        else
+        {
+
+        }
+    }
+
+    public void PlayerSpeedButton()
+    {
+        if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 0)
+        {
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _playerSpeedButton.interactable = false;
+            }
+            else
+            {
+                _playerSpeedButton.interactable = true;
+                PlayerPrefs.SetInt("PlayerSpeedLevel", 1);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>().PlayerSpeedGuncelle();
+            }
+        }
+        else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 1)
+        {
+
+
+            if (PlayerPrefs.GetInt("Money") < 2000)
+            {
+                _playerSpeedButton.interactable = false;
+            }
+            else
+            {
+                _playerSpeedButton.interactable = true;
+                PlayerPrefs.SetInt("PlayerSpeedLevel", 2);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>().PlayerSpeedGuncelle();
+            }
+        }
+        else
+        {
+
+        }
+    }
+
+
+    public void PlayerCapacityButton()
+    {
+        if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 0)
+        {
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _playerCapacityButton.interactable = false;
+            }
+            else
+            {
+                _playerCapacityButton.interactable = true;
+                PlayerPrefs.SetInt("PlayerCapacityLevel", 1);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>().PlayerCapacityGuncelle();
+            }
+        }
+        else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 1)
+        {
+
+
+            if (PlayerPrefs.GetInt("Money") < 2000)
+            {
+                _playerCapacityButton.interactable = false;
+            }
+            else
+            {
+                _playerCapacityButton.interactable = true;
+                PlayerPrefs.SetInt("PlayerCapacityLevel", 2);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>().PlayerCapacityGuncelle();
+            }
+        }
+        else
+        {
+
+        }
+    }
 
 }
