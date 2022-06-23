@@ -3991,7 +3991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4375957104425461223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9811,9 +9811,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 810909050933733220}
+  - component: {fileID: 7523210411228551908}
+  - component: {fileID: 2959387475196114370}
+  - component: {fileID: 8591080121049533433}
+  - component: {fileID: 8241574535803118428}
   m_Layer: 0
   m_Name: Barmen1
-  m_TagString: Untagged
+  m_TagString: Garson
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9835,6 +9839,82 @@ Transform:
   m_Father: {fileID: 8575297975613754295}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7523210411228551908
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782820943378575704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.5
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 0, y: 5, z: 0}
+--- !u!54 &2959387475196114370
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782820943378575704}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!195 &8591080121049533433
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782820943378575704}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2.5
+  m_Speed: 3
+  m_Acceleration: 10
+  avoidancePriority: 50
+  m_AngularSpeed: 360
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 10
+  m_BaseOffset: 0
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &8241574535803118428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782820943378575704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce6b6d417244eb2ac8be1ad47651e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 8591080121049533433}
+  _agentAnimator: {fileID: 7168605025363270146}
+  _stackNoktasi: {fileID: 5515819587993299603}
+  _drinkTepsi: {fileID: 8575297975654619329}
+  _tepsidekiDrinks:
+  - {fileID: 8575297975735155321}
+  - {fileID: 8575297975425255728}
+  - {fileID: 8575297975142458371}
+  _cantadakiDrinkObjeleri: []
+  _sezlonglar: []
+  _drinkStackSiniri: 1
+  _cantadakiDrinkSayisi: 0
 --- !u!1 &4808601207661629136
 GameObject:
   m_ObjectHideFlags: 0
@@ -18876,6 +18956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8575297975075333500}
+  - component: {fileID: 7168605025363270146}
   m_Layer: 0
   m_Name: garsonKarakter
   m_TagString: Untagged
@@ -18902,6 +18983,26 @@ Transform:
   m_Father: {fileID: 8575297975851879331}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7168605025363270146
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575297975075333501}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4989a641ab0ca4df1b5b131828d80dd5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8575297975112363226
 GameObject:
   m_ObjectHideFlags: 0
@@ -18982,7 +19083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8575297975142458370
 Transform:
   m_ObjectHideFlags: 0
@@ -19499,7 +19600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8575297975425255731
 Transform:
   m_ObjectHideFlags: 0
@@ -20334,7 +20435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8575297975735155320
 Transform:
   m_ObjectHideFlags: 0

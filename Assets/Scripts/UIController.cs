@@ -10,6 +10,9 @@ public class UIController : MonoBehaviour
     public GameObject TapToStartPanel, GamePanel, _upgradePanel;
     public Text gamePlayScoreText, tapToStartScoreText;
 
+    [Header("GEREKLI OBJELER")]
+    [SerializeField] private GameObject _drinkAlani;
+
     [Header("UPGRADE EKRANI")]
     [Header("Player")]
     [SerializeField] private Text _playerSpeedPriceText;
@@ -18,6 +21,11 @@ public class UIController : MonoBehaviour
     [SerializeField] private Text _playerCapacityPriceText;
     [SerializeField] private Slider _playerCapacitySlider;
     [SerializeField] private Button _playerCapacityButton;
+    [Header("Garson")]
+    [SerializeField] private Text _garsonAcmaPriceText;
+    [SerializeField] private Slider _garsonAcmaSlider;
+    [SerializeField] private Button _garsonAcmaButton;
+
 
     private bool _upgradeScreenAcik;
 
@@ -277,6 +285,45 @@ public class UIController : MonoBehaviour
         {
 
         }
+
+
+        //-------GARSON SATIN AL--------
+
+        if (PlayerPrefs.GetInt("GarsonSayisi") == 0)
+        {
+            if (_drinkAlani.activeSelf)
+            {
+                _garsonAcmaPriceText.text = "$1000";
+                _garsonAcmaSlider.value = 0;
+
+                if (PlayerPrefs.GetInt("Money") < 1000)
+                {
+                    _garsonAcmaButton.interactable = false;
+                }
+                else
+                {
+                    _garsonAcmaButton.interactable = true;
+                }
+            }
+            else
+            {
+                _garsonAcmaPriceText.text = "BUY BEACH PUB";
+                _garsonAcmaSlider.value = 0;
+                _garsonAcmaButton.interactable = false;
+            }
+
+        }
+        else if (PlayerPrefs.GetInt("GarsonSayisi") == 1)
+        {
+            _garsonAcmaPriceText.text = "EXPAND 2. AREA";
+            _garsonAcmaSlider.value = 1;
+            _garsonAcmaButton.interactable = false;
+
+        }
+        else
+        {
+
+        }
     }
 
     public void PlayerSpeedButton()
@@ -347,6 +394,37 @@ public class UIController : MonoBehaviour
                 PlayerPrefs.SetInt("PlayerCapacityLevel", 2);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>().PlayerCapacityGuncelle();
             }
+        }
+        else
+        {
+
+        }
+    }
+
+    public void GarsonSatinAlButton()
+    {
+        if (PlayerPrefs.GetInt("GarsonSayisi") == 0)
+        {
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _garsonAcmaButton.interactable = false;
+            }
+            else
+            {
+                _garsonAcmaButton.interactable = true;
+                PlayerPrefs.SetInt("GarsonSayisi", 1);
+                _drinkAlani.GetComponent<garsonAcmaScripti>().GarsonAc();
+            }
+        }
+        else if (PlayerPrefs.GetInt("GarsonSayisi") == 1)
+        {
+
+
+
+            _garsonAcmaButton.interactable = false;
+
+
         }
         else
         {

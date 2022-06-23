@@ -20,6 +20,7 @@ TagManager:
   - RotaOlustur
   - BedelOdemeMoney
   - DenizSiniri
+  - Garson
   layers:
   - Default
   - TransparentFX

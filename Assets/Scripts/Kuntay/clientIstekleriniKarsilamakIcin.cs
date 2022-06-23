@@ -52,6 +52,25 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
 
             }
         }
+        else if (other.gameObject.tag == "Garson")
+        {
+            if (other.gameObject.GetComponent<GarsonScript>()._cantadakiDrinkObjeleri.Count > 0 && icecekIstiyor == true)
+            {
+                other.gameObject.GetComponent<GarsonScript>().DrinkCek();
+                icecek.SetActive(true);
+                _dolduranClient.GetComponent<ClientAIScript>().IsteklerKarsilandi();
+                dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
+                icecekIstiyor = false;
+            }
+            else
+            {
+
+            }
+        }
+        else
+        {
+
+        }
 
         if (other.gameObject.tag == "stuff")
         {

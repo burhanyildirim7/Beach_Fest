@@ -3587,12 +3587,16 @@ MonoBehaviour:
   _upgradePanel: {fileID: 2870021843916456923}
   gamePlayScoreText: {fileID: 2037673478107303736}
   tapToStartScoreText: {fileID: 1511411089}
+  _drinkAlani: {fileID: 1242565898}
   _playerSpeedPriceText: {fileID: 5757677944544308237}
   _playerSpeedSlider: {fileID: 2428814725937959711}
   _playerSpeedButton: {fileID: 9103805037973821447}
   _playerCapacityPriceText: {fileID: 4226969762498339157}
   _playerCapacitySlider: {fileID: 2428814724976712145}
   _playerCapacityButton: {fileID: 532465207992456683}
+  _garsonAcmaPriceText: {fileID: 2706359057005560165}
+  _garsonAcmaSlider: {fileID: 2428814724801086800}
+  _garsonAcmaButton: {fileID: 7594323295353368615}
 --- !u!4 &955729543
 Transform:
   m_ObjectHideFlags: 0
@@ -4214,6 +4218,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207765044}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1242565898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8128721630058761202, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+  m_PrefabInstance: {fileID: 859086586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1298949706 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6493155770808671153, guid: 348e348e576ba40b7816430b5f1c369f, type: 3}
@@ -18820,7 +18829,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1691390642594012805}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955729542}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: GarsonSatinAlButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7607302203809528460
 GameObject:
   m_ObjectHideFlags: 0

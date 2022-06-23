@@ -13,6 +13,7 @@ public class DrinkDolabiScript : MonoBehaviour
     [SerializeField] private Text _sinirText;
 
     private float _timer;
+    private float _garsonTimer;
 
     private int _üretilenStuff;
 
@@ -40,6 +41,10 @@ public class DrinkDolabiScript : MonoBehaviour
             _sinirText.gameObject.SetActive(true);
             _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiDrinkObjeleri.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._drinkStackSiniri.ToString();
         }
+        else if (other.gameObject.tag == "Garson")
+        {
+            _garsonTimer = 0;
+        }
         else
         {
 
@@ -53,6 +58,10 @@ public class DrinkDolabiScript : MonoBehaviour
             _timer = 0;
             _slider.value = 0;
             _sinirText.gameObject.SetActive(false);
+        }
+        else if (other.gameObject.tag == "Garson")
+        {
+            _garsonTimer = 0;
         }
         else
         {
@@ -108,6 +117,33 @@ public class DrinkDolabiScript : MonoBehaviour
             {
 
             }
+        }
+        else if (other.gameObject.tag == "Garson")
+        {
+
+            if (other.gameObject.GetComponent<GarsonScript>()._cantadakiDrinkObjeleri.Count < other.gameObject.GetComponent<GarsonScript>()._drinkStackSiniri)
+            {
+                _garsonTimer += Time.deltaTime;
+
+
+                if (_garsonTimer > _spawnHizi)
+                {
+
+                    other.gameObject.GetComponent<GarsonScript>().DrinkTopla();
+                    _garsonTimer = 0;
+
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+
         }
         else
         {

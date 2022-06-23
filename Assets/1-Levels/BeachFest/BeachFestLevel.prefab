@@ -13089,6 +13089,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7149528454119156309, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149528454119156309, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8424157057458687455, guid: ba1c9b4a35558426ea71288f04a3750d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -14392,6 +14400,50 @@ PrefabInstance:
       propertyPath: dondurmaciPaneli
       value: 
       objectReference: {fileID: 5619684337484335988}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[0]
+      value: 
+      objectReference: {fileID: 333408717360458207}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[1]
+      value: 
+      objectReference: {fileID: 3782205691011283198}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[2]
+      value: 
+      objectReference: {fileID: 3782205689387795441}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[3]
+      value: 
+      objectReference: {fileID: 3782205689852535467}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[4]
+      value: 
+      objectReference: {fileID: 3782205690507788167}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[5]
+      value: 
+      objectReference: {fileID: 3782205689370543801}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[6]
+      value: 
+      objectReference: {fileID: 3782205690447524888}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[7]
+      value: 
+      objectReference: {fileID: 3782205691088412402}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[8]
+      value: 
+      objectReference: {fileID: 3782205690404715786}
+    - target: {fileID: 8241574535803118428, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
+      propertyPath: _sezlonglar.Array.data[9]
+      value: 
+      objectReference: {fileID: 3782205689263401644}
     - target: {fileID: 8318113176525706905, guid: d278b46b8a6bc41aab8ae353ba63b0f0, type: 3}
       propertyPath: _kapanacakObje
       value: 
