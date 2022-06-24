@@ -139,6 +139,31 @@ public class SefScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == _stackNoktasi)
+        {
+            _agentAnimator.SetBool("Walk", false);
+        }
+        else
+        {
+
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == _stackNoktasi)
+        {
+            _agentAnimator.SetBool("Walk", true);
+        }
+        else
+        {
+
+        }
+    }
+
     public void DrinkTopla()
     {
 

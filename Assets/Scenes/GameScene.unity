@@ -2496,6 +2496,10 @@ PrefabInstance:
       propertyPath: m_CollectObjects
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3566484656671968942, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3578247282031196130, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_NavMeshData
       value: 
@@ -2970,6 +2974,14 @@ PrefabInstance:
       objectReference: {fileID: 23800000, guid: bafd043d61c0b40a9a288333d91455bb, type: 2}
     - target: {fileID: 7048419552193408754, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_CollectObjects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157154247648114526, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157154247648114526, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7212088875342789015, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
