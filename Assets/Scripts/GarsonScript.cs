@@ -26,12 +26,16 @@ public class GarsonScript : MonoBehaviour
     public int _cantadakiDrinkSayisi;
 
 
+
+
+
     void Start()
     {
         _cantadakiDrinkSayisi = 0;
         _drinkStackSiniri = 1;
 
         _point = _stackNoktasi.transform;
+
 
 
 
@@ -84,7 +88,12 @@ public class GarsonScript : MonoBehaviour
                 _point = _stackNoktasi.transform;
             }
 
+
+
+
         }
+
+
 
 
     }
@@ -140,6 +149,31 @@ public class GarsonScript : MonoBehaviour
         _agent.SetDestination(point.position);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == _stackNoktasi)
+        {
+            _agentAnimator.SetBool("Walk", false);
+        }
+        else
+        {
+
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == _stackNoktasi)
+        {
+            _agentAnimator.SetBool("Walk", true);
+        }
+        else
+        {
+
+        }
+    }
+
     public void DrinkTopla()
     {
 
@@ -168,6 +202,8 @@ public class GarsonScript : MonoBehaviour
         {
 
         }
+
+
 
 
     }

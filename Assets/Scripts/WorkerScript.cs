@@ -39,6 +39,8 @@ public class WorkerScript : MonoBehaviour
 
     public int _drinkStackSiniri;
 
+    private bool _yuruyor;
+
     void Start()
     {
         _cantadakiObjeSayisi = 0;
@@ -56,6 +58,8 @@ public class WorkerScript : MonoBehaviour
 
         WorkerCapacityGuncelle();
         WorkerSpeedGuncelle();
+
+        _yuruyor = false;
     }
 
     private void FixedUpdate()
@@ -104,6 +108,38 @@ public class WorkerScript : MonoBehaviour
             else
             {
                 _point = _stackNoktasi.transform;
+            }
+
+            if (_yuruyor)
+            {
+                if (_cantadakiStuffObjeleri.Count > 0)
+                {
+
+                    _agentAnimator.SetBool("Walk", false);
+                    _agentAnimator.SetBool("CarryIdle", false);
+                    _agentAnimator.SetBool("CarryWalk", true);
+                }
+                else
+                {
+                    _agentAnimator.SetBool("CarryIdle", false);
+                    _agentAnimator.SetBool("CarryWalk", false);
+                    _agentAnimator.SetBool("Walk", true);
+                }
+            }
+            else
+            {
+                if (_cantadakiStuffObjeleri.Count > 0)
+                {
+                    _agentAnimator.SetBool("Walk", false);
+                    _agentAnimator.SetBool("CarryWalk", false);
+                    _agentAnimator.SetBool("CarryIdle", true);
+                }
+                else
+                {
+                    _agentAnimator.SetBool("CarryIdle", false);
+                    _agentAnimator.SetBool("Walk", false);
+                    _agentAnimator.SetBool("CarryWalk", false);
+                }
             }
 
         }
@@ -197,6 +233,64 @@ public class WorkerScript : MonoBehaviour
 
         }
         */
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == _stackNoktasi)
+        {
+
+            _yuruyor = false;
+            /*
+            if (_cantadakiStuffObjeleri.Count > 0)
+            {
+                _agentAnimator.SetBool("Walk", false);
+                _agentAnimator.SetBool("CarryWalk", false);
+                _agentAnimator.SetBool("CarryIdle", true);
+            }
+            else
+            {
+                _agentAnimator.SetBool("CarryIdle", false);
+                _agentAnimator.SetBool("Walk", false);
+                _agentAnimator.SetBool("CarryWalk", false);
+            }
+            */
+
+        }
+        else
+        {
+
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == _stackNoktasi)
+        {
+
+            _yuruyor = true;
+            /*
+            if (_cantadakiStuffObjeleri.Count > 0)
+            {
+
+                _agentAnimator.SetBool("Walk", false);
+                _agentAnimator.SetBool("CarryIdle", false);
+                _agentAnimator.SetBool("CarryWalk", true);
+            }
+            else
+            {
+                _agentAnimator.SetBool("CarryIdle", false);
+                _agentAnimator.SetBool("CarryWalk", false);
+                _agentAnimator.SetBool("Walk", true);
+            }
+            */
+        }
+        else
+        {
+
+        }
     }
 
     public void StuffTopla(GameObject other)
