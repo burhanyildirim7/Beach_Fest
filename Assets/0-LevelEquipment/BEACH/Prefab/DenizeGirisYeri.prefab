@@ -2598,6 +2598,7 @@ GameObject:
   - component: {fileID: 4852812135593823724}
   - component: {fileID: 4852812135593823726}
   - component: {fileID: 4852812135593823727}
+  - component: {fileID: 8441410088971936850}
   m_Layer: 0
   m_Name: GirisObjesi
   m_TagString: Untagged
@@ -2672,6 +2673,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &8441410088971936850
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852812135593823725}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c62f269f2e2547dd99a3564749ef1cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4852812135632545233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,7 +2799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4852812135686392970}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 1.5}
   m_LocalScale: {x: 0.18, y: 1, z: 0.18}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2864,7 +2885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4852812135747869115}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: -2}
+  m_LocalPosition: {x: -0, y: 0, z: -1}
   m_LocalScale: {x: 0.18, y: 1, z: 0.18}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2935,6 +2956,7 @@ GameObject:
   - component: {fileID: 4852812135804729306}
   - component: {fileID: 4852812135804729308}
   - component: {fileID: 4852812135804729309}
+  - component: {fileID: 6003701334135048227}
   m_Layer: 0
   m_Name: GirisObjesi
   m_TagString: Untagged
@@ -3009,6 +3031,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &6003701334135048227
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852812135804729307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c62f269f2e2547dd99a3564749ef1cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4852812135811332380
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,6 +3218,7 @@ GameObject:
   - component: {fileID: 4852812135905174976}
   - component: {fileID: 4852812135905174978}
   - component: {fileID: 4852812135905174979}
+  - component: {fileID: 6397934884147500539}
   m_Layer: 0
   m_Name: GirisObjesi
   m_TagString: Untagged
@@ -3250,6 +3293,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &6397934884147500539
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852812135905174977}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c62f269f2e2547dd99a3564749ef1cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4852812135912953053
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3324,7 @@ GameObject:
   - component: {fileID: 4852812135912953052}
   - component: {fileID: 4852812135912953054}
   - component: {fileID: 4852812135912953055}
+  - component: {fileID: 2278929406210088069}
   m_Layer: 0
   m_Name: GirisObjesi
   m_TagString: Untagged
@@ -3335,6 +3399,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2278929406210088069
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852812135912953053}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c62f269f2e2547dd99a3564749ef1cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4852812135944550993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3647,7 +3731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4852812136346152868}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: -4}
+  m_LocalPosition: {x: -0, y: 0, z: -3.5}
   m_LocalScale: {x: 0.18, y: 1, z: 0.18}
   m_ConstrainProportionsScale: 0
   m_Children:
