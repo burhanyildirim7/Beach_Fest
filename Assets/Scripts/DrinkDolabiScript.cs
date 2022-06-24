@@ -126,7 +126,7 @@ public class DrinkDolabiScript : MonoBehaviour
                 _garsonTimer += Time.deltaTime;
 
 
-                if (_garsonTimer > _spawnHizi)
+                if (_garsonTimer > 3)
                 {
 
                     other.gameObject.GetComponent<GarsonScript>().DrinkTopla();

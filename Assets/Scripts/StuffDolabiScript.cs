@@ -17,6 +17,7 @@ public class StuffDolabiScript : MonoBehaviour
     [SerializeField] private Text _sinirText;
 
     private float _timer;
+    private float _garsonTimer;
 
     private int _üretilenStuff;
 
@@ -41,6 +42,10 @@ public class StuffDolabiScript : MonoBehaviour
             _sinirText.gameObject.SetActive(true);
             _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri.ToString();
         }
+        else if (other.gameObject.tag == "Worker")
+        {
+            _garsonTimer = 0;
+        }
         else
         {
 
@@ -54,6 +59,10 @@ public class StuffDolabiScript : MonoBehaviour
             _timer = 0;
             _slider.value = 0;
             _sinirText.gameObject.SetActive(false);
+        }
+        else if (other.gameObject.tag == "Worker")
+        {
+            _garsonTimer = 0;
         }
         else
         {
@@ -106,6 +115,33 @@ public class StuffDolabiScript : MonoBehaviour
             {
 
             }
+        }
+        else if (other.gameObject.tag == "Worker")
+        {
+
+            if (other.gameObject.GetComponent<WorkerScript>()._cantadakiStuffObjeleri.Count < other.gameObject.GetComponent<WorkerScript>()._stuffStackSiniri)
+            {
+                _garsonTimer += Time.deltaTime;
+
+
+                if (_garsonTimer > 3)
+                {
+                    GameObject stuff = Instantiate(_stuff, _spawnPoint.transform.position, Quaternion.identity);
+                    other.gameObject.GetComponent<WorkerScript>().StuffTopla(stuff);
+                    _garsonTimer = 0;
+
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+
         }
         else
         {

@@ -15,6 +15,8 @@ public class IceCreamDolabiScript : MonoBehaviour
 
     private float _timer;
 
+    private float _garsonTimer;
+
     private int _üretilenStuff;
 
     private float _velocityX;
@@ -36,6 +38,10 @@ public class IceCreamDolabiScript : MonoBehaviour
             _sinirText.gameObject.SetActive(true);
             _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._iceCreamStackSiniri.ToString();
         }
+        else if (other.gameObject.tag == "Sef")
+        {
+            _garsonTimer = 0;
+        }
         else
         {
 
@@ -49,6 +55,10 @@ public class IceCreamDolabiScript : MonoBehaviour
             _timer = 0;
             _slider.value = 0;
             _sinirText.gameObject.SetActive(false);
+        }
+        else if (other.gameObject.tag == "Sef")
+        {
+            _garsonTimer = 0;
         }
         else
         {
@@ -105,6 +115,33 @@ public class IceCreamDolabiScript : MonoBehaviour
             {
 
             }
+        }
+        else if (other.gameObject.tag == "Sef")
+        {
+
+            if (other.gameObject.GetComponent<SefScript>()._cantadakiDrinkObjeleri.Count < other.gameObject.GetComponent<SefScript>()._drinkStackSiniri)
+            {
+                _garsonTimer += Time.deltaTime;
+
+
+                if (_garsonTimer > 3)
+                {
+
+                    other.gameObject.GetComponent<SefScript>().DrinkTopla();
+                    _garsonTimer = 0;
+
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+
         }
         else
         {

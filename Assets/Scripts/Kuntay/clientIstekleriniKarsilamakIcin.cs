@@ -67,6 +67,36 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
 
             }
         }
+        else if (other.gameObject.tag == "Sef")
+        {
+            if (other.gameObject.GetComponent<SefScript>()._cantadakiDrinkObjeleri.Count > 0 && dondurmaIstiyor == true)
+            {
+                other.gameObject.GetComponent<SefScript>().DrinkCek();
+                dondurma.SetActive(true);
+                _dolduranClient.GetComponent<ClientAIScript>().IsteklerKarsilandi();
+                dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
+                dondurmaIstiyor = false;
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.gameObject.tag == "Worker")
+        {
+            if (other.gameObject.GetComponent<WorkerScript>()._cantadakiStuffObjeleri.Count > 0 && semsiyeIstiyor == true)
+            {
+                other.gameObject.GetComponent<WorkerScript>().StuffCek(gameObject.transform);
+                semsiye.SetActive(true);
+                _dolduranClient.GetComponent<ClientAIScript>().IsteklerKarsilandi();
+                dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
+                semsiyeIstiyor = false;
+            }
+            else
+            {
+
+            }
+        }
         else
         {
 

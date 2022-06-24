@@ -12,6 +12,8 @@ public class UIController : MonoBehaviour
 
     [Header("GEREKLI OBJELER")]
     [SerializeField] private GameObject _drinkAlani;
+    [SerializeField] private GameObject _iceCreamAlani;
+    [SerializeField] private GameObject _stuffAlani;
 
     [Header("UPGRADE EKRANI")]
     [Header("Player")]
@@ -25,6 +27,21 @@ public class UIController : MonoBehaviour
     [SerializeField] private Text _garsonAcmaPriceText;
     [SerializeField] private Slider _garsonAcmaSlider;
     [SerializeField] private Button _garsonAcmaButton;
+    [Header("Sef")]
+    [SerializeField] private Text _sefAcmaPriceText;
+    [SerializeField] private Slider _sefAcmaSlider;
+    [SerializeField] private Button _sefAcmaButton;
+    [Header("Worker")]
+    [SerializeField] private Text _workerAcmaPriceText;
+    [SerializeField] private Slider _workerAcmaSlider;
+    [SerializeField] private Button _workerAcmaButton;
+    [Header("Worker Yukseltmeler")]
+    [SerializeField] private Text _workerSpeedPriceText;
+    [SerializeField] private Slider _workerSpeedSlider;
+    [SerializeField] private Button _workerSpeedButton;
+    [SerializeField] private Text _workerCapacityPriceText;
+    [SerializeField] private Slider _workerCapacitySlider;
+    [SerializeField] private Button _workerCapacityButton;
 
 
     private bool _upgradeScreenAcik;
@@ -324,6 +341,164 @@ public class UIController : MonoBehaviour
         {
 
         }
+
+        //-------SEF SATIN AL--------
+
+        if (PlayerPrefs.GetInt("SefSayisi") == 0)
+        {
+            if (_iceCreamAlani.activeSelf)
+            {
+                _sefAcmaPriceText.text = "$1000";
+                _sefAcmaSlider.value = 0;
+
+                if (PlayerPrefs.GetInt("Money") < 1000)
+                {
+                    _sefAcmaButton.interactable = false;
+                }
+                else
+                {
+                    _sefAcmaButton.interactable = true;
+                }
+            }
+            else
+            {
+                _sefAcmaPriceText.text = "BUY ICE CREAM MAKER";
+                _sefAcmaSlider.value = 0;
+                _sefAcmaButton.interactable = false;
+            }
+
+        }
+        else if (PlayerPrefs.GetInt("SefSayisi") == 1)
+        {
+            _sefAcmaPriceText.text = "EXPAND 2. AREA";
+            _sefAcmaSlider.value = 1;
+            _sefAcmaButton.interactable = false;
+
+        }
+        else
+        {
+
+        }
+
+        //-------WORKER SATIN AL--------
+
+        if (PlayerPrefs.GetInt("WorkerSayisi") == 0)
+        {
+
+            _workerAcmaPriceText.text = "$1000";
+            _workerAcmaSlider.value = 0;
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _workerAcmaButton.interactable = false;
+            }
+            else
+            {
+                _workerAcmaButton.interactable = true;
+            }
+
+
+        }
+        else if (PlayerPrefs.GetInt("WorkerSayisi") == 1)
+        {
+            _workerAcmaPriceText.text = "EXPAND 2. AREA";
+            _workerAcmaSlider.value = 1;
+            _workerAcmaButton.interactable = false;
+
+        }
+        else
+        {
+
+        }
+
+
+        //-------WORKER SPEED--------
+
+        if (PlayerPrefs.GetInt("WorkerSpeedLevel") == 0)
+        {
+            _workerSpeedPriceText.text = "$1000";
+            _workerSpeedSlider.value = 1;
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _workerSpeedButton.interactable = false;
+            }
+            else
+            {
+                _workerSpeedButton.interactable = true;
+            }
+        }
+        else if (PlayerPrefs.GetInt("WorkerSpeedLevel") == 1)
+        {
+            _workerSpeedPriceText.text = "$2000";
+            _workerSpeedSlider.value = 2;
+
+            if (PlayerPrefs.GetInt("Money") < 2000)
+            {
+                _workerSpeedButton.interactable = false;
+            }
+            else
+            {
+                _workerSpeedButton.interactable = true;
+            }
+        }
+        else if (PlayerPrefs.GetInt("WorkerSpeedLevel") == 2)
+        {
+            _workerSpeedPriceText.text = "MAX LEVEL";
+            _workerSpeedSlider.value = 3;
+
+
+            _workerSpeedButton.interactable = false;
+
+        }
+        else
+        {
+
+        }
+
+        //-------WORKER CAPACITY--------
+
+        if (PlayerPrefs.GetInt("WorkerCapacityLevel") == 0)
+        {
+            _workerCapacityPriceText.text = "$1000";
+            _workerCapacitySlider.value = 1;
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _workerCapacityButton.interactable = false;
+            }
+            else
+            {
+                _workerCapacityButton.interactable = true;
+            }
+        }
+        else if (PlayerPrefs.GetInt("WorkerCapacityLevel") == 1)
+        {
+            _workerCapacityPriceText.text = "$2000";
+            _workerCapacitySlider.value = 2;
+
+            if (PlayerPrefs.GetInt("Money") < 2000)
+            {
+                _workerCapacityButton.interactable = false;
+            }
+            else
+            {
+                _workerCapacityButton.interactable = true;
+            }
+        }
+        else if (PlayerPrefs.GetInt("WorkerCapacityLevel") == 2)
+        {
+            _workerCapacityPriceText.text = "MAX LEVEL";
+            _workerCapacitySlider.value = 3;
+
+
+            _workerCapacityButton.interactable = false;
+
+        }
+        else
+        {
+
+        }
     }
 
     public void PlayerSpeedButton()
@@ -425,6 +600,151 @@ public class UIController : MonoBehaviour
             _garsonAcmaButton.interactable = false;
 
 
+        }
+        else
+        {
+
+        }
+    }
+
+    public void SefSatinAlButton()
+    {
+        if (PlayerPrefs.GetInt("SefSayisi") == 0)
+        {
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _sefAcmaButton.interactable = false;
+            }
+            else
+            {
+                _sefAcmaButton.interactable = true;
+                PlayerPrefs.SetInt("SefSayisi", 1);
+                _iceCreamAlani.GetComponent<garsonAcmaScripti>().GarsonAc();
+            }
+        }
+        else if (PlayerPrefs.GetInt("SefSayisi") == 1)
+        {
+
+
+
+            _sefAcmaButton.interactable = false;
+
+
+        }
+        else
+        {
+
+        }
+    }
+
+    public void WorkerSatinAlButton()
+    {
+        if (PlayerPrefs.GetInt("WorkerSayisi") == 0)
+        {
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _workerAcmaButton.interactable = false;
+            }
+            else
+            {
+                _workerAcmaButton.interactable = true;
+                PlayerPrefs.SetInt("WorkerSayisi", 1);
+                _stuffAlani.GetComponent<garsonAcmaScripti>().GarsonAc();
+            }
+        }
+        else if (PlayerPrefs.GetInt("WorkerSayisi") == 1)
+        {
+
+
+
+            _workerAcmaButton.interactable = false;
+
+
+        }
+        else
+        {
+
+        }
+    }
+
+    public void WorkerSpeedButton()
+    {
+        if (PlayerPrefs.GetInt("WorkerSpeedLevel") == 0)
+        {
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _workerSpeedButton.interactable = false;
+            }
+            else
+            {
+                _workerSpeedButton.interactable = true;
+                PlayerPrefs.SetInt("WorkerSpeedLevel", 1);
+                GameObject.FindGameObjectWithTag("Garson").GetComponent<GarsonScript>().GarsonSpeedGuncelle();
+                GameObject.FindGameObjectWithTag("Sef").GetComponent<SefScript>().SefSpeedGuncelle();
+                GameObject.FindGameObjectWithTag("Worker").GetComponent<WorkerScript>().WorkerSpeedGuncelle();
+            }
+        }
+        else if (PlayerPrefs.GetInt("WorkerSpeedLevel") == 1)
+        {
+
+
+            if (PlayerPrefs.GetInt("Money") < 2000)
+            {
+                _workerSpeedButton.interactable = false;
+            }
+            else
+            {
+                _workerSpeedButton.interactable = true;
+                PlayerPrefs.SetInt("WorkerSpeedLevel", 2);
+                GameObject.FindGameObjectWithTag("Garson").GetComponent<GarsonScript>().GarsonSpeedGuncelle();
+                GameObject.FindGameObjectWithTag("Sef").GetComponent<SefScript>().SefSpeedGuncelle();
+                GameObject.FindGameObjectWithTag("Worker").GetComponent<WorkerScript>().WorkerSpeedGuncelle();
+            }
+        }
+        else
+        {
+
+        }
+    }
+
+
+    public void WorkerCapacityButton()
+    {
+        if (PlayerPrefs.GetInt("WorkerCapacityLevel") == 0)
+        {
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _workerCapacityButton.interactable = false;
+            }
+            else
+            {
+                _workerCapacityButton.interactable = true;
+                PlayerPrefs.SetInt("WorkerCapacityLevel", 1);
+                GameObject.FindGameObjectWithTag("Garson").GetComponent<GarsonScript>().GarsonCapacityGuncelle();
+                GameObject.FindGameObjectWithTag("Sef").GetComponent<SefScript>().SefCapacityGuncelle();
+                GameObject.FindGameObjectWithTag("Worker").GetComponent<WorkerScript>().WorkerCapacityGuncelle();
+            }
+        }
+        else if (PlayerPrefs.GetInt("WorkerCapacityLevel") == 1)
+        {
+
+
+            if (PlayerPrefs.GetInt("Money") < 2000)
+            {
+                _workerCapacityButton.interactable = false;
+            }
+            else
+            {
+                _workerCapacityButton.interactable = true;
+                PlayerPrefs.SetInt("WorkerCapacityLevel", 2);
+                GameObject.FindGameObjectWithTag("Garson").GetComponent<GarsonScript>().GarsonCapacityGuncelle();
+                GameObject.FindGameObjectWithTag("Sef").GetComponent<SefScript>().SefCapacityGuncelle();
+                GameObject.FindGameObjectWithTag("Worker").GetComponent<WorkerScript>().WorkerCapacityGuncelle();
+            }
         }
         else
         {

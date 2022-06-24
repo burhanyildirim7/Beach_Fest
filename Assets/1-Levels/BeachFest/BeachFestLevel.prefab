@@ -5452,7 +5452,7 @@ MonoBehaviour:
   - {fileID: 5647529740132195648, guid: 3e1a8a444840a475397af4b54c71443a, type: 3}
   - {fileID: 2693294674462437729, guid: fa87a862209a94f3f83eb28eaf06fa59, type: 3}
   _spawnNoktasi: {fileID: 4153899612469252348}
-  _spawnHizi: 3
+  _spawnHizi: 5
   _aiHareketKontrol: {fileID: 2287683629053507856}
   _uret: 0
 --- !u!1 &6480649860069690625
@@ -10989,6 +10989,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[0]
+      value: 
+      objectReference: {fileID: 333408717360458207}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[1]
+      value: 
+      objectReference: {fileID: 3782205691011283198}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[2]
+      value: 
+      objectReference: {fileID: 3782205689387795441}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[3]
+      value: 
+      objectReference: {fileID: 3782205689852535467}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[4]
+      value: 
+      objectReference: {fileID: 3782205690507788167}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[5]
+      value: 
+      objectReference: {fileID: 3782205689370543801}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[6]
+      value: 
+      objectReference: {fileID: 3782205690447524888}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[7]
+      value: 
+      objectReference: {fileID: 3782205691088412402}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[8]
+      value: 
+      objectReference: {fileID: 3782205690404715786}
+    - target: {fileID: 1759366237094711990, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
+      propertyPath: _sezlonglar.Array.data[9]
+      value: 
+      objectReference: {fileID: 3782205689263401644}
     - target: {fileID: 2753614403586890868, guid: f9aaac87e9c4c47ce9b94bf41c102239, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -13664,6 +13708,94 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[0]
+      value: 
+      objectReference: {fileID: 3782205691011283198}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[1]
+      value: 
+      objectReference: {fileID: 3782205689387795441}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[2]
+      value: 
+      objectReference: {fileID: 3782205689852535467}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[3]
+      value: 
+      objectReference: {fileID: 3782205690507788167}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[4]
+      value: 
+      objectReference: {fileID: 3782205689370543801}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[5]
+      value: 
+      objectReference: {fileID: 3782205690447524888}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[6]
+      value: 
+      objectReference: {fileID: 3782205691088412402}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[7]
+      value: 
+      objectReference: {fileID: 3782205690404715786}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[8]
+      value: 
+      objectReference: {fileID: 3782205689263401644}
+    - target: {fileID: 3596014315557188541, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[9]
+      value: 
+      objectReference: {fileID: 333408717360458207}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[0]
+      value: 
+      objectReference: {fileID: 333408717360458207}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[1]
+      value: 
+      objectReference: {fileID: 3782205691011283198}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[2]
+      value: 
+      objectReference: {fileID: 3782205689387795441}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[3]
+      value: 
+      objectReference: {fileID: 3782205689852535467}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[4]
+      value: 
+      objectReference: {fileID: 3782205690507788167}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[5]
+      value: 
+      objectReference: {fileID: 3782205689370543801}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[6]
+      value: 
+      objectReference: {fileID: 3782205690447524888}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[7]
+      value: 
+      objectReference: {fileID: 3782205691088412402}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[8]
+      value: 
+      objectReference: {fileID: 3782205690404715786}
+    - target: {fileID: 4931000646963491426, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
+      propertyPath: _sezlonglar.Array.data[9]
+      value: 
+      objectReference: {fileID: 3782205689263401644}
     - target: {fileID: 6387015968787984322, guid: e26f62ad7e3bf4941ae70812bc9ad7a2, type: 3}
       propertyPath: m_Name
       value: IceCreamGrubu

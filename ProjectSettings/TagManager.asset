@@ -21,6 +21,8 @@ TagManager:
   - BedelOdemeMoney
   - DenizSiniri
   - Garson
+  - Sef
+  - Worker
   layers:
   - Default
   - TransparentFX

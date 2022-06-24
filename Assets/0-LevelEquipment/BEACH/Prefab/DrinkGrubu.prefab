@@ -1020,8 +1020,7 @@ MonoBehaviour:
   garson1Object: {fileID: 8575297975613754292}
   garson2Object: {fileID: 6604474878748766301}
   workerPaneli: {fileID: 0}
-  dondurmaciObjesi: {fileID: 0}
-  garsonSlideri: {fileID: 0}
+  _icecek: 1
 --- !u!114 &4119648380678626771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9878,8 +9877,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 4782820943378575704}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.5
-  m_Speed: 3
+  m_Radius: 0.1
+  m_Speed: 2
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 360

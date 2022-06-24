@@ -169,7 +169,7 @@ public class ClientAIScript : MonoBehaviour
 
         if (GameController.instance.isContinue == true)
         {
-            if (gameObject.GetComponent<NavMeshAgent>().enabled == true)
+            if (_agent.enabled == true)
             {
                 SetDestination(_point);
             }
@@ -1028,12 +1028,15 @@ public class ClientAIScript : MonoBehaviour
     private IEnumerator SezlongaYat()
     {
 
+
         yield return new WaitForSeconds(0.5f);
 
         gameObject.transform.DORotate(new Vector3(0, 135f, 0), 0.5f);
 
         yield return new WaitForSeconds(0.5f);
         //gameObject.transform.DOMoveY(-0.5f, 0.5f);
+
+
 
         if (_Erkek1)
         {
@@ -1071,6 +1074,8 @@ public class ClientAIScript : MonoBehaviour
         }
 
 
+
+
         //yield return new WaitForSeconds(0.5f);
 
         if (_giysiliKarakter.activeSelf)
@@ -1083,6 +1088,8 @@ public class ClientAIScript : MonoBehaviour
             _giysisizAnimator.SetBool("walk", false);
             _giysisizAnimator.SetBool("yatis", true);
         }
+
+        //_agent.enabled = false;
 
         int sayi = Random.Range(0, 3);
 
@@ -1105,6 +1112,8 @@ public class ClientAIScript : MonoBehaviour
 
 
         yield return new WaitForSeconds(20f);
+
+        // _agent.enabled = true;
 
         if (_giysiliKarakter.activeSelf)
         {
@@ -1235,6 +1244,8 @@ public class ClientAIScript : MonoBehaviour
         _istekKarsilandiEmoji.SetActive(true);
 
         yield return new WaitForSeconds(10f);
+
+        //_agent.enabled = true;
 
         if (_giysiliKarakter.activeSelf)
         {

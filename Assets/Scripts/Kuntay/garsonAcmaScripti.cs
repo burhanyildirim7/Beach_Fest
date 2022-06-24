@@ -7,8 +7,12 @@ public class garsonAcmaScripti : MonoBehaviour
 {
 
 
-    [SerializeField] GameObject garson1Object, garson2Object, workerPaneli, dondurmaciObjesi;
-    [SerializeField] Slider garsonSlideri;
+    [SerializeField] GameObject garson1Object, garson2Object;
+
+
+    [SerializeField] private bool _icecek;
+    [SerializeField] private bool _stuff;
+
 
 
     void Start()
@@ -19,18 +23,52 @@ public class garsonAcmaScripti : MonoBehaviour
 
     public void GarsonAc()
     {
-        if (PlayerPrefs.GetInt("GarsonSayisi") == 1)
+        if (_icecek)
         {
-            garson1Object.SetActive(true);
+            if (PlayerPrefs.GetInt("GarsonSayisi") == 1)
+            {
+                garson1Object.SetActive(true);
+            }
+            else if (PlayerPrefs.GetInt("GarsonSayisi") == 2)
+            {
+                garson2Object.SetActive(true);
+            }
+            else
+            {
+
+            }
         }
-        else if (PlayerPrefs.GetInt("GarsonSayisi") == 2)
+        else if (_stuff)
         {
-            garson2Object.SetActive(true);
+            if (PlayerPrefs.GetInt("WorkerSayisi") == 1)
+            {
+                garson1Object.SetActive(true);
+            }
+            else if (PlayerPrefs.GetInt("WorkerSayisi") == 2)
+            {
+                garson2Object.SetActive(true);
+            }
+            else
+            {
+
+            }
         }
         else
         {
+            if (PlayerPrefs.GetInt("SefSayisi") == 1)
+            {
+                garson1Object.SetActive(true);
+            }
+            else if (PlayerPrefs.GetInt("SefSayisi") == 2)
+            {
+                garson2Object.SetActive(true);
+            }
+            else
+            {
 
+            }
         }
+
     }
 
 

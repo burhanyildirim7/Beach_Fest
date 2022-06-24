@@ -53,7 +53,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2406846743842875297}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
+  m_Radius: 0.1
   m_Speed: 2
   m_Acceleration: 10
   avoidancePriority: 50
@@ -147,6 +147,8 @@ MonoBehaviour:
   _dusSirasinda: 0
   _dusta: 0
   _dusNumber: 0
+  _boguluyor: 0
+  _kurtarildi: 0
   _waterEfekt: {fileID: 3473424800419404702}
   _yurumeEfekt: {fileID: 7868010200133544581}
 --- !u!1001 &4728548036329368454

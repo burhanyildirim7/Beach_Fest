@@ -3306,6 +3306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+--- !u!1 &859086587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 102799939711874948, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+  m_PrefabInstance: {fileID: 859086586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &887513293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,6 +3593,8 @@ MonoBehaviour:
   gamePlayScoreText: {fileID: 2037673478107303736}
   tapToStartScoreText: {fileID: 1511411089}
   _drinkAlani: {fileID: 1242565898}
+  _iceCreamAlani: {fileID: 1857012772}
+  _stuffAlani: {fileID: 859086587}
   _playerSpeedPriceText: {fileID: 5757677944544308237}
   _playerSpeedSlider: {fileID: 2428814725937959711}
   _playerSpeedButton: {fileID: 9103805037973821447}
@@ -3597,6 +3604,18 @@ MonoBehaviour:
   _garsonAcmaPriceText: {fileID: 2706359057005560165}
   _garsonAcmaSlider: {fileID: 2428814724801086800}
   _garsonAcmaButton: {fileID: 7594323295353368615}
+  _sefAcmaPriceText: {fileID: 3459373564098215593}
+  _sefAcmaSlider: {fileID: 8283249461269531905}
+  _sefAcmaButton: {fileID: 1641885915212410684}
+  _workerAcmaPriceText: {fileID: 2428814726019936679}
+  _workerAcmaSlider: {fileID: 2428814726071857284}
+  _workerAcmaButton: {fileID: 2428814724328348993}
+  _workerSpeedPriceText: {fileID: 3704281543270223249}
+  _workerSpeedSlider: {fileID: 2428814725614561448}
+  _workerSpeedButton: {fileID: 1166589464513069232}
+  _workerCapacityPriceText: {fileID: 8880073282452857226}
+  _workerCapacitySlider: {fileID: 2428814726025294355}
+  _workerCapacityButton: {fileID: 340107315662214331}
 --- !u!4 &955729543
 Transform:
   m_ObjectHideFlags: 0
@@ -5130,6 +5149,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 579200236737269914, guid: f65a1c753d8b4458f89b9a16da8ea135, type: 3}
   m_PrefabInstance: {fileID: 714021498}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1857012772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5619684337484335988, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+  m_PrefabInstance: {fileID: 859086586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1967901578
 GameObject:
   m_ObjectHideFlags: 0
@@ -5766,7 +5790,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3978267824250303891}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955729542}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: WorkerCapacityButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &401461402057003182
 GameObject:
   m_ObjectHideFlags: 0
@@ -6549,7 +6585,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5861059437612277514}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955729542}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: WorkerSpeedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1229779807151736596
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6980,7 +7028,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2721963872000688075}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955729542}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: SefSatinAlButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1642498938664006924
 Transform:
   m_ObjectHideFlags: 0
@@ -10747,8 +10807,8 @@ RectTransform:
   m_Father: {fileID: 3813274263358414372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.625161}
+  m_AnchorMin: {x: 0, y: 0.37483907}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11092,7 +11152,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2428814724328348994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955729542}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: WorkerSatinAlButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2428814724328348994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13666,7 +13738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 233.25818}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 622.2877}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &2850474857926882045
@@ -14281,7 +14353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3527317640494225821
 GameObject:
   m_ObjectHideFlags: 0
@@ -16539,7 +16611,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5461652675351239868}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20057,7 +20129,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5943984012659208371}
   m_HandleRect: {fileID: 2422990406772064985}
   m_Direction: 2
-  m_Value: -0.0000022241443
+  m_Value: 1.0000002
   m_Size: 0.625161
   m_NumberOfSteps: 0
   m_OnValueChanged:

@@ -50,6 +50,18 @@ public class sezlongAcmaKodu : MonoBehaviour
 
             }
         }
+        else if (other.gameObject.tag == "Worker")
+        {
+            if (other.gameObject.GetComponent<WorkerScript>()._cantadakiStuffObjeleri.Count > 0)
+            {
+                other.gameObject.GetComponent<WorkerScript>().StuffCek(transform);
+
+            }
+            else
+            {
+
+            }
+        }
         else
         {
 

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class GarsonScript : MonoBehaviour
+public class SefScript : MonoBehaviour
 {
-
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private Animator _agentAnimator;
     [SerializeField] private GameObject _stackNoktasi;
@@ -36,8 +35,8 @@ public class GarsonScript : MonoBehaviour
 
 
         SirtCantasiLevelStart();
-        GarsonCapacityGuncelle();
-        GarsonSpeedGuncelle();
+        SefCapacityGuncelle();
+        SefSpeedGuncelle();
     }
 
 
@@ -62,7 +61,7 @@ public class GarsonScript : MonoBehaviour
                 {
                     if (_sezlonglar[i].gameObject.transform.parent.gameObject.activeSelf)
                     {
-                        if (_sezlonglar[i].GetComponent<clientIstekleriniKarsilamakIcin>().icecekIstiyor)
+                        if (_sezlonglar[i].GetComponent<clientIstekleriniKarsilamakIcin>().dondurmaIstiyor)
                         {
                             _point = _sezlonglar[i].transform;
                             break;
@@ -89,7 +88,12 @@ public class GarsonScript : MonoBehaviour
 
     }
 
-    public void GarsonCapacityGuncelle()
+    private void SetDestination(Transform point)
+    {
+        _agent.SetDestination(point.position);
+    }
+
+    public void SefCapacityGuncelle()
     {
         if (PlayerPrefs.GetInt("WorkerCapacityLevel") == 0)
         {
@@ -112,7 +116,7 @@ public class GarsonScript : MonoBehaviour
         }
     }
 
-    public void GarsonSpeedGuncelle()
+    public void SefSpeedGuncelle()
     {
         if (PlayerPrefs.GetInt("WorkerSpeedLevel") == 0)
         {
@@ -133,11 +137,6 @@ public class GarsonScript : MonoBehaviour
         {
 
         }
-    }
-
-    private void SetDestination(Transform point)
-    {
-        _agent.SetDestination(point.position);
     }
 
     public void DrinkTopla()
