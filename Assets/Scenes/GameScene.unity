@@ -2108,6 +2108,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_Alignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 102799940590008311, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 134578233759277443, guid: 951e4248c4ef94876819dddad14644ea, type: 3}
       propertyPath: m_NavMeshData
       value: 
