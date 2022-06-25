@@ -170,12 +170,12 @@ public class WorkerScript : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("WorkerCapacityLevel") == 1)
         {
-            _stuffStackSiniri = 7;
+            _stuffStackSiniri = 6;
 
         }
         else if (PlayerPrefs.GetInt("WorkerCapacityLevel") == 2)
         {
-            _stuffStackSiniri = 10;
+            _stuffStackSiniri = 8;
 
         }
         else

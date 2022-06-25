@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
 
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
             StartCoroutine(ParaAnim());
         }
         else if (other.gameObject.tag == "BedelOdemeCollider")
@@ -113,6 +115,8 @@ public class PlayerController : MonoBehaviour
                         PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 10);
                         UIController.instance.SetGamePlayScoreText();
                         _kalanBedel -= 10;
+
+                        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
 
                         _stayTimer = 0;
                     }
@@ -177,6 +181,25 @@ public class PlayerController : MonoBehaviour
 
         PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") + 10);
         UIController.instance.SetGamePlayScoreText();
+
+
+        if (PlayerPrefs.GetInt("UpgradeSenaryosu") < 1)
+        {
+            if (PlayerPrefs.GetInt("Money") > 500)
+            {
+                StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().UpgradeSenaryo());
+                PlayerPrefs.SetInt("UpgradeSenaryosu", 1);
+            }
+            else
+            {
+
+            }
+
+        }
+        else
+        {
+
+        }
     }
 
 
@@ -201,7 +224,7 @@ public class PlayerController : MonoBehaviour
 
         Elephant.LevelStarted(1);
 
-        PlayerPrefs.SetInt("Money", 99999);
+        //PlayerPrefs.SetInt("Money", 99999);
         UIController.instance.SetGamePlayScoreText();
 
     }

@@ -15,6 +15,16 @@ public class BedelOdemeler : MonoBehaviour
     [SerializeField] private bool _alan1DenizAlani;
     [SerializeField] private bool _alan1Drink;
     [SerializeField] private bool _alan1IceCream;
+    [SerializeField] private bool _alan1Sezlong1;
+    [SerializeField] private bool _alan1Sezlong2;
+    [SerializeField] private bool _alan1Sezlong3;
+    [SerializeField] private bool _alan1Sezlong4;
+    [SerializeField] private bool _alan1Sezlong5;
+    [SerializeField] private bool _alan1Yuzme1;
+    [SerializeField] private bool _alan1Yuzme2;
+    [SerializeField] private bool _alan1Yuzme3;
+    [SerializeField] private bool _alan1Yuzme4;
+    [SerializeField] private bool _expandAlani;
 
     public int _odenecekBedel;
 
@@ -118,6 +128,136 @@ public class BedelOdemeler : MonoBehaviour
             }
 
         }
+        else if (_alan1Sezlong1)
+        {
+            if (PlayerPrefs.GetInt("Alan1Sezlong1") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("Alan1Sezlong1");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Alan1Sezlong1", _odenecekBedel);
+            }
+
+        }
+        else if (_alan1Sezlong2)
+        {
+            if (PlayerPrefs.GetInt("Alan1Sezlong2") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("Alan1Sezlong2");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Alan1Sezlong2", _odenecekBedel);
+            }
+
+        }
+        else if (_alan1Sezlong3)
+        {
+            if (PlayerPrefs.GetInt("Alan1Sezlong3") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("Alan1Sezlong3");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Alan1Sezlong3", _odenecekBedel);
+            }
+
+        }
+        else if (_alan1Sezlong4)
+        {
+            if (PlayerPrefs.GetInt("Alan1Sezlong4") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("Alan1Sezlong4");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Alan1Sezlong4", _odenecekBedel);
+            }
+
+        }
+        else if (_alan1Sezlong5)
+        {
+            if (PlayerPrefs.GetInt("Alan1Sezlong5") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("Alan1Sezlong5");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Alan1Sezlong5", _odenecekBedel);
+            }
+
+        }
+        else if (_alan1Yuzme1)
+        {
+            if (PlayerPrefs.GetInt("Alan1Yuzme1") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("Alan1Yuzme1");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Alan1Yuzme1", _odenecekBedel);
+            }
+
+        }
+        else if (_alan1Yuzme2)
+        {
+            if (PlayerPrefs.GetInt("Alan1Yuzme2") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("Alan1Yuzme2");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Alan1Yuzme2", _odenecekBedel);
+            }
+
+        }
+        else if (_alan1Yuzme3)
+        {
+            if (PlayerPrefs.GetInt("Alan1Yuzme3") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("Alan1Yuzme3");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Alan1Yuzme3", _odenecekBedel);
+            }
+
+        }
+        else if (_alan1Yuzme4)
+        {
+            if (PlayerPrefs.GetInt("Alan1Yuzme4") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("Alan1Yuzme4");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Alan1Yuzme4", _odenecekBedel);
+            }
+
+        }
+        else if (_expandAlani)
+        {
+            if (PlayerPrefs.GetInt("ExpandAlani") > 0)
+            {
+                _odenecekBedel = PlayerPrefs.GetInt("ExpandAlani");
+                _bedelText.text = "$" + _odenecekBedel.ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("ExpandAlani", _odenecekBedel);
+            }
+
+        }
         else
         {
 
@@ -204,6 +344,56 @@ public class BedelOdemeler : MonoBehaviour
         else if (_alan1IceCream)
         {
             PlayerPrefs.SetInt("Alan1IceCream", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_alan1Sezlong1)
+        {
+            PlayerPrefs.SetInt("Alan1Sezlong1", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_alan1Sezlong2)
+        {
+            PlayerPrefs.SetInt("Alan1Sezlong2", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_alan1Sezlong3)
+        {
+            PlayerPrefs.SetInt("Alan1Sezlong3", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_alan1Sezlong4)
+        {
+            PlayerPrefs.SetInt("Alan1Sezlong4", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_alan1Sezlong5)
+        {
+            PlayerPrefs.SetInt("Alan1Sezlong5", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_alan1Yuzme1)
+        {
+            PlayerPrefs.SetInt("Alan1Yuzme1", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_alan1Yuzme2)
+        {
+            PlayerPrefs.SetInt("Alan1Yuzme2", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_alan1Yuzme3)
+        {
+            PlayerPrefs.SetInt("Alan1Yuzme3", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_alan1Yuzme4)
+        {
+            PlayerPrefs.SetInt("Alan1Yuzme4", _odenecekBedel);
+            _bedelText.text = "$" + _odenecekBedel.ToString();
+        }
+        else if (_expandAlani)
+        {
+            PlayerPrefs.SetInt("ExpandAlani", _odenecekBedel);
             _bedelText.text = "$" + _odenecekBedel.ToString();
         }
         else

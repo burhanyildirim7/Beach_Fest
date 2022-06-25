@@ -23,6 +23,7 @@ TagManager:
   - Garson
   - Sef
   - Worker
+  - OnBoardingController
   layers:
   - Default
   - TransparentFX

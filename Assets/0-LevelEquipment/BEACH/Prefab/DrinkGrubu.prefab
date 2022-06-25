@@ -2017,6 +2017,16 @@ MonoBehaviour:
   _alan1DenizAlani: 0
   _alan1Drink: 1
   _alan1IceCream: 0
+  _alan1Sezlong1: 0
+  _alan1Sezlong2: 0
+  _alan1Sezlong3: 0
+  _alan1Sezlong4: 0
+  _alan1Sezlong5: 0
+  _alan1Yuzme1: 0
+  _alan1Yuzme2: 0
+  _alan1Yuzme3: 0
+  _alan1Yuzme4: 0
+  _expandAlani: 0
   _odenecekBedel: 750
 --- !u!1 &967485277017443301
 GameObject:
@@ -3100,7 +3110,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5121189765444127285}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 0.5
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -4023,7 +4033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4375957104425461223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9003,7 +9013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6204276259590221921
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12098,9 +12108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6142e96651bbe491ab04486287e67f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnHizi: 1
+  _spawnHizi: 0.5
   _slider: {fileID: 6199234606768216059}
   _sinirText: {fileID: 7730494650850337854}
+  _image: {fileID: 4340563490512577364}
 --- !u!114 &6655455634972668065
 MonoBehaviour:
   m_ObjectHideFlags: 0

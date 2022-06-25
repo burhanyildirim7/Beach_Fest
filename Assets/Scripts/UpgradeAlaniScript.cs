@@ -9,6 +9,8 @@ public class UpgradeAlaniScript : MonoBehaviour
     [SerializeField] private Slider _slider;
     [Header("Ekran Acilis Hizi")]
     [SerializeField] private float _spawnHizi;
+    [Header("Image")]
+    [SerializeField] private GameObject _image;
 
     private float _velocityX;
     private float _velocityZ;
@@ -20,6 +22,7 @@ public class UpgradeAlaniScript : MonoBehaviour
     void Start()
     {
         _panelAcildi = false;
+        _image.SetActive(false);
     }
 
 
@@ -29,6 +32,7 @@ public class UpgradeAlaniScript : MonoBehaviour
         {
             _timer = 0;
             _slider.value = 0;
+            _image.SetActive(true);
 
 
         }
@@ -45,6 +49,7 @@ public class UpgradeAlaniScript : MonoBehaviour
             _timer = 0;
             _slider.value = 0;
             _panelAcildi = false;
+            _image.SetActive(false);
 
         }
         else
@@ -73,6 +78,8 @@ public class UpgradeAlaniScript : MonoBehaviour
                         _slider.value = 0;
                         UIController.instance.UpgradeCanvasAc();
                         _panelAcildi = true;
+
+                        //MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
 
                     }
                     else

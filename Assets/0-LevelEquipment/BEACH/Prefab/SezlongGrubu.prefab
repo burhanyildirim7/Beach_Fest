@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6434565518610198241}
   - component: {fileID: 2008691244893236810}
   - component: {fileID: 5431806037736391332}
+  - component: {fileID: 5818721929116701962}
   m_Layer: 0
   m_Name: sezlong1Bedeli (4)
   m_TagString: Untagged
@@ -85,6 +86,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5818721929116701962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529482211468912458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fed9b8c7da9488a82654272d8c454a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bedelText: {fileID: 4222149560880512591}
+  acilacakSezlongGrubu: {fileID: 486560976640951670}
+  kapanacakGrubu: {fileID: 529482211468912458}
+  sezlongGrubuNo: 5
 --- !u!1 &646564162463220624
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,9 +115,10 @@ GameObject:
   - component: {fileID: 8599735826129429082}
   - component: {fileID: 5775936943166986210}
   - component: {fileID: 1899187702031651780}
+  - component: {fileID: 3451223329635023612}
   m_Layer: 0
   m_Name: BedelOdemeCollideri
-  m_TagString: Untagged
+  m_TagString: BedelOdemeCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,6 +217,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3451223329635023612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646564162463220624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1150ba8439ec549d98023d6b2d8fe0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bedelText: {fileID: 2301071566753083689}
+  _alan1Kabin1: 0
+  _alan1Kabin2: 0
+  _alan1Dus1: 0
+  _alan1SezlongAlani: 0
+  _alan1DenizAlani: 0
+  _alan1Drink: 0
+  _alan1IceCream: 0
+  _alan1Sezlong1: 0
+  _alan1Sezlong2: 0
+  _alan1Sezlong3: 0
+  _alan1Sezlong4: 1
+  _alan1Sezlong5: 0
+  _alan1Yuzme1: 0
+  _alan1Yuzme2: 0
+  _alan1Yuzme3: 0
+  _alan1Yuzme4: 0
+  _expandAlani: 0
+  _odenecekBedel: 50
 --- !u!1 &735141257682088907
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +487,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $100
+  m_Text: $50
 --- !u!1 &998938600105927131
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,9 +501,10 @@ GameObject:
   - component: {fileID: 2823042216320090232}
   - component: {fileID: 3403637025905925628}
   - component: {fileID: 5562854657716355080}
+  - component: {fileID: 1718095095548091457}
   m_Layer: 0
   m_Name: BedelOdemeCollideri
-  m_TagString: Untagged
+  m_TagString: BedelOdemeCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -553,6 +603,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1718095095548091457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998938600105927131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1150ba8439ec549d98023d6b2d8fe0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bedelText: {fileID: 6735826923477867375}
+  _alan1Kabin1: 0
+  _alan1Kabin2: 0
+  _alan1Dus1: 0
+  _alan1SezlongAlani: 0
+  _alan1DenizAlani: 0
+  _alan1Drink: 0
+  _alan1IceCream: 0
+  _alan1Sezlong1: 0
+  _alan1Sezlong2: 1
+  _alan1Sezlong3: 0
+  _alan1Sezlong4: 0
+  _alan1Sezlong5: 0
+  _alan1Yuzme1: 0
+  _alan1Yuzme2: 0
+  _alan1Yuzme3: 0
+  _alan1Yuzme4: 0
+  _expandAlani: 0
+  _odenecekBedel: 50
 --- !u!1 &3442254205184675402
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,9 +647,10 @@ GameObject:
   - component: {fileID: 5196985311129708403}
   - component: {fileID: 3548284870401950573}
   - component: {fileID: 2747790685251371362}
+  - component: {fileID: 8507429450859447630}
   m_Layer: 0
   m_Name: BedelOdemeCollideri
-  m_TagString: Untagged
+  m_TagString: BedelOdemeCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,6 +749,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8507429450859447630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442254205184675402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1150ba8439ec549d98023d6b2d8fe0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bedelText: {fileID: 287372583909790712}
+  _alan1Kabin1: 0
+  _alan1Kabin2: 0
+  _alan1Dus1: 0
+  _alan1SezlongAlani: 0
+  _alan1DenizAlani: 0
+  _alan1Drink: 0
+  _alan1IceCream: 0
+  _alan1Sezlong1: 1
+  _alan1Sezlong2: 0
+  _alan1Sezlong3: 0
+  _alan1Sezlong4: 0
+  _alan1Sezlong5: 0
+  _alan1Yuzme1: 0
+  _alan1Yuzme2: 0
+  _alan1Yuzme3: 0
+  _alan1Yuzme4: 0
+  _expandAlani: 0
+  _odenecekBedel: 50
 --- !u!1 &3525045121805590382
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +791,7 @@ GameObject:
   - component: {fileID: 3396612375232026199}
   - component: {fileID: 8838376109603017066}
   - component: {fileID: 4773221329300881852}
+  - component: {fileID: 4359815192039526119}
   m_Layer: 0
   m_Name: sezlong1Bedeli (2)
   m_TagString: Untagged
@@ -752,6 +866,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4359815192039526119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525045121805590382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fed9b8c7da9488a82654272d8c454a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bedelText: {fileID: 8634278176851247367}
+  acilacakSezlongGrubu: {fileID: 486560977007718300}
+  kapanacakGrubu: {fileID: 3525045121805590382}
+  sezlongGrubuNo: 3
 --- !u!1 &3797271140523344801
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +961,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $100
+  m_Text: $50
 --- !u!1 &3899279304005993136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,7 +1172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3899279304686250526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: -4.21, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1165,7 +1295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3899279304973145834
 Transform:
   m_ObjectHideFlags: 0
@@ -1239,6 +1369,7 @@ GameObject:
   - component: {fileID: 1751900519198021809}
   - component: {fileID: 3337016064559143437}
   - component: {fileID: 2961228780077939488}
+  - component: {fileID: 9086549025921298735}
   m_Layer: 0
   m_Name: sezlong1Bedeli
   m_TagString: Untagged
@@ -1313,6 +1444,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9086549025921298735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4013597381005223954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fed9b8c7da9488a82654272d8c454a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bedelText: {fileID: 287372583909790712}
+  acilacakSezlongGrubu: {fileID: 486560975947685181}
+  kapanacakGrubu: {fileID: 4013597381005223954}
+  sezlongGrubuNo: 1
 --- !u!1 &4256092315283659442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1471,7 @@ GameObject:
   - component: {fileID: 8391865260273143394}
   - component: {fileID: 4593690165803092126}
   - component: {fileID: 6336371060634824169}
+  - component: {fileID: 9138125577728298294}
   m_Layer: 0
   m_Name: sezlong1Bedeli (1)
   m_TagString: Untagged
@@ -1398,6 +1546,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9138125577728298294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4256092315283659442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fed9b8c7da9488a82654272d8c454a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bedelText: {fileID: 6735826923477867375}
+  acilacakSezlongGrubu: {fileID: 486560977047905934}
+  kapanacakGrubu: {fileID: 4256092315283659442}
+  sezlongGrubuNo: 2
 --- !u!1 &4293955125422113473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1641,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $100
+  m_Text: $50
 --- !u!1 &4433272089882367576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1777,16 @@ MonoBehaviour:
   _alan1DenizAlani: 0
   _alan1Drink: 0
   _alan1IceCream: 0
+  _alan1Sezlong1: 0
+  _alan1Sezlong2: 0
+  _alan1Sezlong3: 0
+  _alan1Sezlong4: 0
+  _alan1Sezlong5: 0
+  _alan1Yuzme1: 0
+  _alan1Yuzme2: 0
+  _alan1Yuzme3: 0
+  _alan1Yuzme4: 0
+  _expandAlani: 0
   _odenecekBedel: 250
 --- !u!1 &4579324240264127898
 GameObject:
@@ -1627,9 +1801,10 @@ GameObject:
   - component: {fileID: 2274818492967500843}
   - component: {fileID: 6158571515356692770}
   - component: {fileID: 8725258384024408872}
+  - component: {fileID: 119843099645650724}
   m_Layer: 0
   m_Name: BedelOdemeCollideri
-  m_TagString: Untagged
+  m_TagString: BedelOdemeCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1728,6 +1903,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &119843099645650724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4579324240264127898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1150ba8439ec549d98023d6b2d8fe0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bedelText: {fileID: 8634278176851247367}
+  _alan1Kabin1: 0
+  _alan1Kabin2: 0
+  _alan1Dus1: 0
+  _alan1SezlongAlani: 0
+  _alan1DenizAlani: 0
+  _alan1Drink: 0
+  _alan1IceCream: 0
+  _alan1Sezlong1: 0
+  _alan1Sezlong2: 0
+  _alan1Sezlong3: 1
+  _alan1Sezlong4: 0
+  _alan1Sezlong5: 0
+  _alan1Yuzme1: 0
+  _alan1Yuzme2: 0
+  _alan1Yuzme3: 0
+  _alan1Yuzme4: 0
+  _expandAlani: 0
+  _odenecekBedel: 50
 --- !u!1 &4993793322172798558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,9 +2129,10 @@ GameObject:
   - component: {fileID: 4649706469466098015}
   - component: {fileID: 8406839467713306247}
   - component: {fileID: 2642815130228427168}
+  - component: {fileID: 8371247981540846601}
   m_Layer: 0
   m_Name: BedelOdemeCollideri
-  m_TagString: Untagged
+  m_TagString: BedelOdemeCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2024,6 +2231,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8371247981540846601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5356235274709896508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1150ba8439ec549d98023d6b2d8fe0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bedelText: {fileID: 4222149560880512591}
+  _alan1Kabin1: 0
+  _alan1Kabin2: 0
+  _alan1Dus1: 0
+  _alan1SezlongAlani: 0
+  _alan1DenizAlani: 0
+  _alan1Drink: 0
+  _alan1IceCream: 0
+  _alan1Sezlong1: 0
+  _alan1Sezlong2: 0
+  _alan1Sezlong3: 0
+  _alan1Sezlong4: 0
+  _alan1Sezlong5: 1
+  _alan1Yuzme1: 0
+  _alan1Yuzme2: 0
+  _alan1Yuzme3: 0
+  _alan1Yuzme4: 0
+  _expandAlani: 0
+  _odenecekBedel: 50
 --- !u!1 &5991812090672594832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,7 +2341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $100
+  m_Text: $50
 --- !u!1 &6637932718324744907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,6 +2739,7 @@ GameObject:
   - component: {fileID: 3768523079026401588}
   - component: {fileID: 2999501551091978353}
   - component: {fileID: 2258503531074855265}
+  - component: {fileID: 2944991956969856772}
   m_Layer: 0
   m_Name: sezlong1Bedeli (3)
   m_TagString: Untagged
@@ -2575,6 +2814,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2944991956969856772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8212519280073490441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fed9b8c7da9488a82654272d8c454a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bedelText: {fileID: 2301071566753083689}
+  acilacakSezlongGrubu: {fileID: 486560975907516712}
+  kapanacakGrubu: {fileID: 8212519280073490441}
+  sezlongGrubuNo: 4
 --- !u!1 &8239990843837557521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,7 +2909,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $100
+  m_Text: "$50\x03"
 --- !u!1 &8490819802700223526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3038,7 +3293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5829980711199924944, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
@@ -3049,6 +3304,11 @@ PrefabInstance:
 --- !u!4 &486560977047905933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3521139256540494640, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+  m_PrefabInstance: {fileID: 3899279303552441789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &486560977047905934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
   m_PrefabInstance: {fileID: 3899279303552441789}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3899279303595775151
@@ -3108,7 +3368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5829980711199924944, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
@@ -3116,6 +3376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+--- !u!1 &486560977007718300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+  m_PrefabInstance: {fileID: 3899279303595775151}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &486560977007718303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3521139256540494640, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
@@ -3178,7 +3443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5829980711199924944, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
@@ -3189,6 +3454,11 @@ PrefabInstance:
 --- !u!4 &486560976640951669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3521139256540494640, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+  m_PrefabInstance: {fileID: 3899279303959330373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &486560976640951670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
   m_PrefabInstance: {fileID: 3899279303959330373}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3899279304025839689
@@ -3272,6 +3542,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3899279304973145834}
     m_Modifications:
+    - target: {fileID: 94154062449468776, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 909211976641854659, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014077000493823717, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251460379957612408, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564054459896483699, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750839162571269616, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943058554283017309, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2282405571710054162, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344095304663063382, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351795954526538073, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524594701615766633, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596422491111910197, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708067852525420285, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922161122268985545, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403602371654719331, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3521139256540494640, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3322,7 +3652,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065330869379872753, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106937895060361548, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668112737573209570, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918377067802587585, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058140915629264222, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231453188110060520, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5625175916872041993, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
@@ -3332,8 +3686,41 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6238167968972722284, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782750541621842468, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7207863008023666944, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254154594969864764, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637396221141775932, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8000988556980536513, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252080141351861328, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+--- !u!1 &486560975947685181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+  m_PrefabInstance: {fileID: 3899279304657905166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &486560975947685182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3521139256540494640, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
@@ -3470,7 +3857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5829980711199924944, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
       propertyPath: m_IsActive
@@ -3478,6 +3865,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+--- !u!1 &486560975907516712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3521139256540494643, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}
+  m_PrefabInstance: {fileID: 3899279304693877275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &486560975907516715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3521139256540494640, guid: efcffac95ae5c49cbb7941a933b5f424, type: 3}

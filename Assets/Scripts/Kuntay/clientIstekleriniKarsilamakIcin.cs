@@ -34,7 +34,7 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
             else if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count > 0 && dondurmaIstiyor == true)
             {
                 other.gameObject.GetComponent<SirtCantasiScript>().IceCreamCek();
-                dondurma.SetActive(true);
+                //dondurma.SetActive(true);
                 _dolduranClient.GetComponent<ClientAIScript>().IsteklerKarsilandi();
                 dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
                 dondurmaIstiyor = false;
@@ -42,7 +42,7 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
             else if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiDrinkObjeleri.Count > 0 && icecekIstiyor == true)
             {
                 other.gameObject.GetComponent<SirtCantasiScript>().DrinkCek();
-                icecek.SetActive(true);
+                //icecek.SetActive(true);
                 _dolduranClient.GetComponent<ClientAIScript>().IsteklerKarsilandi();
                 dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
                 icecekIstiyor = false;

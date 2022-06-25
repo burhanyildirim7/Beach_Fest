@@ -32,6 +32,12 @@ public class YuzmeAlaniClientIstek : MonoBehaviour
         dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
     }
 
+    public void ParaVer()
+    {
+
+        dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
+    }
+
     public void DenizdenCikti()
     {
         acilacakGrup.SetActive(true);

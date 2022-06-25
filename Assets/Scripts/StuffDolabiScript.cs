@@ -15,6 +15,8 @@ public class StuffDolabiScript : MonoBehaviour
     [SerializeField] private Slider _slider;
     [Header("Sinir Text")]
     [SerializeField] private Text _sinirText;
+    [Header("Image")]
+    [SerializeField] private GameObject _image;
 
     private float _timer;
     private float _garsonTimer;
@@ -28,6 +30,7 @@ public class StuffDolabiScript : MonoBehaviour
     {
         _üretilenStuff = 0;
         _sinirText.gameObject.SetActive(false);
+        _image.SetActive(false);
     }
 
 
@@ -39,6 +42,7 @@ public class StuffDolabiScript : MonoBehaviour
         {
             _timer = 0;
             _slider.value = 0;
+            _image.SetActive(true);
             _sinirText.gameObject.SetActive(true);
             _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri.ToString();
         }
@@ -58,6 +62,7 @@ public class StuffDolabiScript : MonoBehaviour
         {
             _timer = 0;
             _slider.value = 0;
+            _image.SetActive(false);
             _sinirText.gameObject.SetActive(false);
         }
         else if (other.gameObject.tag == "Worker")
@@ -107,7 +112,15 @@ public class StuffDolabiScript : MonoBehaviour
                 }
                 else
                 {
+                    if (PlayerPrefs.GetInt("TrashSenaryosu") < 1)
+                    {
+                        StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().TrashOnBoarding());
+                        PlayerPrefs.SetInt("TrashSenaryosu", 1);
+                    }
+                    else
+                    {
 
+                    }
                 }
 
             }
@@ -124,7 +137,7 @@ public class StuffDolabiScript : MonoBehaviour
                 _garsonTimer += Time.deltaTime;
 
 
-                if (_garsonTimer > 3)
+                if (_garsonTimer > 1)
                 {
                     GameObject stuff = Instantiate(_stuff, _spawnPoint.transform.position, Quaternion.identity);
                     other.gameObject.GetComponent<WorkerScript>().StuffTopla(stuff);

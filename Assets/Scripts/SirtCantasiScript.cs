@@ -95,13 +95,13 @@ public class SirtCantasiScript : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 1)
         {
-            _stuffStackSiniri = 7;
+            _stuffStackSiniri = 6;
             _iceCreamStackSiniri = 2;
             _drinkStackSiniri = 2;
         }
         else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 2)
         {
-            _stuffStackSiniri = 10;
+            _stuffStackSiniri = 8;
             _iceCreamStackSiniri = 3;
             _drinkStackSiniri = 3;
         }
@@ -127,6 +127,8 @@ public class SirtCantasiScript : MonoBehaviour
                 other.gameObject.transform.DOLocalRotate(new Vector3(90, 90, 0), 0.5f);
                 _cantadakiStuffSayisi++;
                 _cantadakiObjeSayisi++;
+
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
             else
             {
@@ -155,6 +157,8 @@ public class SirtCantasiScript : MonoBehaviour
                         _cantadakiIceCreamObjeleri.Add(_tepsidekiIceCreams[i].gameObject);
                         _cantadakiIceCreamSayisi++;
                         _cantadakiObjeSayisi++;
+
+                        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
                         break;
                     }
                     else
@@ -192,6 +196,8 @@ public class SirtCantasiScript : MonoBehaviour
                         _cantadakiDrinkObjeleri.Add(_tepsidekiDrinks[i].gameObject);
                         _cantadakiDrinkSayisi++;
                         _cantadakiObjeSayisi++;
+
+                        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
                         break;
                     }
                     else
@@ -219,6 +225,8 @@ public class SirtCantasiScript : MonoBehaviour
 
         _canSimidi.SetActive(true);
 
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
     }
 
 
@@ -235,6 +243,8 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiStuffObjeleri.RemoveAt(_cantadakiStuffObjeleri.Count - 1);
             _cantadakiStuffSayisi--;
             _cantadakiObjeSayisi--;
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
 
         }
@@ -258,6 +268,8 @@ public class SirtCantasiScript : MonoBehaviour
             //_cantadakiObjeler.RemoveAt(_cantadakiDrinkObjeleri.Count - 1);
             _cantadakiIceCreamSayisi--;
             _cantadakiObjeSayisi--;
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
 
         }
@@ -281,6 +293,8 @@ public class SirtCantasiScript : MonoBehaviour
             //_cantadakiObjeler.RemoveAt(_cantadakiDrinkObjeleri.Count - 1);
             _cantadakiDrinkSayisi--;
             _cantadakiObjeSayisi--;
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
 
         }
@@ -293,6 +307,8 @@ public class SirtCantasiScript : MonoBehaviour
     public void CanSimidiCek()
     {
         _canSimidi.SetActive(false);
+
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
     }
 
 
@@ -303,6 +319,8 @@ public class SirtCantasiScript : MonoBehaviour
         IceCreamCek();
         DrinkCek();
         CanSimidiCek();
+
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
     }
 
     public void TepsiBosalt()

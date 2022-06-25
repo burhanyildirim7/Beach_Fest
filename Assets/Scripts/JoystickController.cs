@@ -138,11 +138,11 @@ public class JoystickController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 0)
         {
-            _speed = 3;
+            _speed = 4;
         }
         else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 1)
         {
-            _speed = 4;
+            _speed = 4.5f;
         }
         else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 2)
         {

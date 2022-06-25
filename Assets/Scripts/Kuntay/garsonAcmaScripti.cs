@@ -31,6 +31,7 @@ public class garsonAcmaScripti : MonoBehaviour
             }
             else if (PlayerPrefs.GetInt("GarsonSayisi") == 2)
             {
+                garson1Object.SetActive(true);
                 garson2Object.SetActive(true);
             }
             else
@@ -46,6 +47,7 @@ public class garsonAcmaScripti : MonoBehaviour
             }
             else if (PlayerPrefs.GetInt("WorkerSayisi") == 2)
             {
+                garson1Object.SetActive(true);
                 garson2Object.SetActive(true);
             }
             else
@@ -61,6 +63,7 @@ public class garsonAcmaScripti : MonoBehaviour
             }
             else if (PlayerPrefs.GetInt("SefSayisi") == 2)
             {
+                garson1Object.SetActive(true);
                 garson2Object.SetActive(true);
             }
             else

@@ -29,15 +29,15 @@ public class CameraMovement : MonoBehaviour
     {
         //transform.position = Vector3.Lerp(transform.position, new Vector3(odakNoktasi.transform.position.x, odakNoktasi.transform.position.y + aradakiFark.y, odakNoktasi.transform.position.z + aradakiFark.z), Time.deltaTime * 5f);
         Player = odakNoktasi;
-        GameController.instance._kameraHareketli = true;
+        //GameController.instance._kameraHareketli = true;
 
-        Invoke("KamerayiResetle", 3f);
+        //Invoke("KamerayiResetle", 3f);
     }
 
-    private void KamerayiResetle()
+    public void KamerayiResetle()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-        GameController.instance._kameraHareketli = false;
+        //GameController.instance._kameraHareketli = false;
     }
 
 }

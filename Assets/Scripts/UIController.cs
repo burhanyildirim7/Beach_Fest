@@ -95,6 +95,16 @@ public class UIController : MonoBehaviour
         //SetLevelText(LevelController.instance.totalLevelNo);
         SetGamePlayScoreText();
 
+        if (PlayerPrefs.GetInt("AcilisSenaryosu") < 1)
+        {
+            StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().StartOnBoarding());
+            PlayerPrefs.SetInt("AcilisSenaryosu", 1);
+        }
+        else
+        {
+
+        }
+
     }
 
     // RESTART TUSUNA BASILDISINDA  --- LOOSE EKRANINDA
@@ -199,12 +209,16 @@ public class UIController : MonoBehaviour
         //GamePanel.SetActive(false);
         _upgradePanel.SetActive(true);
         _upgradeScreenAcik = true;
+
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
     }
 
     public void UpgradeCanvasKapat()
     {
         _upgradePanel.SetActive(false);
         _upgradeScreenAcik = false;
+
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
         //GamePanel.SetActive(true);
 
     }
@@ -219,10 +233,10 @@ public class UIController : MonoBehaviour
 
         if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 0)
         {
-            _playerSpeedPriceText.text = "$1000";
+            _playerSpeedPriceText.text = "$500";
             _playerSpeedSlider.value = 1;
 
-            if (PlayerPrefs.GetInt("Money") < 1000)
+            if (PlayerPrefs.GetInt("Money") < 500)
             {
                 _playerSpeedButton.interactable = false;
             }
@@ -233,10 +247,10 @@ public class UIController : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 1)
         {
-            _playerSpeedPriceText.text = "$2000";
+            _playerSpeedPriceText.text = "$1000";
             _playerSpeedSlider.value = 2;
 
-            if (PlayerPrefs.GetInt("Money") < 2000)
+            if (PlayerPrefs.GetInt("Money") < 1000)
             {
                 _playerSpeedButton.interactable = false;
             }
@@ -263,10 +277,10 @@ public class UIController : MonoBehaviour
 
         if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 0)
         {
-            _playerCapacityPriceText.text = "$1000";
+            _playerCapacityPriceText.text = "$500";
             _playerCapacitySlider.value = 1;
 
-            if (PlayerPrefs.GetInt("Money") < 1000)
+            if (PlayerPrefs.GetInt("Money") < 500)
             {
                 _playerCapacityButton.interactable = false;
             }
@@ -277,10 +291,10 @@ public class UIController : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 1)
         {
-            _playerCapacityPriceText.text = "$2000";
+            _playerCapacityPriceText.text = "$1000";
             _playerCapacitySlider.value = 2;
 
-            if (PlayerPrefs.GetInt("Money") < 2000)
+            if (PlayerPrefs.GetInt("Money") < 1000)
             {
                 _playerCapacityButton.interactable = false;
             }
@@ -385,10 +399,10 @@ public class UIController : MonoBehaviour
         if (PlayerPrefs.GetInt("WorkerSayisi") == 0)
         {
 
-            _workerAcmaPriceText.text = "$1000";
+            _workerAcmaPriceText.text = "$500";
             _workerAcmaSlider.value = 0;
 
-            if (PlayerPrefs.GetInt("Money") < 1000)
+            if (PlayerPrefs.GetInt("Money") < 500)
             {
                 _workerAcmaButton.interactable = false;
             }
@@ -401,8 +415,23 @@ public class UIController : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("WorkerSayisi") == 1)
         {
-            _workerAcmaPriceText.text = "EXPAND 2. AREA";
+            _workerAcmaPriceText.text = "$1000";
             _workerAcmaSlider.value = 1;
+
+            if (PlayerPrefs.GetInt("Money") < 1000)
+            {
+                _workerAcmaButton.interactable = false;
+            }
+            else
+            {
+                _workerAcmaButton.interactable = true;
+            }
+
+        }
+        else if (PlayerPrefs.GetInt("WorkerSayisi") == 2)
+        {
+            _workerAcmaPriceText.text = "EXPAND 2. AREA";
+            _workerAcmaSlider.value = 2;
             _workerAcmaButton.interactable = false;
 
         }
@@ -506,6 +535,24 @@ public class UIController : MonoBehaviour
         if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 0)
         {
 
+            if (PlayerPrefs.GetInt("Money") < 500)
+            {
+                _playerSpeedButton.interactable = false;
+            }
+            else
+            {
+                _playerSpeedButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 500);
+                SetGamePlayScoreText();
+                PlayerPrefs.SetInt("PlayerSpeedLevel", 1);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>().PlayerSpeedGuncelle();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+            }
+        }
+        else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 1)
+        {
+
+
             if (PlayerPrefs.GetInt("Money") < 1000)
             {
                 _playerSpeedButton.interactable = false;
@@ -513,23 +560,11 @@ public class UIController : MonoBehaviour
             else
             {
                 _playerSpeedButton.interactable = true;
-                PlayerPrefs.SetInt("PlayerSpeedLevel", 1);
-                GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>().PlayerSpeedGuncelle();
-            }
-        }
-        else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 1)
-        {
-
-
-            if (PlayerPrefs.GetInt("Money") < 2000)
-            {
-                _playerSpeedButton.interactable = false;
-            }
-            else
-            {
-                _playerSpeedButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 1000);
+                SetGamePlayScoreText();
                 PlayerPrefs.SetInt("PlayerSpeedLevel", 2);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<JoystickController>().PlayerSpeedGuncelle();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
         }
         else
@@ -544,6 +579,24 @@ public class UIController : MonoBehaviour
         if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 0)
         {
 
+            if (PlayerPrefs.GetInt("Money") < 500)
+            {
+                _playerCapacityButton.interactable = false;
+            }
+            else
+            {
+                _playerCapacityButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 500);
+                SetGamePlayScoreText();
+                PlayerPrefs.SetInt("PlayerCapacityLevel", 1);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>().PlayerCapacityGuncelle();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+            }
+        }
+        else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 1)
+        {
+
+
             if (PlayerPrefs.GetInt("Money") < 1000)
             {
                 _playerCapacityButton.interactable = false;
@@ -551,23 +604,11 @@ public class UIController : MonoBehaviour
             else
             {
                 _playerCapacityButton.interactable = true;
-                PlayerPrefs.SetInt("PlayerCapacityLevel", 1);
-                GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>().PlayerCapacityGuncelle();
-            }
-        }
-        else if (PlayerPrefs.GetInt("PlayerCapacityLevel") == 1)
-        {
-
-
-            if (PlayerPrefs.GetInt("Money") < 2000)
-            {
-                _playerCapacityButton.interactable = false;
-            }
-            else
-            {
-                _playerCapacityButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 1000);
+                SetGamePlayScoreText();
                 PlayerPrefs.SetInt("PlayerCapacityLevel", 2);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>().PlayerCapacityGuncelle();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
         }
         else
@@ -588,8 +629,11 @@ public class UIController : MonoBehaviour
             else
             {
                 _garsonAcmaButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 1000);
+                SetGamePlayScoreText();
                 PlayerPrefs.SetInt("GarsonSayisi", 1);
                 _drinkAlani.GetComponent<garsonAcmaScripti>().GarsonAc();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
         }
         else if (PlayerPrefs.GetInt("GarsonSayisi") == 1)
@@ -619,8 +663,11 @@ public class UIController : MonoBehaviour
             else
             {
                 _sefAcmaButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 1000);
+                SetGamePlayScoreText();
                 PlayerPrefs.SetInt("SefSayisi", 1);
                 _iceCreamAlani.GetComponent<garsonAcmaScripti>().GarsonAc();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
         }
         else if (PlayerPrefs.GetInt("SefSayisi") == 1)
@@ -643,6 +690,23 @@ public class UIController : MonoBehaviour
         if (PlayerPrefs.GetInt("WorkerSayisi") == 0)
         {
 
+            if (PlayerPrefs.GetInt("Money") < 500)
+            {
+                _workerAcmaButton.interactable = false;
+            }
+            else
+            {
+                _workerAcmaButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 500);
+                SetGamePlayScoreText();
+                PlayerPrefs.SetInt("WorkerSayisi", 1);
+                _stuffAlani.GetComponent<garsonAcmaScripti>().GarsonAc();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+            }
+        }
+        else if (PlayerPrefs.GetInt("WorkerSayisi") == 1)
+        {
+
             if (PlayerPrefs.GetInt("Money") < 1000)
             {
                 _workerAcmaButton.interactable = false;
@@ -650,11 +714,14 @@ public class UIController : MonoBehaviour
             else
             {
                 _workerAcmaButton.interactable = true;
-                PlayerPrefs.SetInt("WorkerSayisi", 1);
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 1000);
+                SetGamePlayScoreText();
+                PlayerPrefs.SetInt("WorkerSayisi", 2);
                 _stuffAlani.GetComponent<garsonAcmaScripti>().GarsonAc();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
         }
-        else if (PlayerPrefs.GetInt("WorkerSayisi") == 1)
+        else if (PlayerPrefs.GetInt("WorkerSayisi") == 2)
         {
 
 
@@ -681,10 +748,13 @@ public class UIController : MonoBehaviour
             else
             {
                 _workerSpeedButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 1000);
+                SetGamePlayScoreText();
                 PlayerPrefs.SetInt("WorkerSpeedLevel", 1);
                 GameObject.FindGameObjectWithTag("Garson").GetComponent<GarsonScript>().GarsonSpeedGuncelle();
                 GameObject.FindGameObjectWithTag("Sef").GetComponent<SefScript>().SefSpeedGuncelle();
                 GameObject.FindGameObjectWithTag("Worker").GetComponent<WorkerScript>().WorkerSpeedGuncelle();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
         }
         else if (PlayerPrefs.GetInt("WorkerSpeedLevel") == 1)
@@ -698,10 +768,13 @@ public class UIController : MonoBehaviour
             else
             {
                 _workerSpeedButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 2000);
+                SetGamePlayScoreText();
                 PlayerPrefs.SetInt("WorkerSpeedLevel", 2);
                 GameObject.FindGameObjectWithTag("Garson").GetComponent<GarsonScript>().GarsonSpeedGuncelle();
                 GameObject.FindGameObjectWithTag("Sef").GetComponent<SefScript>().SefSpeedGuncelle();
                 GameObject.FindGameObjectWithTag("Worker").GetComponent<WorkerScript>().WorkerSpeedGuncelle();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
         }
         else
@@ -723,10 +796,13 @@ public class UIController : MonoBehaviour
             else
             {
                 _workerCapacityButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 1000);
+                SetGamePlayScoreText();
                 PlayerPrefs.SetInt("WorkerCapacityLevel", 1);
                 GameObject.FindGameObjectWithTag("Garson").GetComponent<GarsonScript>().GarsonCapacityGuncelle();
                 GameObject.FindGameObjectWithTag("Sef").GetComponent<SefScript>().SefCapacityGuncelle();
                 GameObject.FindGameObjectWithTag("Worker").GetComponent<WorkerScript>().WorkerCapacityGuncelle();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
         }
         else if (PlayerPrefs.GetInt("WorkerCapacityLevel") == 1)
@@ -740,10 +816,13 @@ public class UIController : MonoBehaviour
             else
             {
                 _workerCapacityButton.interactable = true;
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 2000);
+                SetGamePlayScoreText();
                 PlayerPrefs.SetInt("WorkerCapacityLevel", 2);
                 GameObject.FindGameObjectWithTag("Garson").GetComponent<GarsonScript>().GarsonCapacityGuncelle();
                 GameObject.FindGameObjectWithTag("Sef").GetComponent<SefScript>().SefCapacityGuncelle();
                 GameObject.FindGameObjectWithTag("Worker").GetComponent<WorkerScript>().WorkerCapacityGuncelle();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             }
         }
         else

@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 0
+  - 455396283074899
   appLabels:
-  - App Name
+  - Beach Fest!
   cookie: 1
   logging: 1
   status: 1

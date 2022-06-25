@@ -746,7 +746,27 @@ public class ClientAIScript : MonoBehaviour
             {
                 _canSimidi.SetActive(true);
                 other.gameObject.GetComponent<SirtCantasiScript>()._canSimidi.SetActive(false);
-                gameObject.GetComponent<NavMeshAgent>().speed = 5;
+
+                if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 0)
+                {
+                    //_speed = 4;
+                    gameObject.GetComponent<NavMeshAgent>().speed = 3;
+                }
+                else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 1)
+                {
+                    //_speed = 4.5f;
+                    gameObject.GetComponent<NavMeshAgent>().speed = 3.5f;
+                }
+                else if (PlayerPrefs.GetInt("PlayerSpeedLevel") == 2)
+                {
+                    //_speed = 5;
+                    gameObject.GetComponent<NavMeshAgent>().speed = 4;
+                }
+                else
+                {
+
+                }
+
                 _boguluyor = false;
                 _kurtarildi = true;
 
@@ -755,6 +775,9 @@ public class ClientAIScript : MonoBehaviour
                 _icecekIstiyorEmoji.SetActive(false);
                 _canSimidiIstiyorEmoji.SetActive(false);
                 _istekKarsilandiEmoji.SetActive(true);
+
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
             }
             else
             {
@@ -897,6 +920,8 @@ public class ClientAIScript : MonoBehaviour
                 _canSimidiIstiyorEmoji.SetActive(false);
                 _istekKarsilandiEmoji.SetActive(false);
                 _istekKarsilandiEmoji.SetActive(true);
+
+                _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<YuzmeAlaniClientIstek>().ParaVer();
             }
             else
             {
@@ -1164,6 +1189,16 @@ public class ClientAIScript : MonoBehaviour
             _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().semsiyeIstiyor = true;
             _semsiyeIstiyorEmoji.SetActive(true);
 
+            if (PlayerPrefs.GetInt("SemsiyeSenaryosu") < 1)
+            {
+                StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().SemsiyeOnBoarding(_gidilecekSezlonglar[_dolanSezlongNumber]));
+                PlayerPrefs.SetInt("SemsiyeSenaryosu", 1);
+            }
+            else
+            {
+
+            }
+
         }
         else if (isteksayi == 1)
         {
@@ -1171,10 +1206,32 @@ public class ClientAIScript : MonoBehaviour
             {
                 _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().dondurmaIstiyor = true;
                 _dondurmaIstiyorEmoji.SetActive(true);
+
+                if (PlayerPrefs.GetInt("DondurmaSenaryosu") < 1)
+                {
+                    StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().DondurmaOnBoarding(_gidilecekSezlonglar[_dolanSezlongNumber]));
+                    PlayerPrefs.SetInt("DondurmaSenaryosu", 1);
+                }
+                else
+                {
+
+                }
             }
             else
             {
-                IstedigiObjeYok();
+                //IstedigiObjeYok();
+                _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().semsiyeIstiyor = true;
+                _semsiyeIstiyorEmoji.SetActive(true);
+
+                if (PlayerPrefs.GetInt("SemsiyeSenaryosu") < 1)
+                {
+                    StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().SemsiyeOnBoarding(_gidilecekSezlonglar[_dolanSezlongNumber]));
+                    PlayerPrefs.SetInt("SemsiyeSenaryosu", 1);
+                }
+                else
+                {
+
+                }
             }
 
 
@@ -1185,10 +1242,32 @@ public class ClientAIScript : MonoBehaviour
             {
                 _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().icecekIstiyor = true;
                 _icecekIstiyorEmoji.SetActive(true);
+
+                if (PlayerPrefs.GetInt("IcecekSenaryosu") < 1)
+                {
+                    StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().IcecekOnBoarding(_gidilecekSezlonglar[_dolanSezlongNumber]));
+                    PlayerPrefs.SetInt("IcecekSenaryosu", 1);
+                }
+                else
+                {
+
+                }
             }
             else
             {
-                IstedigiObjeYok();
+                //IstedigiObjeYok();
+                _gidilecekSezlonglar[_dolanSezlongNumber].GetComponent<clientIstekleriniKarsilamakIcin>().semsiyeIstiyor = true;
+                _semsiyeIstiyorEmoji.SetActive(true);
+
+                if (PlayerPrefs.GetInt("SemsiyeSenaryosu") < 1)
+                {
+                    StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().SemsiyeOnBoarding(_gidilecekSezlonglar[_dolanSezlongNumber]));
+                    PlayerPrefs.SetInt("SemsiyeSenaryosu", 1);
+                }
+                else
+                {
+
+                }
             }
 
         }
@@ -1350,6 +1429,16 @@ public class ClientAIScript : MonoBehaviour
         {
             _canSimidiIstiyorEmoji.SetActive(true);
             _boguluyor = true;
+
+            if (PlayerPrefs.GetInt("BogulmaSenaryosu") < 1)
+            {
+                StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().BogulmaOnBoarding(gameObject));
+                PlayerPrefs.SetInt("BogulmaSenaryosu", 1);
+            }
+            else
+            {
+                StartCoroutine(GameObject.FindGameObjectWithTag("OnBoardingController").GetComponent<OnBoardingController>().BogulmaSenaryo(gameObject));
+            }
         }
 
     }

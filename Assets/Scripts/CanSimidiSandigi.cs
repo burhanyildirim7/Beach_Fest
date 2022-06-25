@@ -11,6 +11,8 @@ public class CanSimidiSandigi : MonoBehaviour
     [SerializeField] private Slider _slider;
     [Header("Sinir Text")]
     [SerializeField] private Text _sinirText;
+    [Header("Image")]
+    [SerializeField] private GameObject _image;
 
     private float _timer;
 
@@ -23,6 +25,7 @@ public class CanSimidiSandigi : MonoBehaviour
     {
         _üretilenStuff = 0;
         _sinirText.gameObject.SetActive(false);
+        _image.SetActive(false);
     }
 
 
@@ -32,6 +35,7 @@ public class CanSimidiSandigi : MonoBehaviour
         {
             _timer = 0;
             _slider.value = 0;
+            _image.SetActive(true);
             _sinirText.gameObject.SetActive(true);
 
             if (other.gameObject.GetComponent<SirtCantasiScript>()._canSimidi.activeSelf == false)
@@ -58,6 +62,7 @@ public class CanSimidiSandigi : MonoBehaviour
         {
             _timer = 0;
             _slider.value = 0;
+            _image.SetActive(false);
             _sinirText.gameObject.SetActive(false);
         }
         else
