@@ -110,7 +110,8 @@ public class PlayerController : MonoBehaviour
                         _paraUI.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).OnComplete(() => _paraUI.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f));
                         GameObject para = Instantiate(_bedelOdemePara, _moneySpawnPoint.transform.position, Quaternion.identity);
                         para.transform.rotation = Quaternion.Euler(90, 0, 0);
-                        para.transform.DOMove(other.gameObject.transform.position, 1f);
+                        //para.transform.DOMove(other.gameObject.transform.position, 1f);
+                        para.transform.DOJump(other.gameObject.transform.position, 3, 1, 1f);
                         //other.GetComponent<BedelOdemeler>().BedelOdeUlen();
                         PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - 10);
                         UIController.instance.SetGamePlayScoreText();
