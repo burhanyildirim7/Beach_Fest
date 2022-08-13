@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.UI;
-using ElephantSDK;
+//using ElephantSDK;
 using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
@@ -223,16 +223,16 @@ public class PlayerController : MonoBehaviour
 
 
 
-        Elephant.LevelStarted(1);
+        //Elephant.LevelStarted(1);
 
-        //PlayerPrefs.SetInt("Money", 99999);
+        PlayerPrefs.SetInt("Money", 99999);
         UIController.instance.SetGamePlayScoreText();
 
     }
 
     private void OnApplicationQuit()
     {
-        Elephant.LevelCompleted(1);
+        //Elephant.LevelCompleted(1);
         //Debug.Log("Application ending after " + Time.time + " seconds");
     }
 
