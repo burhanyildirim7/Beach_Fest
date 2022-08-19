@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class StuffDolabiScript : MonoBehaviour
 {
+    [Header("Hangi Dolap")]
+    [SerializeField] private bool _sezlong;
+    [SerializeField] private bool _semsiye;
+    [SerializeField] private bool _palet;
     [Header("Uretilecek Stuff Objesi")]
     [SerializeField] private GameObject _stuff;
     [Header("Spawn Point")]
@@ -95,7 +99,23 @@ public class StuffDolabiScript : MonoBehaviour
                         if (_timer > _spawnHizi)
                         {
                             GameObject stuff = Instantiate(_stuff, _spawnPoint.transform.position, Quaternion.identity);
-                            other.gameObject.GetComponent<SirtCantasiScript>().StuffTopla(stuff);
+                            if (_sezlong)
+                            {
+                                other.gameObject.GetComponent<SirtCantasiScript>().StuffTopla(stuff);
+                            }
+                            else if (_semsiye)
+                            {
+                                other.gameObject.GetComponent<SirtCantasiScript>().StuffSemsiyeTopla(stuff);
+                            }
+                            else if (_palet)
+                            {
+                                other.gameObject.GetComponent<SirtCantasiScript>().StuffPaletTopla(stuff);
+                            }
+                            else
+                            {
+
+                            }
+
                             _timer = 0;
                             _slider.value = 0;
                             _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri.ToString();

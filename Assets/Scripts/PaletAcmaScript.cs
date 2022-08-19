@@ -26,7 +26,7 @@ public class PaletAcmaScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "stuff")
+        if (other.tag == "stuffpalet")
         {
             _yuzmeAlaniClientIstek._doluMu = false;
             acilacakSezlong.SetActive(true);
@@ -41,7 +41,7 @@ public class PaletAcmaScript : MonoBehaviour
         {
             if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiObjeler.Count > 0)
             {
-                other.gameObject.GetComponent<SirtCantasiScript>().StuffCek(transform);
+                other.gameObject.GetComponent<SirtCantasiScript>().StuffPaletCek(transform);
 
             }
             else

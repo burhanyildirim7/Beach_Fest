@@ -25,7 +25,7 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
         {
             if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count > 0 && semsiyeIstiyor == true)
             {
-                other.gameObject.GetComponent<SirtCantasiScript>().StuffCek(gameObject.transform);
+                other.gameObject.GetComponent<SirtCantasiScript>().StuffSemsiyeCek(gameObject.transform);
                 semsiye.SetActive(true);
                 _dolduranClient.GetComponent<ClientAIScript>().IsteklerKarsilandi();
                 dropParaObjesi.GetComponent<moneyGrubuKontrolu>().paraEklensinMi = true;
@@ -84,7 +84,7 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
         }
         else if (other.gameObject.tag == "Worker")
         {
-            if (other.gameObject.GetComponent<WorkerScript>()._cantadakiStuffObjeleri.Count > 0 && semsiyeIstiyor == true)
+            if (other.gameObject.GetComponent<WorkerScript>()._cantadakiStuffObjeleri.Count > 0 && semsiyeIstiyor == true && other.gameObject.GetComponent<WorkerScript>()._worker2)
             {
                 other.gameObject.GetComponent<WorkerScript>().StuffCek(gameObject.transform);
                 semsiye.SetActive(true);
@@ -102,7 +102,7 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "stuff")
+        if (other.gameObject.tag == "stuffsemsiye")
         {
             Destroy(other.gameObject);
         }

@@ -20,6 +20,9 @@ public class WorkerScript : MonoBehaviour
     [SerializeField] private Animator _agentAnimator;
     [SerializeField] private GameObject _stackNoktasi;
 
+    public bool _worker1;
+    public bool _worker2;
+
     public List<GameObject> _sezlonglar = new List<GameObject>();
 
     private Transform _point;
@@ -87,20 +90,39 @@ public class WorkerScript : MonoBehaviour
                 {
                     if (_sezlonglar[i].gameObject.transform.parent.gameObject.activeSelf)
                     {
-                        if (_sezlonglar[i].GetComponent<clientIstekleriniKarsilamakIcin>().semsiyeIstiyor)
+                        if (_worker2)
+                        {
+                            if (_sezlonglar[i].GetComponent<clientIstekleriniKarsilamakIcin>().semsiyeIstiyor)
+                            {
+
+                                _point = _sezlonglar[i].transform;
+                                break;
+
+
+                            }
+                            else
+                            {
+                                _point = _stackNoktasi.transform;
+                            }
+                        }
+                        else
+                        {
+                            _point = _stackNoktasi.transform;
+                        }
+
+                    }
+                    else
+                    {
+                        if (_worker1)
                         {
                             _point = _sezlonglar[i].transform;
                             break;
                         }
                         else
                         {
-                            _point = _stackNoktasi.transform;
+
                         }
-                    }
-                    else
-                    {
-                        _point = _sezlonglar[i].transform;
-                        break;
+
                     }
 
                 }

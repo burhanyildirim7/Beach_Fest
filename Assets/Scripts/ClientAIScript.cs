@@ -1056,13 +1056,20 @@ public class ClientAIScript : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        //gameObject.transform.DOMoveX(_gidilecekSezlonglar[_dolanSezlongNumber].transform.position.x, 0.5f);
+        //gameObject.transform.DOMoveZ(_gidilecekSezlonglar[_dolanSezlongNumber].transform.position.z, 0.5f);
         gameObject.transform.DORotate(new Vector3(0, 135f, 0), 0.5f);
 
         yield return new WaitForSeconds(0.5f);
         //gameObject.transform.DOMoveY(-0.5f, 0.5f);
 
+        //gameObject.transform.position = new Vector3(_gidilecekSezlonglar[_dolanSezlongNumber].transform.position.x, -0.5f, _gidilecekSezlonglar[_dolanSezlongNumber].transform.position.z);
 
+        _giysisizKarakter.transform.localPosition = new Vector3(-0.6f, -0.35f, 0);
 
+        // Sezlong Konumlari İcin
+
+        /*
         if (_Erkek1)
         {
             //_giysisizKarakter.transform.DOLocalMove(new Vector3(-0.2f, -0.6f, -0.25f), 0.1f);
@@ -1097,7 +1104,7 @@ public class ClientAIScript : MonoBehaviour
         {
 
         }
-
+        */
 
 
 
@@ -1151,10 +1158,10 @@ public class ClientAIScript : MonoBehaviour
             _giysisizAnimator.SetBool("walk", true);
         }
         //gameObject.transform.DOMoveY(0f, 0.5f);
-        if (_ErkekCocuk)
+        if (_ErkekCocuk || _KizCocuk)
         {
             //_giysisizKarakter.transform.DOLocalMove(new Vector3(0, 0.52f, 0), 0.1f);
-            _giysisizKarakter.transform.localPosition = new Vector3(0, 0.52f, 0);
+            _giysisizKarakter.transform.localPosition = new Vector3(0, -0.2f, 0);
         }
         else
         {
@@ -1337,10 +1344,10 @@ public class ClientAIScript : MonoBehaviour
             _giysisizAnimator.SetBool("walk", true);
         }
         //gameObject.transform.DOMoveY(0f, 0.5f);
-        if (_ErkekCocuk)
+        if (_ErkekCocuk || _KizCocuk)
         {
             //_giysisizKarakter.transform.DOLocalMove(new Vector3(0, 0.52f, 0), 0.1f);
-            _giysisizKarakter.transform.localPosition = new Vector3(0, 0.52f, 0);
+            _giysisizKarakter.transform.localPosition = new Vector3(0, -0.2f, 0);
         }
         else
         {
