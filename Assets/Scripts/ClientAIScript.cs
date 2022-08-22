@@ -180,237 +180,245 @@ public class ClientAIScript : MonoBehaviour
 
         }
 
-        if (_kurtarildi)
+        if (_agent.enabled == true)
         {
-            _point = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        else
-        {
-
-        }
-
-        if (GameController.instance.isContinue == true)
-        {
-            if (_timer > 0.1f)
+            if (_kurtarildi)
+            {
+                _point = GameObject.FindGameObjectWithTag("Player").transform;
+            }
+            else
             {
 
+            }
 
-
-
-                if (_donuyor == false)
+            if (GameController.instance.isContinue == true)
+            {
+                if (_timer > 0.1f)
                 {
-                    if (_kabineGit == true)
+
+
+
+
+                    if (_donuyor == false)
                     {
-                        KabinKontrolEt();
-                        // Debug.Log(_kabineGit);
-
-
-                        if (_kabinNumber > 0)
+                        if (_kabineGit == true)
                         {
-                            if (gameObject.transform.parent != null)
+                            KabinKontrolEt();
+                            // Debug.Log(_kabineGit);
+
+
+                            if (_kabinNumber > 0)
                             {
-                                if (gameObject == gameObject)
+                                if (gameObject.transform.parent != null)
                                 {
-                                    if (_aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu == false)
+                                    if (gameObject == gameObject)
                                     {
-
-                                        if (_kabinSirasiNumber == 0)
+                                        if (_aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu == false)
                                         {
-                                            gameObject.GetComponent<NavMeshAgent>().enabled = true;
-                                            _point = _aiHareketKontrol._kabinler[_kabinNumber].transform;
-                                            _aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu = true;
-                                            _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
-                                            gameObject.transform.parent = null;
-                                            _kabineGidiyor = true;
 
-                                            if (_kabinSirasinda == false || _kabinde == false)
+                                            if (_kabinSirasiNumber == 0)
                                             {
-                                                if (_giysiliKarakter.activeSelf)
-                                                {
+                                                gameObject.GetComponent<NavMeshAgent>().enabled = true;
+                                                _point = _aiHareketKontrol._kabinler[_kabinNumber].transform;
+                                                _aiHareketKontrol._kabinler[_kabinNumber].GetComponent<kabinetkapakacilma>()._doluMu = true;
+                                                _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
+                                                gameObject.transform.parent = null;
+                                                _kabineGidiyor = true;
 
-                                                    _giysiliAnimator.SetBool("walk", true);
-                                                }
-                                                else
+                                                if (_kabinSirasinda == false || _kabinde == false)
                                                 {
+                                                    if (_giysiliKarakter.activeSelf)
+                                                    {
 
-                                                    _giysisizAnimator.SetBool("walk", true);
+                                                        _giysiliAnimator.SetBool("walk", true);
+                                                    }
+                                                    else
+                                                    {
+
+                                                        _giysisizAnimator.SetBool("walk", true);
+                                                    }
                                                 }
                                             }
+                                            else
+                                            {
+
+                                            }
+
+
+
+                                            //Debug.Log(_kabinNumber);
                                         }
                                         else
                                         {
+                                            if (_kabinde == false)
+                                            {
+                                                KabinSirasinaGec();
+                                                _point = _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].transform;
+                                                _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
 
+                                                //Debug.Log("siraya gir");
+                                            }
+                                            else
+                                            {
+
+                                            }
+                                            //_point = _aiHareketKontrol._kabinler[0].transform;
+                                            //_point = gameObject.transform;
                                         }
-
-
-
-                                        //Debug.Log(_kabinNumber);
                                     }
                                     else
                                     {
-                                        if (_kabinde == false)
-                                        {
-                                            KabinSirasinaGec();
-                                            _point = _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].transform;
-                                            _aiHareketKontrol._kabinSirasi[_kabinSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
 
-                                            //Debug.Log("siraya gir");
-                                        }
-                                        else
-                                        {
-
-                                        }
-                                        //_point = _aiHareketKontrol._kabinler[0].transform;
-                                        //_point = gameObject.transform;
                                     }
+
+
+
+
                                 }
                                 else
                                 {
+                                    /*
+                                    if (_kabinde == false)
+                                    {
+
+                                        _point = _aiHareketKontrol._kabinler[0].transform;
+                                    }
+                                    else
+                                    {
+
+                                    }
+                                    */
 
                                 }
-
-
-
 
                             }
                             else
                             {
-                                /*
-                                if (_kabinde == false)
-                                {
 
-                                    _point = _aiHareketKontrol._kabinler[0].transform;
+                            }
+                        }
+                        else if (_dusaGit == true)
+                        {
+                            DusKontrolEt();
+                            // Debug.Log(_kabineGit);
+
+
+                            if (_dusNumber > 0)
+                            {
+                                if (gameObject.transform.parent != null)
+                                {
+                                    if (gameObject == gameObject)
+                                    {
+                                        if (_aiHareketKontrol._duslar[_dusNumber].GetComponent<DusAlaniEvent>()._doluMu == false)
+                                        {
+
+                                            if (_dusSirasiNumber == 0)
+                                            {
+                                                gameObject.GetComponent<NavMeshAgent>().enabled = true;
+                                                _point = _aiHareketKontrol._duslar[_dusNumber].transform;
+                                                _aiHareketKontrol._duslar[_dusNumber].GetComponent<DusAlaniEvent>()._doluMu = true;
+                                                _aiHareketKontrol._dusSirasi[_dusSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
+                                                gameObject.transform.parent = null;
+                                                _dusaGidiyor = true;
+
+                                                if (_dusSirasinda == false || _dusta == false)
+                                                {
+                                                    if (_giysiliKarakter.activeSelf)
+                                                    {
+
+                                                        _giysiliAnimator.SetBool("walk", true);
+                                                    }
+                                                    else
+                                                    {
+
+                                                        _giysisizAnimator.SetBool("walk", true);
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+
+                                            }
+
+
+
+                                            //Debug.Log(_kabinNumber);
+                                        }
+                                        else
+                                        {
+                                            if (_dusta == false)
+                                            {
+                                                DusSirasinaGec();
+                                                _point = _aiHareketKontrol._dusSirasi[_dusSirasiNumber].transform;
+                                                _aiHareketKontrol._dusSirasi[_dusSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
+
+                                                //Debug.Log("siraya gir");
+                                            }
+                                            else
+                                            {
+
+                                            }
+                                            //_point = _aiHareketKontrol._kabinler[0].transform;
+                                            //_point = gameObject.transform;
+                                        }
+                                    }
+                                    else
+                                    {
+
+                                    }
+
+
+
+
                                 }
                                 else
                                 {
+                                    /*
+                                    if (_kabinde == false)
+                                    {
+
+                                        _point = _aiHareketKontrol._kabinler[0].transform;
+                                    }
+                                    else
+                                    {
+
+                                    }
+                                    */
 
                                 }
-                                */
 
                             }
+                            else
+                            {
 
+                            }
                         }
                         else
                         {
 
                         }
-                    }
-                    else if (_dusaGit == true)
-                    {
-                        DusKontrolEt();
-                        // Debug.Log(_kabineGit);
 
-
-                        if (_dusNumber > 0)
-                        {
-                            if (gameObject.transform.parent != null)
-                            {
-                                if (gameObject == gameObject)
-                                {
-                                    if (_aiHareketKontrol._duslar[_dusNumber].GetComponent<DusAlaniEvent>()._doluMu == false)
-                                    {
-
-                                        if (_dusSirasiNumber == 0)
-                                        {
-                                            gameObject.GetComponent<NavMeshAgent>().enabled = true;
-                                            _point = _aiHareketKontrol._duslar[_dusNumber].transform;
-                                            _aiHareketKontrol._duslar[_dusNumber].GetComponent<DusAlaniEvent>()._doluMu = true;
-                                            _aiHareketKontrol._dusSirasi[_dusSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = false;
-                                            gameObject.transform.parent = null;
-                                            _dusaGidiyor = true;
-
-                                            if (_dusSirasinda == false || _dusta == false)
-                                            {
-                                                if (_giysiliKarakter.activeSelf)
-                                                {
-
-                                                    _giysiliAnimator.SetBool("walk", true);
-                                                }
-                                                else
-                                                {
-
-                                                    _giysisizAnimator.SetBool("walk", true);
-                                                }
-                                            }
-                                        }
-                                        else
-                                        {
-
-                                        }
-
-
-
-                                        //Debug.Log(_kabinNumber);
-                                    }
-                                    else
-                                    {
-                                        if (_dusta == false)
-                                        {
-                                            DusSirasinaGec();
-                                            _point = _aiHareketKontrol._dusSirasi[_dusSirasiNumber].transform;
-                                            _aiHareketKontrol._dusSirasi[_dusSirasiNumber].GetComponent<KabinSirasiKontrol>()._doluMu = true;
-
-                                            //Debug.Log("siraya gir");
-                                        }
-                                        else
-                                        {
-
-                                        }
-                                        //_point = _aiHareketKontrol._kabinler[0].transform;
-                                        //_point = gameObject.transform;
-                                    }
-                                }
-                                else
-                                {
-
-                                }
-
-
-
-
-                            }
-                            else
-                            {
-                                /*
-                                if (_kabinde == false)
-                                {
-
-                                    _point = _aiHareketKontrol._kabinler[0].transform;
-                                }
-                                else
-                                {
-
-                                }
-                                */
-
-                            }
-
-                        }
-                        else
-                        {
-
-                        }
                     }
                     else
                     {
 
                     }
 
+
+
+                    //_timer = 0;
                 }
                 else
                 {
 
                 }
-
-
-
-                //_timer = 0;
-            }
-            else
-            {
-
             }
         }
+        else
+        {
+
+        }
+
 
 
 
@@ -1067,6 +1075,8 @@ public class ClientAIScript : MonoBehaviour
 
         _giysisizKarakter.transform.localPosition = new Vector3(-0.6f, -0.35f, 0);
 
+        _agent.enabled = false;
+
         // Sezlong Konumlari İcin
 
         /*
@@ -1144,6 +1154,8 @@ public class ClientAIScript : MonoBehaviour
 
 
         yield return new WaitForSeconds(20f);
+
+        _agent.enabled = true;
 
         // _agent.enabled = true;
 
@@ -1330,6 +1342,8 @@ public class ClientAIScript : MonoBehaviour
         _istekKarsilandiEmoji.SetActive(true);
 
         yield return new WaitForSeconds(10f);
+
+        _agent.enabled = true;
 
         //_agent.enabled = true;
 

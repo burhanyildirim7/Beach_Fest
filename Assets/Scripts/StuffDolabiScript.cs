@@ -48,7 +48,7 @@ public class StuffDolabiScript : MonoBehaviour
             _slider.value = 0;
             _image.SetActive(true);
             _sinirText.gameObject.SetActive(true);
-            _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri.ToString();
+            _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiObjeler.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri.ToString();
         }
         else if (other.gameObject.tag == "Worker")
         {
@@ -91,7 +91,7 @@ public class StuffDolabiScript : MonoBehaviour
             {
                 if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiIceCreamObjeleri.Count == 0 && other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiDrinkObjeleri.Count == 0)
                 {
-                    if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count < other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri)
+                    if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiObjeler.Count < other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri)
                     {
                         _timer += Time.deltaTime;
                         _slider.value += Time.deltaTime;
@@ -118,7 +118,7 @@ public class StuffDolabiScript : MonoBehaviour
 
                             _timer = 0;
                             _slider.value = 0;
-                            _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri.ToString();
+                            _sinirText.text = other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiObjeler.Count.ToString() + " / " + other.gameObject.GetComponent<SirtCantasiScript>()._stuffStackSiniri.ToString();
                         }
                         else
                         {

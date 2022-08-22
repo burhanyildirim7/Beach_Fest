@@ -13,6 +13,7 @@ public class OnBoardingController : MonoBehaviour
     [SerializeField] private GameObject _canSimidiKonum;
     [SerializeField] private GameObject _sezlongKonum;
     [SerializeField] private GameObject _upgradeAlaniKonum;
+    [SerializeField] private GameObject _semsiyeAlaniKonum;
 
     private CameraMovement _cameraMovement;
 
@@ -61,9 +62,9 @@ public class OnBoardingController : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        _cameraMovement.KamerayiYonlendir(_stuffKonum);
+        _cameraMovement.KamerayiYonlendir(_semsiyeAlaniKonum);
 
-        _onBoardingOku.transform.position = new Vector3(_stuffKonum.transform.position.x, 5, _stuffKonum.transform.position.z);
+        _onBoardingOku.transform.position = new Vector3(_semsiyeAlaniKonum.transform.position.x, 5, _semsiyeAlaniKonum.transform.position.z);
 
         yield return new WaitForSeconds(3f);
 
