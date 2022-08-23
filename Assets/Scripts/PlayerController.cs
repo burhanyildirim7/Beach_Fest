@@ -222,7 +222,8 @@ public class PlayerController : MonoBehaviour
         _denizeGirdi = false;
 
 
-
+        AppMetrica.Instance.ReportEvent("level_start", 1.ToString());
+        AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelStarted(1);
 
         PlayerPrefs.SetInt("Money", 99999);
@@ -232,6 +233,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        AppMetrica.Instance.ReportEvent("level_finish", 1.ToString());
+        AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelCompleted(1);
         //Debug.Log("Application ending after " + Time.time + " seconds");
     }
