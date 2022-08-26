@@ -23,7 +23,7 @@ public class clientIstekleriniKarsilamakIcin : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffObjeleri.Count > 0 && semsiyeIstiyor == true)
+            if (other.gameObject.GetComponent<SirtCantasiScript>()._cantadakiStuffSemsiyeObjeleri.Count > 0 && semsiyeIstiyor == true)
             {
                 other.gameObject.GetComponent<SirtCantasiScript>().StuffSemsiyeCek(gameObject.transform);
                 semsiye.SetActive(true);

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 //using ElephantSDK;
 using DG.Tweening;
 
+
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
@@ -33,6 +34,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _waterEfekt;
     [SerializeField] private GameObject _yurumeEfekt;
 
+
+
     private float _efektTimer;
 
     private int _kalanBedel;
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviour
     private float _velocityZ;
 
     private bool _denizeGirdi;
+
+    public string _yollanacakLevel;
 
     private void Awake()
     {
@@ -105,7 +110,7 @@ public class PlayerController : MonoBehaviour
                 {
                     _stayTimer += Time.deltaTime;
 
-                    if (_stayTimer > 0.1f)
+                    if (_stayTimer > 0.05f)
                     {
                         _paraUI.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).OnComplete(() => _paraUI.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f));
                         GameObject para = Instantiate(_bedelOdemePara, _moneySpawnPoint.transform.position, Quaternion.identity);
@@ -221,8 +226,9 @@ public class PlayerController : MonoBehaviour
 
         _denizeGirdi = false;
 
-
-        AppMetrica.Instance.ReportEvent("level_start", 1.ToString());
+        _yollanacakLevel = 1.ToString();
+        string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
+        AppMetrica.Instance.ReportEvent("level_start", gönderilenLevel);
         AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelStarted(1);
 
@@ -233,7 +239,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        AppMetrica.Instance.ReportEvent("level_finish", 1.ToString());
+        _yollanacakLevel = 1.ToString();
+        string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
+        AppMetrica.Instance.ReportEvent("level_finish", gönderilenLevel);
         AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelCompleted(1);
         //Debug.Log("Application ending after " + Time.time + " seconds");
