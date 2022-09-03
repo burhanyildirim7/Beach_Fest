@@ -228,11 +228,11 @@ public class PlayerController : MonoBehaviour
 
         _yollanacakLevel = 1.ToString();
         string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
-        AppMetrica.Instance.ReportEvent("level_start", gönderilenLevel);
+        AppMetrica.Instance.ReportEvent("level_start");
         AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelStarted(1);
 
-        PlayerPrefs.SetInt("Money", 99999);
+        //PlayerPrefs.SetInt("Money", 99999);
         UIController.instance.SetGamePlayScoreText();
 
     }
@@ -241,7 +241,7 @@ public class PlayerController : MonoBehaviour
     {
         _yollanacakLevel = 1.ToString();
         string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
-        AppMetrica.Instance.ReportEvent("level_finish", gönderilenLevel);
+        AppMetrica.Instance.ReportEvent("level_finish");
         AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelCompleted(1);
         //Debug.Log("Application ending after " + Time.time + " seconds");
